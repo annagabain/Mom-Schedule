@@ -1,3 +1,5 @@
+I am thinking to create an app called Mom Schedule, to address the same user persona as for my previous projects. The app should include a calendar, event editing, (maybe showing meeting locations on google maps) and creating task (to-do) cards. Not sure if there should be a login option at this stage just yet.
+
 # Portfolio Project 4
 Full-Stack Toolkit
 Project purpose:
