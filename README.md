@@ -1,4 +1,7 @@
-I am thinking to create an app called Mom Schedule, to address the same user persona as for my previous projects. The app should include a calendar, event editing, (maybe showing meeting locations on google maps) and creating task (to-do) cards.
+# Mom Schedule app
+
+- address the same user persona as for my previous projects. 
+- includes a calendar, event editing, creating task (to-do) cards.
 
 # Portfolio Project 4
 Full-Stack Toolkit
@@ -11,4 +14,6 @@ HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
 
-<img width="100%" alt="wireframe" src="https://github.com/annagabain/Mom-Schedule/blob/main/mom-schedule-wireframe-desktop.png">
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png">
+
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
