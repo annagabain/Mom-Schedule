@@ -11,4 +11,4 @@ HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
 
-<img width="100%" alt="wireframe" src="assets/md-images/mom-schedule-wireframe-desktop.png">
+<img width="100%" alt="wireframe" src="https://github.com/annagabain/Mom-Schedule/blob/main/mom-schedule-wireframe-desktop.png">
