@@ -3,7 +3,7 @@
 - address the same user persona as for my previous projects. 
 - includes a calendar, event editing, creating task (to-do) cards.
 
-# Portfolio Project 4
+## Portfolio Project 4
 Full-Stack Toolkit
 Project purpose:
 
@@ -20,6 +20,14 @@ Postgres Relational database
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> 
 
+*Edit Task View*
+
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-task-edit.png"> 
+
 *This Week View*
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
+
+## Sources
+
+https://www.figma.com/
