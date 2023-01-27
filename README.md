@@ -14,11 +14,15 @@ HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
 
-## Wireframes
+## Desktop Wireframes
 
 *Today View*
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> 
+
+*Login / Register View*
+
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-register-login-view.png"> 
 
 *Edit Task View*
 
