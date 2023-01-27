@@ -14,6 +14,12 @@ HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
 
-<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png">
+## Wireframes
+
+*Today View*
+
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> 
+
+*This Week View*
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
