@@ -32,9 +32,9 @@ Postgres Relational database
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
-*FIRST DRAFT PgSQL Relational Database Diagram*
+*DRAFT PgSQL Relational Database Diagram*
 
-<img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-28.png">
+<img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-31.png">
 
 ## Sources
 
