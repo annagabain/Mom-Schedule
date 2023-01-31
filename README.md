@@ -36,6 +36,12 @@ Postgres Relational database
 
 <img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-31.png">
 
+## Tools
+
+Wireframes: https://www.figma.com/
+
 ## Sources
 
-https://www.figma.com/
+How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
+
+
