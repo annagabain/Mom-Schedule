@@ -1,9 +1,11 @@
 # Mom Schedule app
+## A Time Planning Tool for Busy Mothers
 
-- address the same user persona as for my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
-- includes a calendar, event editing, creating task (to-do) cards.
+- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
+- includes a calendar, event editing, creating task cards.
 
 ## Portfolio Project 4
+
 Full-Stack Toolkit
 Project purpose:
 
@@ -13,6 +15,16 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
+
+## User Stories
+
+- Account authorisation - Login
+
+- As a site user I can see the Schedule so that I can overview my tasks
+
+- View a Task
+
+- Edit a Task
 
 ## Desktop Wireframes
 
