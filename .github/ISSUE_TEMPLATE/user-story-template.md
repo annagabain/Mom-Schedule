@@ -20,6 +20,8 @@ assignees: ''
   
   In order to **receive benefit** as a **role**, I can **goal / desire**
   
+  As **role** I can **capability** so that **received benefit**
+  
 ### Acceptance Criteria:
   
 - Acceptance Criteria 1:
