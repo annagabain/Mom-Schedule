@@ -1,6 +1,6 @@
 # Mom Schedule app
 
-- address the same user persona as for my previous projects. 
+- address the same user persona as for my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
 - includes a calendar, event editing, creating task (to-do) cards.
 
 ## Portfolio Project 4
@@ -34,7 +34,7 @@ Postgres Relational database
 
 *DRAFT PgSQL Relational Database Diagram*
 
-<img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-31.png">
+<img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-31-1.png">
 
 ## Tools
 
