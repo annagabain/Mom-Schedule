@@ -1,0 +1,49 @@
+    /* Colours of the Project
+    #9C9FA6   - Grey
+    #FAF7F4   - Off White
+    #D8CBC4   - Mokka Beige
+    #455359   - Sea Green
+    #A67153(old)  #6A4C39(new)   - Brown
+    #0D0D0D   - Black-Brown */
+
+    /* These fonts are imported from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+
+    /* This styling is set for the whole project as a deafault */
+    body {
+        color: #0D0D0D;
+        background-color: #D8CBC4;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    /* Navigaiton styling starts here*/
+    header {
+        padding: 30px 50px;
+        margin-bottom: 30px;
+        background: #D8CBC4;
+    }
+
+    h1 {
+        font-family: 'Lemonada', cursive, sans-serif;
+        font-weight: 400;
+        color: #0D0D0D;
+        text-align: left;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    
+    .login-greeting {
+        text-align: right;
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        text-indent: 30px;
+        line-height: 32px;
+    }
