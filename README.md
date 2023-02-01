@@ -1,8 +1,11 @@
 # Mom Schedule
 ## A Time Planning Tool for Busy Mothers
 
-- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
-- includes a calendar, event editing, creating task cards.
+## Main Technologies
+HTML, CSS, JavaScript, Python+Django
+Postgres Relational database 
+
+# Live View https://mom-schedule.herokuapp.com/
 
 ## Portfolio Project 4
 
@@ -11,9 +14,8 @@ Project purpose:
 
 In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
 
-## Main Technologies
-HTML, CSS, JavaScript, Python+Django
-Postgres Relational database 
+- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
+- includes a calendar, event editing, creating task cards.
 
 
 ## User Stories
