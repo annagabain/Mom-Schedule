@@ -56,6 +56,10 @@ Wireframes: https://www.figma.com/
 
 ## Sources
 
+Using WhiteNoise with Django: https://whitenoise.evans.io/en/stable/django.html
+
+Django and Static Assets: https://devcenter.heroku.com/articles/django-assets?fbclid=IwAR16j_4bi-WEMxrA-VwWmFUfPOFP9ef2Kqzb6lM1pVCiKti_dhwoku1ceEg
+
 Django models: https://docs.djangoproject.com/en/4.1/topics/db/models/
 
 How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
