@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom Schedule - Django</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+    <div style="margin-top: 50px;" class="ui container">
+        <h1 class="ui center aligned header">Django Mom Schedule App</h1>
+
+        <form class="ui form" action="/add" method="post">
+            {% csrf_token %}
+            <div class="field">
+                <label>Task Title</label>
+                <input type="text" name="title" placeholder="Enter mom_task task...">
+                <br>
+            </div>
+            <button class="ui blue button" type="submit">Add</button>
+        </form>
+
+        <hr>
+
+        {% for mom_task in mom_task_list %}
+
+        <div class="ui segment">
+            <p class="ui big header">{{ mom_task.id }} | {{ mom_task.title }}
+
+                {% if mom_task.complete == False %}
+                <span class="ui gray label">Not Complete</span>
+                {% else %}
+                <span class="ui green label">Complete</span>
+                {% endif %}
+            </p>
+            <a class="ui blue button" href="/update/{{ mom_task.id }}">Toggle Complete</a>
+            <a class="ui red button" href="/delete/{{ mom_task.id }}">Delete</a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</body>
+
+</html>

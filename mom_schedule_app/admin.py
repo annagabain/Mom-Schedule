@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Mom_task
 
-# Register your models here.
+
+admin.site.register(Mom_task)

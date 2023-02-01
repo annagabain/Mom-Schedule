@@ -1,4 +1,4 @@
-# Mom Schedule app
+# Mom Schedule
 ## A Time Planning Tool for Busy Mothers
 
 - address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
@@ -55,5 +55,7 @@ Wireframes: https://www.figma.com/
 ## Sources
 
 How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
+
+Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/develop-a-simple-python-django-todo-app-in-1-minute-4908
 
 
