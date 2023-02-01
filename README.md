@@ -54,6 +54,8 @@ Wireframes: https://www.figma.com/
 
 ## Sources
 
+Django models: https://docs.djangoproject.com/en/4.1/topics/db/models/
+
 How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 
 Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/develop-a-simple-python-django-todo-app-in-1-minute-4908

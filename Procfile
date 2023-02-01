@@ -1,0 +1,1 @@
+web: gunicorn django_mom_schedule_project.wsgi
