@@ -22,9 +22,9 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 - Account authorisation - Login
 
-- As a site user I can see the Schedule so that I can overview my tasks
+- As a site user I can see the schedule so that I can overview my tasks
 
-- View a Task
+- As a site user I can view an individual task so that I can read the details of it
 
 - Edit a Task
 
@@ -62,6 +62,8 @@ Static files weren't included by Heroku after deployment. Using WhiteNoise packa
 Wireframes: https://www.figma.com/
 
 ## Sources
+
+Django project base template: https://stackoverflow.com/questions/14720464/django-project-base-template#:~:text=Yes%2C%20you%20can%20use%20%7B%25,where%20to%20place%20the%20base.
 
 A guide to user registration: https://ordinarycoders.com/blog/article/django-user-register-login-logout
 

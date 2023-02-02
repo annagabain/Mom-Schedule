@@ -18,62 +18,26 @@
 
     <header>
         <span>
-            <h1>Mom Schedule</h1>
+            <a href="/"><h1>Mom Schedule</h1></a>
         </span>
         <p class="login-greeting">
-            Hello!
+            <!-- dummy psydocode -->
+            <!-- FIX later! -->
+            Hello {{ user.name }}! 
             <br>
-            Log in
+            <a href="/register">Log in</a>
         </p>
-
+        <a href="/register"><button>Register</button></a>
+        <a href="/edit_task"><button>Edit Tasks</button></a>
     </header>
-
-    <div class="ui container">
-        <form class="ui form" action="/add" method="post">
-            {% csrf_token %}
-            <div class="field">
-                <label>
-                    <h2>Create a New Task</h2>
-                </label>
-                <input type="text" name="title" placeholder="Create a new task...">
-                <br>
-            </div>
-            <button type="submit">Add</button>
-        </form>
-
-        <hr>
-        <hr>
-        All Tasks
-        <hr>
-        <hr>
-
-        {% for mom_task in mom_task_list %}
-
-        <div class="ui segment">
-
-            <div class="center">
-                <span id="task-title">{{ mom_task.title }}</span>
-
-                {% if mom_task.complete == False %}
-                <span class="ui gray label">Not Complete</span>
-                {% else %}
-                <span class="ui green label">Complete</span>
-                {% endif %}
-                
-            </div>
-            <div>
-                <p>Description will go here</p>
-            </div>
-            <div class="center">
-                <a href="/update/{{ mom_task.id }}"><button>Toggle complete</button></a>
-                <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
-            </div>
-        </div>
-
-        {% endfor %}
-
-    </div>
-
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Other templates' content here -->
+        {% endblock content %}
+    </main>
+    <footer>
+       Anna Gabain &#169; for educational purposes
+    </footer>
 
 </body>
 

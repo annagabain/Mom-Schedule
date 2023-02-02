@@ -13,31 +13,9 @@ def mom_home(request):
     return render(request, "index.html")
 
 
-# change this to edit tasks page and create a separate base.html to extend
-def index(request):
+def mom_task(request):
     mom_tasks = Mom_task.objects.all()
-    return render(request, "base.html", {"mom_task_list": mom_tasks})
-
-
-@require_http_methods(["POST"])
-def add(request):
-    title = request.POST["title"]
-    mom_task = Mom_task(title=title)
-    mom_task.save()
-    return redirect("index")
-
-
-def update(request, mom_task_id):
-    mom_task = Mom_task.objects.get(id=mom_task_id)
-    mom_task.complete = not mom_task.complete
-    mom_task.save()
-    return redirect("index")
-
-
-def delete(request, mom_task_id):
-    mom_task = Mom_task.objects.get(id=mom_task_id)
-    mom_task.delete()
-    return redirect("index")
+    return render(request, "edit_task.html", {"mom_task_list": mom_tasks})
 
 
 def register_request(request):
@@ -53,5 +31,22 @@ def register_request(request):
     return render(request=request, template_name="register.html", context={"register_form": form})  # noqa
 
 
-def test_template(request):
-    return render(request, "test.html")
+@require_http_methods(["POST"])
+def add(request):
+    title = request.POST["title"]
+    mom_task = Mom_task(title=title)
+    mom_task.save()
+    return redirect("edit_task")
+
+
+def update(request, mom_task_id):
+    mom_task = Mom_task.objects.get(id=mom_task_id)
+    mom_task.complete = not mom_task.complete
+    mom_task.save()
+    return redirect("edit_task")
+
+
+def delete(request, mom_task_id):
+    mom_task = Mom_task.objects.get(id=mom_task_id)
+    mom_task.delete()
+    return redirect("edit_task")

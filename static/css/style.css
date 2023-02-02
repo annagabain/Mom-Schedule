@@ -20,7 +20,7 @@
     }
 
     /* Navigaiton styling starts here*/
-    header {
+    header, footer {
         padding: 30px 50px;
         margin-bottom: 30px;
         background: #D8CBC4;
