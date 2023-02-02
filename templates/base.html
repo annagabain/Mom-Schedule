@@ -27,15 +27,18 @@
         </p>
 
     </header>
+
     <div class="ui container">
         <form class="ui form" action="/add" method="post">
             {% csrf_token %}
             <div class="field">
-                <label><h2>Task Title</h2></label>
+                <label>
+                    <h2>Create a New Task</h2>
+                </label>
                 <input type="text" name="title" placeholder="Create a new task...">
                 <br>
             </div>
-            <h2><button class="" type="submit">Add</button></h2>
+            <button type="submit">Add</button>
         </form>
 
         <hr>
@@ -47,19 +50,24 @@
         {% for mom_task in mom_task_list %}
 
         <div class="ui segment">
-            <h2>{{ mom_task.title }}
-                <!-- <p class="ui big header">{{ mom_task.id }} | {{ mom_task.title }} -->
-                </h2>
-            <div>
+
+            <div class="center">
+                <span id="task-title">{{ mom_task.title }}</span>
+
                 {% if mom_task.complete == False %}
                 <span class="ui gray label">Not Complete</span>
                 {% else %}
                 <span class="ui green label">Complete</span>
                 {% endif %}
+                
             </div>
-            <a class="ui small button" href="/update/{{ mom_task.id }}">Toggle complete</a>
-            <a class="ui red button" href="/delete/{{ mom_task.id }}">Delete</a>
-
+            <div>
+                <p>Description will go here</p>
+            </div>
+            <div class="center">
+                <a href="/update/{{ mom_task.id }}"><button>Toggle complete</button></a>
+                <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
+            </div>
         </div>
 
         {% endfor %}

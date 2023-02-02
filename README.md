@@ -52,10 +52,9 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 ## Debugging
 
-Static files weren't included by Heroku afterthe deployment. Using WhiteNoise package fixed the issue.
+Static files weren't included by Heroku after deployment. Using WhiteNoise package fixed the issue.
 
-<img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg">
-<img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
+<img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
 
 
 ## Tools
@@ -63,6 +62,8 @@ Static files weren't included by Heroku afterthe deployment. Using WhiteNoise pa
 Wireframes: https://www.figma.com/
 
 ## Sources
+
+A guide to user registration: https://ordinarycoders.com/blog/article/django-user-register-login-logout
 
 Using WhiteNoise with Django: https://whitenoise.evans.io/en/stable/django.html
 

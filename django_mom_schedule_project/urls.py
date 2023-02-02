@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from mom_schedule_app import views
 
+app_name = "mom_schedule_app"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index, name="index"),
+    path("", views.mom_home, name="homepage"),
+    path("register", views.register_request, name="register"),
+    path("edit_task", views.index, name="index"),
     path('add', views.add, name='add'),
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),

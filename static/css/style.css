@@ -33,12 +33,16 @@
         text-align: left;
     }
 
-    h2 {
-        text-align: center;
-    }
-    
+
     .login-greeting {
         text-align: right;
+    }
+
+    #task-title {
+        font-weight: 600;
+        font-size: x-large;
+        color: #0D0D0D;
+        text-align: left;
     }
 
     p {
@@ -46,4 +50,20 @@
         font-weight: 400;
         text-indent: 30px;
         line-height: 32px;
+    }
+
+    button {
+        height: 35px;
+        border-radius: 10%;
+        background-color: #D8CBC4;
+        color: #0D0D0D;
+        text-align: center;
+    }
+
+    .center, form {
+        text-align: center;
+    }
+
+    .right {
+        text-align: right;
     }
