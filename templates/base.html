@@ -10,7 +10,7 @@
     <!-- MY CUSTOM CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
 
 </head>
 
@@ -30,11 +30,13 @@
         <a href="/register"><button>Register</button></a>
         <a href="/edit_task"><button>Edit Tasks</button></a>
     </header>
-    <main class="flex-shrink-0 main-bg">
+
+    <main>
         {% block content %}
         <!-- Other templates' content here -->
         {% endblock content %}
     </main>
+    
     <footer>
        Anna Gabain &#169; for educational purposes
     </footer>

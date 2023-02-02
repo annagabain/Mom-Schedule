@@ -11,7 +11,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 
-    /* This styling is set for the whole project as a deafault */
     body {
         color: #0D0D0D;
         background-color: #D8CBC4;
@@ -19,7 +18,6 @@
         font-weight: 400;
     }
 
-    /* Navigaiton styling starts here*/
     header, footer {
         padding: 30px 50px;
         margin-bottom: 30px;

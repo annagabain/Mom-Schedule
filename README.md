@@ -5,7 +5,7 @@
 HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
-# Live View https://mom-schedule.herokuapp.com/
+Live View https://mom-schedule.herokuapp.com/
 
 ## Portfolio Project 4
 
