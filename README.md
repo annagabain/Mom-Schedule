@@ -46,9 +46,17 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
-*DRAFT PgSQL Relational Database Diagram*
+*PgSQL Relational Database Diagram*
 
-<img width="70%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-01-31-1.png">
+<img width="50%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
+
+## Debugging
+
+Static files weren't included by Heroku afterthe deployment. Using WhiteNoise package fixed the issue.
+
+<img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg">
+<img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
+
 
 ## Tools
 
