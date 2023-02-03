@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.mom_home, name="index"),
     path("register", views.register_request, name="register"),
+    path("login", views.login_request, name="login"),
     path("edit_task", views.mom_task, name="edit_task"),
     path('add', views.add, name='add'),
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
