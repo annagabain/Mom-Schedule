@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from mom_schedule_app import views
 
-app_name = "mom_schedule_app"
+app_name = 'mom_schedule_app'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.mom_home, name="index"),
-    path("register", views.register_request, name="register"),
-    path("login", views.login_request, name="login"),
-    path("edit_task", views.mom_task, name="edit_task"),
+    path('', views.mom_home, name='index'),
+    path('register', views.register_request, name='register'),
+    path('login', views.login_request, name='login'),
+    path('logout', views.logout_request, name='logout'),
+    path('edit_task', views.mom_task, name='edit_task'),
     path('add', views.add, name='add'),
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),

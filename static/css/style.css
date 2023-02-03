@@ -65,3 +65,7 @@
     .right {
         text-align: right;
     }
+
+    img {
+        border-radius: 50%;
+    }

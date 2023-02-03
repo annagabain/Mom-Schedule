@@ -21,10 +21,20 @@
 
     <header>
         <span>
-            <a href="/"><h1>Mom Schedule</h1></a>
+            <a href="/">
+                <h1>Mom Schedule</h1>
+            </a>
         </span>
+
         <p class="login-greeting">
-            Hello {{ user }}!
+            <!-- log in or logout based on authentication status -->
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="#">Hello {{user.username}}!</a>
+            <br>
+            <a class="nav-link" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-link" href="/login">Login</a>
+            {% endif %}
         </p>
         <a href="/register"><button>Register</button></a>
         <a href="/login"><button>Login</button></a>
@@ -34,19 +44,19 @@
     <main>
         <!-- Bootstrap messages as a user interaction feedback -->
         {% if messages %}
-        <ul class="messages">
+        
             {% for message in messages %}
             <!-- <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li> -->
-            <div class="container-fluid p-0">
-                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="True">&times;</span>
-                  </button>
-                  {{ message }}
+            <div class="container-fluid p-0 left">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="True">&times;</span>
+                    </button> -->
+                    <span style="color:red;">{{ message }}</span>
                 </div>
-              </div>
+            </div>
             {% endfor %}
-        </ul>
+        
         {% endif %}
 
         {% block content %}
