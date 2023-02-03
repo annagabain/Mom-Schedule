@@ -20,13 +20,17 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 ## User Stories
 
-- Account authorisation - Login
+- As a site user I can register so that I can have a unique and private schedule
+
+- As a site user I can login so that I can view my own schedule
 
 - As a site user I can see the schedule so that I can overview my tasks
 
-- As a site user I can view an individual task so that I can read the details of it
+- As a site user I can View an individual task so that I can read the details of it
 
-- Edit a Task
+- As a site user I can Edit an individual task so that I can adapt it to my needs
+
+- As **a site Admin** I can **login** so that I can **view and manage the users and tasks**
 
 ## Desktop Wireframes
 
