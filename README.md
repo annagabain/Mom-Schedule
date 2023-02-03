@@ -32,6 +32,9 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 - As **a site Admin** I can **login** so that I can **view and manage the users and tasks**
 
+All user stories as part of a project: https://github.com/users/annagabain/projects/7/views/1
+
+
 ## Desktop Wireframes
 
 *Today View*
@@ -66,6 +69,8 @@ Static files weren't included by Heroku after deployment. Using WhiteNoise packa
 Wireframes: https://www.figma.com/
 
 ## Sources
+
+Setup Bootstrap messages for Django: https://ordinarycoders.com/blog/article/django-messages-framework
 
 Django project base template: https://stackoverflow.com/questions/14720464/django-project-base-template#:~:text=Yes%2C%20you%20can%20use%20%7B%25,where%20to%20place%20the%20base.
 

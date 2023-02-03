@@ -9,6 +9,9 @@
     <title>Mom Schedule - Django</title>
     <!-- MY CUSTOM CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
 
@@ -18,12 +21,14 @@
 
     <header>
         <span>
-            <a href="/"><h1>Mom Schedule</h1></a>
+            <a href="/">
+                <h1>Mom Schedule</h1>
+            </a>
         </span>
         <p class="login-greeting">
             <!-- dummy psydocode -->
             <!-- FIX later! -->
-            Hello {{ user.name }}! 
+            Hello {{ user.name }}!
             <br>
             <a href="/register">Log in</a>
         </p>
@@ -32,13 +37,30 @@
     </header>
 
     <main>
+        <!-- Bootstrap messages as a user interaction feedback -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <!-- <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li> -->
+            <div class="container-fluid p-0">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="True">&times;</span>
+                  </button>
+                  {{ message }}
+                </div>
+              </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         {% block content %}
         <!-- Other templates' content here -->
         {% endblock content %}
     </main>
-    
+
     <footer>
-       Anna Gabain &#169; for educational purposes
+        Anna Gabain &#169; for educational purposes
     </footer>
 
 </body>
