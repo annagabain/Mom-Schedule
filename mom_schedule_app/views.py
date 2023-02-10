@@ -60,7 +60,8 @@ def logout_request(request):
 @require_http_methods(["POST"])
 def add(request):
     title = request.POST["title"]
-    mom_task = Mom_task(title=title)
+    description = request.POST["description"]
+    mom_task = Mom_task(title=title, description=description)
     mom_task.save()
     return redirect("edit_task")
 

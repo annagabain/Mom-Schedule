@@ -14,16 +14,19 @@
                 <h2>Create a New Task</h2>
             </label>
             <input type="text" name="title" placeholder="Task heading...">
+            <input id="description" type="textarea" name="description" placeholder="Task description...">
+
             <br>
         </div>
         <button type="submit">Add</button>
     </form>
-
+    <br>
     <hr>
     <hr>
     All Tasks
     <hr>
     <hr>
+    <br>
 
     {% for mom_task in mom_task_list %}
 
@@ -31,7 +34,7 @@
 
         <div class="center">
             <span id="task-title">{{ mom_task.title }}</span>
-
+            
             {% if mom_task.complete == False %}
             <span class="ui gray label">Not Complete</span>
             {% else %}
@@ -39,9 +42,11 @@
             {% endif %}
             
         </div>
+        <br>
         <div>
-            <p>Description will go here</p>
+            <span id="task-description">{{ mom_task.description }}</span>
         </div>
+        <br>
         <div class="center">
             <a href="/update/{{ mom_task.id }}"><button>Toggle complete</button></a>
             <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
