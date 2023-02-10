@@ -75,5 +75,9 @@ def update(request, mom_task_id):
 
 def delete(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
-    mom_task.delete()
-    return redirect("edit_task")
+
+    if request.method == 'POST':
+        mom_task.delete()
+        return redirect("edit_task")
+
+    return render(request, 'delete_task.html', {'mom_task': mom_task})
