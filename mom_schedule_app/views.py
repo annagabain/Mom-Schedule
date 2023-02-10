@@ -16,7 +16,7 @@ def mom_home(request):
 
 def mom_task(request):
     mom_tasks = Mom_task.objects.all()
-    return render(request, "edit_task.html", {"mom_task_list": mom_tasks})
+    return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
 
 
 def register_request(request):
@@ -63,14 +63,36 @@ def add(request):
     description = request.POST["description"]
     mom_task = Mom_task(title=title, description=description)
     mom_task.save()
-    return redirect("edit_task")
+    return redirect("all_tasks")
+
+
+def edit(request, mom_task_id):
+    mom_task = Mom_task.objects.get(id=mom_task_id)
+    task_form_fields = {
+        "title": mom_task.title,
+        "description": mom_task.description,
+        "id": mom_task.id
+    }
+    return render(request, 'edit_task.html', context=task_form_fields)
 
 
 def update(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
+    # if request.method == 'POST':
+    mom_task.title = request.GET['title']
+    mom_task.description = request.GET['description']
+    mom_task.save()
+    task_form_fields = {
+        "alltasks": Mom_task.objects.all()
+    }
+    return redirect("all_tasks")
+
+
+def toggle_complete(request, mom_task_id):
+    mom_task = Mom_task.objects.get(id=mom_task_id)
     mom_task.complete = not mom_task.complete
     mom_task.save()
-    return redirect("edit_task")
+    return redirect("all_tasks")
 
 
 def delete(request, mom_task_id):
@@ -78,6 +100,6 @@ def delete(request, mom_task_id):
 
     if request.method == 'POST':
         mom_task.delete()
-        return redirect("edit_task")
+        return redirect("all_tasks")
 
     return render(request, 'delete_task.html', {'mom_task': mom_task})

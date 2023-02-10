@@ -1,61 +1,24 @@
-{% extends "base.html" %}
-{% block content %}
-
 <div class="center">
     <h2>EDIT TASK</h2>
     <hr>
 </div>
 
-<div class="ui container">
-    <form class="ui form" action="/add" method="post">
-        {% csrf_token %}
-        <div class="field">
-            <label>
-                <h2>Create a New Task</h2>
-            </label>
-            <input type="text" name="title" placeholder="Task heading...">
-            <input id="description" type="textarea" name="description" placeholder="Task description...">
+<a href="/all_tasks"><button>No, go back to the Tasks!</button></a>
+<br>
+<br>
 
-            <br>
-        </div>
-        <button type="submit">Add</button>
-    </form>
+<!-- <form action="/update/{{id}}" method="post"> -->
+<form action="/update/{{id}}">
+
+    {% csrf_token %}
+
+    <label for="title">Task Heading</label>
+    <input type="text" id="title" name="title" value={{title}}>
     <br>
-    <hr>
-    <hr>
-    All Tasks
-    <hr>
-    <hr>
     <br>
-
-    {% for mom_task in mom_task_list %}
-
-    <div class="ui segment">
-
-        <div class="center">
-            <span id="task-title">{{ mom_task.title }}</span>
-            
-            {% if mom_task.complete == False %}
-            <span class="ui gray label">Not Complete</span>
-            {% else %}
-            <span class="ui green label">Complete</span>
-            {% endif %}
-            
-        </div>
-        <br>
-        <div>
-            <span id="task-description">{{ mom_task.description }}</span>
-        </div>
-        <br>
-        <div class="center">
-            <a href="/update/{{ mom_task.id }}"><button>Toggle complete</button></a>
-            <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
-
-        </div>
-    </div>
-
-    {% endfor %}
-
-</div>
-
-{% endblock content %}
+    <label for="description">Task Description</label>
+    <textarea id="description" name="description">{{ description }}</textarea>
+    <br>
+    <br>
+    <button type="submit">Update</button>
+</form>

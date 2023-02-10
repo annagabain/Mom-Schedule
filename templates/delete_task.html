@@ -2,9 +2,9 @@
 
 <h1>Delete Task</h1>
 
-<p>Are you sure you want to delete this task?</p>
+<p>Are you sure you want to delete <b>{{ mom_task.title }}</b> task? </p>
 
-<form action="" method="post">
+<form method="post">
 {% csrf_token %}
 <input type="submit" value="Delete">
 </form>

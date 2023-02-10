@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="center">
+    <h2>ALL TASKS</h2>
+    <hr>
+</div>
+
+<div class="ui container">
+    <form class="ui form" action="/add" method="post">
+        {% csrf_token %}
+        <div class="field">
+            <label>
+                <h2>Create a New Task</h2>
+            </label>
+            <input type="text" name="title" placeholder="Task heading...">
+            <input id="description" type="textarea" name="description" placeholder="Task description...">
+
+            <br>
+        </div>
+        <button type="submit">Add</button>
+    </form>
+    <br>
+    <hr>
+    <hr>
+    All Tasks
+    <hr>
+    <hr>
+    <br>
+
+    {% for mom_task in mom_task_list %}
+
+    <div class="ui segment">
+
+        <div class="center">
+            <span id="task-title">{{ mom_task.title }}</span>
+            
+            {% if mom_task.complete == False %}
+            <span class="ui gray label">Not Complete</span>
+            {% else %}
+            <span class="ui green label">Complete</span>
+            {% endif %}
+            
+        </div>
+        <br>
+        <div>
+            <span id="task-description">{{ mom_task.description }}</span>
+        </div>
+        <br>
+        <div class="center">
+            <a class="ui button small" href="/toggle_complete/{{ mom_task.id }}">Toggle complete</a>
+            <a class="ui orange button small" href="/edit/{{ mom_task.id }}">Edit</a>
+
+            <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

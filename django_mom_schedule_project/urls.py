@@ -25,8 +25,10 @@ urlpatterns = [
     path('register', views.register_request, name='register'),
     path('login', views.login_request, name='login'),
     path('logout', views.logout_request, name='logout'),
-    path('edit_task', views.mom_task, name='edit_task'),
+    path('all_tasks', views.mom_task, name='all_tasks'),
     path('add', views.add, name='add'),
+    path('edit/<int:mom_task_id>/', views.edit, name='edit'),
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),
+    path('toggle_complete/<int:mom_task_id>/', views.toggle_complete, name='toggle_complete'),  # noqa
 ]
