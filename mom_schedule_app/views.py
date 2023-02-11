@@ -72,7 +72,7 @@ def add(request):
     description = request.POST["description"]
     mom_task = Mom_task(title=title, description=description)
     mom_task.save()
-    # response.user.momtask.add(mom_task)
+    request.user.momtask.add(mom_task)
     return redirect("all_tasks")
 
 
