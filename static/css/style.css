@@ -58,11 +58,19 @@
         text-align: center;
     }
 
-    #description {
+    #newtask {
         background-color:aliceblue;
         width: 100%;
-        height: 200px;
+        height: 170px;
+    }
 
+    #description {
+        width: 50%;
+        height: 70px;
+    }
+
+    #heading {
+        width: 50%;
     }
 
     .center, form {

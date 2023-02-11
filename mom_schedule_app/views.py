@@ -9,11 +9,16 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
+# for restricting unautharized views
+from django.contrib.auth.decorators import login_required
+
 
 def mom_home(request):
     return render(request, "index.html")
 
 
+# only logged in users can see this page
+@login_required(login_url='login')
 def mom_task(request):
     mom_tasks = Mom_task.objects.all()
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})

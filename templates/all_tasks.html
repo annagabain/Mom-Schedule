@@ -6,41 +6,44 @@
     <hr>
 </div>
 
-<div class="ui container">
-    <form class="ui form" action="/add" method="post">
+<div id="newtask">
+    <form action="/add" method="post">
         {% csrf_token %}
         <div class="field">
             <label>
                 <h2>Create a New Task</h2>
             </label>
-            <input type="text" name="title" placeholder="Task heading...">
+            <input id="heading" type="text" name="title" placeholder="Task heading...">
+            <br>
             <input id="description" type="textarea" name="description" placeholder="Task description...">
 
             <br>
         </div>
         <button type="submit">Add</button>
     </form>
-    <br>
-    <hr>
-    <hr>
-    All Tasks
-    <hr>
-    <hr>
-    <br>
+</div>
 
+
+
+<hr>
+
+<br>
+
+
+<div class="ui container">
     {% for mom_task in mom_task_list %}
 
     <div class="ui segment">
 
         <div class="center">
             <span id="task-title">{{ mom_task.title }}</span>
-            
+
             {% if mom_task.complete == False %}
             <span class="ui gray label">Not Complete</span>
             {% else %}
             <span class="ui green label">Complete</span>
             {% endif %}
-            
+
         </div>
         <br>
         <div>
