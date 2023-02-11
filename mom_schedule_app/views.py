@@ -12,6 +12,8 @@ from django.contrib.auth.forms import AuthenticationForm
 # for restricting unautharized views
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.models import User
+
 
 def mom_home(request):
     return render(request, "index.html")
@@ -20,7 +22,8 @@ def mom_home(request):
 # only logged in users can see this page
 @login_required(login_url='login')
 def mom_task(request):
-    mom_tasks = Mom_task.objects.all()
+    mom_tasks = Mom_task.objects.filter(user=request.user)
+    # mom_tasks = Mom_task.objects.all()
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
 
 
@@ -62,15 +65,18 @@ def logout_request(request):
     return redirect("index")
 
 
+@login_required(login_url='login')
 @require_http_methods(["POST"])
 def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
     mom_task = Mom_task(title=title, description=description)
     mom_task.save()
+    # response.user.momtask.add(mom_task)
     return redirect("all_tasks")
 
 
+@login_required(login_url='login')
 def edit(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
     task_form_fields = {
@@ -81,6 +87,7 @@ def edit(request, mom_task_id):
     return render(request, 'edit_task.html', context=task_form_fields)
 
 
+@login_required(login_url='login')
 def update(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
     # if request.method == 'POST':
@@ -100,6 +107,7 @@ def toggle_complete(request, mom_task_id):
     return redirect("all_tasks")
 
 
+@login_required(login_url='login')
 def delete(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
 
