@@ -5,10 +5,10 @@
     <div class="row">
         {% for mom_task in mom_task_list %}
         <div class="col">
-            <div class="card">
+            <div>
                 <div class="card-body">
                     <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
-                    alt="default task image">
+                        alt="default task image">
                     {% if mom_task.complete == False %}
                     <span class="btn btn-outline-secondary btn-sm">Not Complete</span>
                     {% else %}
@@ -27,7 +27,7 @@
                     <a class="btn btn-secondary" href="/toggle_complete/{{ mom_task.id }}">Toggle complete</a>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
 
         </div>
     </div>
