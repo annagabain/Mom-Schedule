@@ -70,6 +70,8 @@ Wireframes: https://www.figma.com/
 
 ## Sources
 
+User Specific Pages: https://www.techwithtim.net/tutorials/django/user-specific-pages-data/
+
 Setup Bootstrap messages for Django: https://ordinarycoders.com/blog/article/django-messages-framework
 
 Django project base template: https://stackoverflow.com/questions/14720464/django-project-base-template#:~:text=Yes%2C%20you%20can%20use%20%7B%25,where%20to%20place%20the%20base.

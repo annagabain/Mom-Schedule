@@ -36,6 +36,11 @@
         text-align: right;
     }
 
+    /* #sidebar{
+        background-color: #0D0D0D;
+        width: 200px;
+    } */
+
     #task-title {
         font-weight: 600;
         font-size: x-large;
@@ -79,6 +84,10 @@
 
     .right {
         text-align: right;
+    }
+
+    .center {
+        text-align: center;
     }
 
     img {
