@@ -10,7 +10,8 @@
     <!-- MY CUSTOM CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
 </head>
@@ -27,53 +28,60 @@
             <!-- log in or logout based on authentication status -->
             {% if user.is_authenticated %}
             <a class="nav-link" href="#">Hello {{user.username}}!</a>
-            <br>
             <a class="nav-link" href="/logout">Logout</a>
             {% else %}
             <a class="nav-link" href="/login">Login</a>
             {% endif %}
         </p>
-        <a href="/"><button>Home</button></a>
-        <a href="/all_tasks"><button>Tasks</button></a>
     </header>
 
     <main>
-
-        <div class="container">
+        <!-- this is the bootstrap container div -->
+        <div>
             <div class="row">
-                <div class="col-4">
-                    1 of 2 sidebar placeholder
+                <div class="col-2 sidebar">
+                    <!-- put sidebar here -->
+                    <a href="/">Home</a>
+                    <br>
+                    <a href="/all_tasks">My Tasks</a>
+                    <br>
+                    <a href="/">Sort by</a>
+                    
+                    <br>
+                    <a href="/all_tasks"><button>&plus; New Task</button></a>
                 </div>
-                <div class="col-8">
-                    2 of 2 put content here
+                <div class="col-10 main-content">
+                    <!-- put main content here -->
+
+                    <!-- Bootstrap messages as a user interaction feedback -->
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="container-fluid center">
+
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <span style="color:red;">{{ message }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% block content %}
+                    <!-- Other templates' content here -->
+                    {% endblock content %}
                 </div>
             </div>
         </div>
-
-
-        <!-- Bootstrap messages as a user interaction feedback -->
-        {% if messages %}
-        {% for message in messages %}
-        <div class="container-fluid center">
-
-            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                <span style="color:red;">{{ message }}</span>
-            </div>
-        </div>
-        {% endfor %}
-        {% endif %}
-
-        {% block content %}
-        <!-- Other templates' content here -->
-        {% endblock content %}
-
     </main>
 
     <footer class="center">
         Anna Gabain &#169; for educational purposes
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
