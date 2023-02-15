@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-
-
-
 <div id="card-parent">
+        {% for mom_task in mom_task_list %}    
     <div class="row">
-
-        {% for mom_task in mom_task_list %}
-        
         <div class="col">
             <!-- <div class="card"> -->
             <div>
@@ -35,14 +29,11 @@
                 </div>
             </div>
         </div>
-        {% if mom_task.title == Null %}
-        <div>
-            <span style="color:red;">No Tasks to Show</span>
-        </div>
-        {% endif %}
-
-        {% endfor %}
     </div>
+    <!-- {% if not mom_task.title %}
+        <span style="color:red;">No Tasks to Show</span>
+    {% endif %} -->
+    {% endfor %}
 </div>
 
 {% endblock content %}
