@@ -27,6 +27,7 @@ urlpatterns = [
     path('logout', views.logout_request, name='logout'),
     path('all_tasks', views.mom_task, name='all_tasks'),
     path('add', views.add, name='add'),
+    path('new_task', views.new, name='new_task'),
     path('edit/<int:mom_task_id>/', views.edit, name='edit'),
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),

@@ -67,6 +67,7 @@ Static files weren't included by Heroku after deployment. Using WhiteNoise packa
 ## Tools
 
 Wireframes: https://www.figma.com/
+Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 ## Sources
 

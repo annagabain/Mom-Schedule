@@ -18,21 +18,24 @@
 
 <body>
     <header>
-        <span>
-            <a href="/">
-                <h1>Mom Schedule</h1>
-            </a>
-        </span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10">
+                    <a href="/"><h1>Mom Schedule</h1></a>
+                </div>
+                <div class="col-2 login-greeting">
+                        <!-- log in or logout based on authentication status -->
+                        {% if user.is_authenticated %}
+                        <a  href="#">Hello {{user.username}}!</a>
+                        <br>
+                        <a  href="/logout">Logout</a>
+                        {% else %}
+                        <a  href="/login">Login</a>
+                        {% endif %}
 
-        <p class="login-greeting">
-            <!-- log in or logout based on authentication status -->
-            {% if user.is_authenticated %}
-            <a class="nav-link" href="#">Hello {{user.username}}!</a>
-            <a class="nav-link" href="/logout">Logout</a>
-            {% else %}
-            <a class="nav-link" href="/login">Login</a>
-            {% endif %}
-        </p>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -48,7 +51,7 @@
                     <a href="/">Sort by</a>
                     
                     <br>
-                    <a href="/all_tasks"><button>&plus; New Task</button></a>
+                    <a href="/new_task"><button>&plus; New Task</button></a>
                 </div>
                 <div class="col-10 main-content">
                     <!-- put main content here -->

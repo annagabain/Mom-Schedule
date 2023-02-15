@@ -1,23 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- {% for td in user.momtask.all %}
-<p><a href="/{{td.id}}">{{td.name}}</a></p>
-{% endfor %} -->
-
-
 <div class="center">
     <h2>ALL TASKS</h2>
     <hr>
 </div>
 
-<div id="newtask">
+<!-- <div id="newtask">
     <form action="/add" method="post">
         {% csrf_token %}
         <div class="field">
             <label>
                 <h2>Create a New Task</h2>
             </label>
+            <br>
             <input id="heading" type="text" name="title" placeholder="Task heading...">
             <br>
             <input id="description" type="textarea" name="description" placeholder="Task description...">
@@ -26,14 +22,11 @@
         </div>
         <button type="submit">Add</button>
     </form>
-</div>
-
-
+</div> -->
 
 <hr>
 
 <br>
-
 
 <div class="ui container">
     {% for mom_task in mom_task_list %}

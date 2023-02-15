@@ -77,6 +77,11 @@ def add(request):
 
 
 @login_required(login_url='login')
+def new(request):
+    return render(request, 'new_task.html')
+
+
+@login_required(login_url='login')
 def edit(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
     task_form_fields = {
