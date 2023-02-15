@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="center">
-    <h2>NEW TASK</h2>
-    <hr>
-</div>
 <div id="newtask">
     <form action="/add" method="post">
         {% csrf_token %}

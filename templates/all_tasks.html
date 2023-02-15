@@ -1,64 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="center">
-    <h2>ALL TASKS</h2>
-    <hr>
-</div>
+<div id="card-parent">
+    <div class="row">
+        {% for mom_task in mom_task_list %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
+                    alt="default task image">
+                    {% if mom_task.complete == False %}
+                    <span class="btn btn-outline-secondary btn-sm">Not Complete</span>
+                    {% else %}
+                    <span class="btn btn-outline-success btn-sm">Complete</span>
+                    {% endif %}
 
-<!-- <div id="newtask">
-    <form action="/add" method="post">
-        {% csrf_token %}
-        <div class="field">
-            <label>
-                <h2>Create a New Task</h2>
-            </label>
-            <br>
-            <input id="heading" type="text" name="title" placeholder="Task heading...">
-            <br>
-            <input id="description" type="textarea" name="description" placeholder="Task description...">
+                    <span class="card-title">{{ mom_task.title }}</span>
+                    <br>
+                    <br>
+                    <span class="card-text">{{ mom_task.description }}</span>
+                    <br>
+                    <br>
 
-            <br>
-        </div>
-        <button type="submit">Add</button>
-    </form>
-</div> -->
-
-<hr>
-
-<br>
-
-<div class="ui container">
-    {% for mom_task in mom_task_list %}
-
-    <div class="ui segment">
-
-        <div class="center">
-            <span id="task-title">{{ mom_task.title }}</span>
-
-            {% if mom_task.complete == False %}
-            <span class="ui gray label">Not Complete</span>
-            {% else %}
-            <span class="ui green label">Complete</span>
-            {% endif %}
-
-        </div>
-        <br>
-        <div>
-            <span id="task-description">{{ mom_task.description }}</span>
-        </div>
-        <br>
-        <div class="center">
-            <a class="ui button small" href="/toggle_complete/{{ mom_task.id }}">Toggle complete</a>
-            <a class="ui orange button small" href="/edit/{{ mom_task.id }}">Edit</a>
-
-            <a class="ui red button small" href="/delete/{{ mom_task.id }}">Delete</a>
+                    <a class="btn btn-warning" href="/edit/{{ mom_task.id }}">Edit</a>
+                    <a class="btn btn-danger" href="/delete/{{ mom_task.id }}">Delete</a>
+                    <a class="btn btn-secondary" href="/toggle_complete/{{ mom_task.id }}">Toggle complete</a>
+                </div>
+            </div>
+        {% endfor %}
 
         </div>
     </div>
-
-    {% endfor %}
-
 </div>
 
 {% endblock content %}

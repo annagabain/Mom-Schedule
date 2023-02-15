@@ -26,10 +26,17 @@
     }
 
     h1 {
-        font-family: 'Lemonada', cursive, sans-serif;
+        /* font-family: 'Lemonada', cursive, sans-serif; */
         font-weight: 400;
         color: #0D0D0D;
         text-align: left;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        text-decoration: none;
     }
 
     .login-greeting {
@@ -43,11 +50,11 @@
     /* sidebar start */
     .sidebar {
         background-color: #efe2da;
-        padding-top: 50px;
+        padding: 50px;
     }
 
     .sidebar a {
-        padding: 6px 8px 6px 16px;
+        padding: 6px 6px 6px 30px;
         text-decoration: none;
         font-size: 25px;
         color: #0D0D0D;
@@ -58,9 +65,23 @@
         color: #455359;
     }
 
+    #round-button {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
     /* sidebar end */
 
-    #task-title {
+    #card-parent {
+        column-count: 3;
+    }
+
+    .card-body {
+        background-color: #FAF7F4;
+    }
+
+    .card-title {
         font-weight: 600;
         font-size: x-large;
         color: #0D0D0D;
@@ -110,6 +131,6 @@
         text-align: center;
     }
 
-    img {
+    #circle-image {
         border-radius: 50%;
     }

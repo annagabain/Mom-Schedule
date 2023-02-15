@@ -1,6 +1,5 @@
-
-
-<h1>Delete Task</h1>
+{% extends "base.html" %}
+{% block content %}
 
 <p>Are you sure you want to delete <b>{{ mom_task.title }}</b> task? </p>
 
@@ -9,4 +8,6 @@
 <input type="submit" value="Delete">
 </form>
 
-<a href="/edit_task"><button>No, Go back to the Tasks!</button></a>
+<a href="/all_tasks"><button>No, Go back to the Tasks!</button></a>
+
+{% endblock content %}

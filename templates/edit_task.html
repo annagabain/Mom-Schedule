@@ -1,11 +1,5 @@
-<div class="center">
-    <h2>EDIT TASK</h2>
-    <hr>
-</div>
-
-<a href="/all_tasks"><button>No, go back to the Tasks!</button></a>
-<br>
-<br>
+{% extends "base.html" %}
+{% block content %}
 
 <!-- <form action="/update/{{id}}" method="post"> -->
 <form action="/update/{{id}}">
@@ -21,4 +15,7 @@
     <br>
     <br>
     <button type="submit">Update</button>
+    <a href="/all_tasks"><button>No, go back to the Tasks!</button></a>
 </form>
+
+{% endblock content %}
