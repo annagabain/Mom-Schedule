@@ -69,12 +69,16 @@ def logout_request(request):
     return redirect("index")
 
 
+# @require_http_methods(["POST"])
 def mom_contact(request):
+    mom_contact = Mom_contact.objects.all()  # noqa
     # email = request.POST["email"]
     # topic = request.POST["topic"]
     # your_message = request.POST["your_message"]
+    # mom_contact = Mom_contact(topic=topic)
+    # mom_contact.save()
     # mom_contact = Mom_contact(email=email, topic=topic, your_message=your_message)  # noqa
-    mom_contact = Mom_contact.objects.all()  # noqa
+
     # messages.info(request, "We received your message and will respond soon.")  # noqa
     return render(request, 'contact.html')
 
