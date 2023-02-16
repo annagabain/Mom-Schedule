@@ -22,21 +22,24 @@
     footer {
         padding: 30px 50px;
         /* margin-bottom: 30px; */
-        background: #D8CBC4;
+        color: #FAF7F4;
+        background: #455359;
     }
 
     h1 {
-        /* font-family: 'Lemonada', cursive, sans-serif; */
+        font-family: 'Lemonada', cursive, sans-serif;
         font-weight: 400;
-        color: #0D0D0D;
+        color: #FAF7F4;
         text-align: left;
     }
 
-    a:link,
+    a, a:link,
     a:visited,
     a:hover,
     a:active {
         text-decoration: none;
+        color: #FAF7F4;
+
     }
 
     .login-greeting {
@@ -70,20 +73,24 @@
         height: 140px;
         border-radius: 50%;
     }
-
     /* sidebar end */
 
     #card-parent {
         column-count: 3;
     }
-
+/* 
     .card {
         margin: 0px 0px 20px 0px;
-    }
+    } */
 
     .card-body {
-        background-color: #FAF7F4;
+        border-style: solid;
+        border-color: #455359;
+        border-width: 2px;
+        border-radius: 3%;
+        background-color:  #FAF7F4;
         -webkit-column-break-inside: avoid;
+        margin: 10px;
     }
 
     .card-title {

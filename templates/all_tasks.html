@@ -2,7 +2,7 @@
 {% block content %}
 
 <div id="card-parent" class="col">
-        {% for mom_task in mom_task_list %}    
+    {% for mom_task in mom_task_list %}
     <div class="row">
         <div class="col">
             <!-- <div class="card"> -->
@@ -34,7 +34,17 @@
 </div>
 
 {% if not mom_task_list %}
-    <span style="color:red;">No Tasks to Show</span>
+
+
+<div class="center">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <span style="color:red;">No Tasks to Show</span>
+    </div>
+    <div>
+        <a href="/new_task"><button>Create New Tasks Here</button></a>
+    </div>
+        
+</div>
 {% endif %}
 
 {% endblock content %}
