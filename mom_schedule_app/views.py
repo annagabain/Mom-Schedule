@@ -5,6 +5,7 @@ from .models import Mom_task, Mom_contact
 
 from .forms import NewUserForm, ContactForm
 from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -66,7 +67,6 @@ def logout_request(request):
     return redirect("index")
 
 
-# @require_http_methods(["POST"])
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -79,15 +79,25 @@ def contact(request):
                 'message': form.cleaned_data['message'],
             }
             message = "\n".join(body.values())
-            messages.info(request, "We received your message and will respond soon.")  # noqa         
-
+            # message = request.POST['message']
+            messages.info(request, "We received your message and will respond soon.")  # noqa
             try:
                 send_mail(subject, message, 'anna.gabain@outlook.com', ['anna.gabain@outlook.com'])  # noqa
+                # send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['anna.gabain@gmail.com'], fail_silently=False)  # noqa
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect("index")
+
     form = ContactForm()
     return render(request, "contact.html", {'form': form})
+
+
+# def contact(request):
+#     if request.method == 'POST':
+#         message = request.POST['message']
+
+#         send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['anna.gabain@gmail.com'], fail_silently=False)  # noqa
+#     return render(request, 'contact.html')
 
 
 @login_required(login_url='login')

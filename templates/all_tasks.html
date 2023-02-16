@@ -30,10 +30,11 @@
             </div>
         </div>
     </div>
-    <!-- {% if not mom_task %}
-        <span style="color:red;">No Tasks to Show</span>
-    {% endif %} -->
     {% endfor %}
 </div>
+
+{% if not mom_task_list %}
+    <span style="color:red;">No Tasks to Show</span>
+{% endif %}
 
 {% endblock content %}
