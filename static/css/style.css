@@ -115,7 +115,7 @@
         text-align: center;
     }
 
-    #newtask {
+    #newtask, #newform {
         background-color: aliceblue;
         width: 100%;
         height: 170px;

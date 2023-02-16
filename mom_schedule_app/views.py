@@ -3,7 +3,9 @@ from django.views.decorators.http import require_http_methods
 
 from .models import Mom_task, Mom_contact
 
-from .forms import NewUserForm, ContactForm
+from .forms import NewUserForm
+# from .forms import NewUserForm, ContactForm
+
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
@@ -67,37 +69,14 @@ def logout_request(request):
     return redirect("index")
 
 
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = "Website Inquiry"
-            body = {
-                'first_name': form.cleaned_data['first_name'],
-                'last_name': form.cleaned_data['last_name'],
-                'email': form.cleaned_data['email_address'],
-                'message': form.cleaned_data['message'],
-            }
-            message = "\n".join(body.values())
-            # message = request.POST['message']
-            messages.info(request, "We received your message and will respond soon.")  # noqa
-            try:
-                send_mail(subject, message, 'anna.gabain@outlook.com', ['anna.gabain@outlook.com'])  # noqa
-                # send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['anna.gabain@gmail.com'], fail_silently=False)  # noqa
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect("index")
-
-    form = ContactForm()
-    return render(request, "contact.html", {'form': form})
-
-
-# def contact(request):
-#     if request.method == 'POST':
-#         message = request.POST['message']
-
-#         send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['anna.gabain@gmail.com'], fail_silently=False)  # noqa
-#     return render(request, 'contact.html')
+def mom_contact(request):
+    # email = request.POST["email"]
+    # topic = request.POST["topic"]
+    # your_message = request.POST["your_message"]
+    # mom_contact = Mom_contact(email=email, topic=topic, your_message=your_message)  # noqa
+    mom_contact = Mom_contact.objects.all()  # noqa
+    # messages.info(request, "We received your message and will respond soon.")  # noqa
+    return render(request, 'contact.html')
 
 
 @login_required(login_url='login')

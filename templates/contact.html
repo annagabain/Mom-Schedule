@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
-    <h4>Contact us directly if you have any questions</h4>
-    <p>
-        Please write your name, email address and a message below if you have any questions.
-        One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-    </p>
-    <form method="post">
-    <!-- <form method="post" action="{% url 'contact' %}"> -->
+<div id="newform">
+    <form action="/contact" method="post">
 
-    {% csrf_token %}
-        {{form.as_p}}
+        {% csrf_token %}
+        <div class="field">
+            <label>
+                <h2>Contact Us</h2>
+            </label>
+            <br>
+            <input id="email" type="email" name="email" placeholder="Your email..." required="required">
+            <br>
+            <input id="topic" type="text" name="topic" placeholder="topic..." required="required">
+            <br>
+            <input id="your_message" type="textarea" name="your_message" placeholder="Your message...">
+
+            <br>
+        </div>
         <button type="submit">Submit</button>
     </form>
 </div>
-
-<!-- <form method="post" action="{% url 'contact' %}">
-	{% csrf_token %}
-	<textarea name="message" placeholder="Message..."></textarea>
-	<input type="submit" />
-</form> -->
 
 {% endblock content %}
