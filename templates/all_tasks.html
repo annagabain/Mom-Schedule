@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="card-parent">
+<div id="card-parent" class="col">
         {% for mom_task in mom_task_list %}    
     <div class="row">
         <div class="col">
             <!-- <div class="card"> -->
-            <div>
+            <div class="row">
                 <div class="card-body">
                     <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
                         alt="default task image">
                     {% if mom_task.complete == False %}
-                    <span class="btn btn-outline-secondary btn-sm">Not Complete</span>
+                    <span class="badge bg-secondary">Not Complete</span>
                     {% else %}
-                    <span class="btn btn-outline-success btn-sm">Complete</span>
+                    <span class="badge bg-success">Complete</span>
                     {% endif %}
 
                     <span class="card-title">{{ mom_task.title }}</span>

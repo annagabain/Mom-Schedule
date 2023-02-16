@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 
-from .models import Mom_task
+from .models import Mom_task, Mom_contact
 
-# for registering a new user
-from .forms import NewUserForm
+from .forms import NewUserForm, ContactForm
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
@@ -63,6 +64,30 @@ def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("index")
+
+
+# @require_http_methods(["POST"])
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = "Website Inquiry"
+            body = {
+                'first_name': form.cleaned_data['first_name'],
+                'last_name': form.cleaned_data['last_name'],
+                'email': form.cleaned_data['email_address'],
+                'message': form.cleaned_data['message'],
+            }
+            message = "\n".join(body.values())
+            messages.info(request, "We received your message and will respond soon.")  # noqa         
+
+            try:
+                send_mail(subject, message, 'anna.gabain@outlook.com', ['anna.gabain@outlook.com'])  # noqa
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect("index")
+    form = ContactForm()
+    return render(request, "contact.html", {'form': form})
 
 
 @login_required(login_url='login')

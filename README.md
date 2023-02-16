@@ -89,4 +89,6 @@ How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/
 
 Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/develop-a-simple-python-django-todo-app-in-1-minute-4908
 
+## Acknowledgments
 
+Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
