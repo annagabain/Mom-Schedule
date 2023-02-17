@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="newform">
+<div>
     <form action="/contact" method="post">
 
         {% csrf_token %}
@@ -16,9 +16,8 @@
             <input id="topic" type="text" name="topic" placeholder="Topic..." required="required">
             <br>
             <input id="your_message" type="textarea" name="your_message" placeholder="Your message...">
-
-            <br>
         </div>
+        <br>
         <button type="submit">Submit</button>
     </form>
 </div>

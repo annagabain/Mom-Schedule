@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- <form action="/update/{{id}}" method="post"> -->
+
 <form action="/update/{{id}}">
 
     {% csrf_token %}
 
-    <label for="title">Task Heading</label>
+    <label for="title">Task Heading:</label>
+    <br>
     <input type="text" id="title" name="title" value='{{title}}'>
     <br>
     <br>
-    <label for="description">Task Description</label>
+    <label for="description">Task Description:</label>
+    <br>
     <textarea id="description" name="description">{{ description }}</textarea>
     <br>
     <br>
-    <button type="submit">Update</button>
-    <a href="/all_tasks"><button>No, go back to the Tasks!</button></a>
+    <button type="submit">Save</button>
+    <br>
+    <br>
+    or
+    <br>
+    <br>
+    <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
+
 </form>
 
 {% endblock content %}

@@ -27,7 +27,6 @@ def mom_home(request):
 @login_required(login_url='login')
 def mom_task(request):
     mom_tasks = Mom_task.objects.filter(user=request.user)
-    # mom_tasks = Mom_task.objects.all()
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
 
 
@@ -111,7 +110,6 @@ def edit(request, mom_task_id):
 @login_required(login_url='login')
 def update(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
-    # if request.method == 'POST':
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
     mom_task.save()

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="newtask">
+<div>
     <form action="/add" method="post">
         {% csrf_token %}
         <div class="field">
@@ -12,9 +12,8 @@
             <input id="heading" type="text" name="title" placeholder="Task heading..." required="required">
             <br>
             <input id="description" type="textarea" name="description" placeholder="Task description...">
-
-            <br>
         </div>
+        <br>
         <button type="submit">Add</button>
     </form>
 </div>
