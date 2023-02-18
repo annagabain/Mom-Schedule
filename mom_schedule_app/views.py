@@ -27,6 +27,10 @@ def mom_home(request):
 @login_required(login_url='login')
 def mom_task(request):
     mom_tasks = Mom_task.objects.filter(user=request.user)
+
+    # keep this line for filtering the views!
+    # mom_tasks = Mom_task.objects.filter(user=request.user, complete='False')
+    # mom_tasks = Mom_task.objects.filter(complete='False').values()
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
 
 
@@ -85,7 +89,9 @@ def mom_contact(request):
 def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
-    mom_task = Mom_task(title=title, description=description)
+    date = request.POST["date"]
+
+    mom_task = Mom_task(title=title, description=description, date=date)
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")
@@ -99,12 +105,13 @@ def new(request):
 @login_required(login_url='login')
 def edit(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
-    task_form_fields = {
+    edit_task_form_fields = {
         "title": mom_task.title,
         "description": mom_task.description,
+        "date": mom_task.date,
         "id": mom_task.id
     }
-    return render(request, 'edit_task.html', context=task_form_fields)
+    return render(request, 'edit_task.html', context=edit_task_form_fields)
 
 
 @login_required(login_url='login')
@@ -112,6 +119,7 @@ def update(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
+    mom_task.date = request.GET['date']
     mom_task.save()
     task_form_fields = {
         "alltasks": Mom_task.objects.all()
