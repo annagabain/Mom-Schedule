@@ -74,13 +74,17 @@
     }
 
     .sidebar a:hover {
-        color: #455359;
+        color: #efe2da;
+        background: #6A4C39;
+
     }
 
     #round-button {
         width: 60px;
         height: 60px;
         border-radius: 50%;
+        background: #6A4C39;
+        color: #efe2da;
     }
 
     /* sidebar end */
