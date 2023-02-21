@@ -95,6 +95,7 @@
     } */
 
     .card-body {
+        width: 18rem;
         border-style: solid;
         border-color: #455359;
         border-width: 2px;

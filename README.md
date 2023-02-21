@@ -9,6 +9,8 @@ Postgres Relational database
 
 Live View https://mom-schedule.herokuapp.com/
 
+<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png">
+
 ## Portfolio Project 4
 
 Full-Stack Toolkit
@@ -90,26 +92,28 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 ### Debugging
 
-:spider: - *Static files weren't included by Heroku after deployment.*
+:lady_beetle: - *Static files weren't included by Heroku after deployment.*
 
 :bulb: - Using WhiteNoise package fixed the issue.
 
-<img width="40%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="40%" alt="debugging" src="documentation/static_css_local.jpg">
+<img width="50%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="50%" alt="debugging" src="documentation/static_css_local.jpg">
 
-:spider: - *Title prepopulated with the first word only*
+:lady_beetle: - *Title prepopulated with the first word only*
+
 :mag: {{ title }}
+
 :bulb: Changed to {{ 'title' }} as a string and it worked
 
-:spider: - *Date Format*
+:lady_beetle: - *Date Format*
 
 having trouble with the date formats in Django. The html form has dd-mm-yyyy and Django has yyyy-mm-dd.
 They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my Task, by clicking the yellow edit button for a specific task on my all_tasks.html. 
 
 It **did not prepopulate the date dropdown** and threw an error when trying to submit without chosing the date over again. However, editing inside the admin site worked well (it displayed yyyy-mm-dd).
 
-<img width="40%" alt="debugging" src="documentation/bug-date-admin.jpg"> <img width="40%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
+<img width="50%" alt="debugging" src="documentation/bug-date-admin.jpg"> <img width="50%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
 
-<img width="40%" alt="debugging" src="documentation/bug-date-admin-3.jpg"> <img width="40%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
+<img width="50%" alt="debugging" src="documentation/bug-date-admin-3.jpg"> <img width="50%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
 
 :mag: - Tried solving by adding this code to settings.py: 
 
@@ -166,3 +170,6 @@ Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/devel
 Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
 
 Jakob Lövhall - help with Python datetime formatting
+
+
+:point_up_2: [Back to Contents](#contents)

@@ -1,0 +1,53 @@
+/* Adapting to smaller device sizes */
+
+/* Corresponding Bootstrap5 grid options
+Class prefix | Size     | Container (max-width) | 
+.col-           <576px      None (auto)
+.col-sm-         ≥576px	    540px
+.col-md-        ≥768px	    720px
+.col-lg-         ≥992px     960px
+.col-xl-        ≥1200px	    1140px
+.col-xxl-       ≥1400px     1320px		 */
+
+
+/* Device = Most of the Smartphones Mobiles */
+@media (max-width: 992px) {
+    #card-parent {
+        column-count: 1;
+    }
+
+    /* sidebar start */
+    .sidebar {
+        background-color: #efe2da;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .sidebar a {
+        padding: 2px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #0D0D0D;
+        display: inline;
+    }
+
+    #round-button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #6A4C39;
+        color: #efe2da;
+        opacity: 10;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    #new-task-sidebar {
+        display: none;
+    }
+
+    /* sidebar end */
+}
