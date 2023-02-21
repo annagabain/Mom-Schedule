@@ -90,46 +90,47 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 ### Debugging
 
-:spider: - Static files weren't included by Heroku after deployment. 
+:spider: - *Static files weren't included by Heroku after deployment.*
 
 :bulb: - Using WhiteNoise package fixed the issue.
 
-<img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
+<img width="40%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="40%" alt="debugging" src="documentation/static_css_local.jpg">
 
-:spider: - Date Format
+:spider: - *Title prepopulated with the first word only*
+:mag: {{ title }}
+:bulb: Changed to {{ 'title' }} as a string and it worked
+
+:spider: - *Date Format*
 
 having trouble with the date formats in Django. The html form has dd-mm-yyyy and Django has yyyy-mm-dd.
-They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my model items...
+They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my Task, by clicking the yellow edit button for a specific task on my all_tasks.html. 
 
-Editing as a user, I mean by clicking the yellow edit button for a specific task on my all_tasks html. 
-It does not prepopulate the date dropdown and throws an error when trying to submit without chosing the date over again
+It **did not prepopulate the date dropdown** and threw an error when trying to submit without chosing the date over again. However, editing inside the admin site worked well (it displayed yyyy-mm-dd).
 
-Editing inside the admin site works well
+<img width="40%" alt="debugging" src="documentation/bug-date-admin.jpg"> <img width="40%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
 
-<img width="30%" alt="debugging" src="documentation/bug-date-admin.jpg">
-<img width="30%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
-<img width="30%" alt="debugging" src="documentation/bug-date-admin-3.jpg">
-<img width="30%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
+<img width="40%" alt="debugging" src="documentation/bug-date-admin-3.jpg"> <img width="40%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
 
-:mag: - Tried solving by:
-by adding: 
+:mag: - Tried solving by adding this code to settings.py: 
+
 LANGUAGE_CODE = 'en-us'
+
 USE_L10N = False
+
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
-it did not work
+
+It did not work
 
 
 :bulb: - I found a solution:
 
 Changed the date format in my edit function in views.py as following:
 
+...
+
 date.strftime("%Y-%m-%d"),
 
 Now it prepopulates my field with date as dd-mm-yyyy. The mom_task is then saved without errors.
-
-
-
-
 
 
 
