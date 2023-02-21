@@ -55,12 +55,13 @@ Class prefix | Size     | Container (max-width) |
         border-radius: 50%;
         background: #6A4C39;
         color: #efe2da;
-        opacity: 10;
+        opacity: 0.9;
         position: fixed;
         bottom: 30px;
         right: 30px;
-        font-weight: 400;
-        font-size: 2rem;
+        /* font-weight: 400;
+        font-size: 2rem; */
+        /* z-index: 2; */
     }
 
     #new-task-sidebar {
@@ -73,4 +74,10 @@ Class prefix | Size     | Container (max-width) |
         padding-top: 120px;
 
     }
+
+    footer {
+        position: absolute;
+        /* z-index: 1; */
+    }
+    
 }
