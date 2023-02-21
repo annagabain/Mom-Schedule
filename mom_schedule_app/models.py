@@ -5,19 +5,18 @@ import datetime
 
 
 # Database columns are here!!
+
 # Task table
 class Mom_task(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
     title = models.CharField(max_length=50, null=False, blank=False)
-    # description = models.CharField(max_length=300)
     complete = models.BooleanField(null=False, blank=False, default=False)
-    # date_due
     # starred
-    # category
+    # category = models.ForeignKey(Mom_category, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
     description = models.TextField(max_length=500)
-    # start_time = models.DateTimeField()
-    # end_time = models.DateTimeField()
+    # date = models.DateField(widget=DateInput(format='%Y-%m-%d', attrs={'type': 'date'}), required=False)  # noqa
     date = models.DateField()
+    # date_due = models.DateTimeField()
 
     def __str__(self):
         return self.title

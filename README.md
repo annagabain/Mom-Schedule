@@ -5,6 +5,8 @@
 HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
+:point_down: Click the link below for the live view: 
+
 Live View https://mom-schedule.herokuapp.com/
 
 ## Portfolio Project 4
@@ -16,6 +18,31 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 - address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
 - includes a calendar, event editing, creating task cards.
+
+
+## Contents:
+- [UX](#user-stories)
+- [Features](#)
+    - [Welcoming Intro](#)
+    - [Main Menu](#)
+    - [HOME](#)
+    - [My Tasks](#)
+    - [(Sort by)](#)
+    - [Contact Us](#)
+    - [New Task](#)
+    - [Future Features](#)
+- [Development Stages](#)
+    - [Planning](#)
+    - [Structure](#)
+    - [Using Libraries](#)
+- [Testing](#testing)
+    - [Validators](#)
+    - [Manual Testing](#)
+    - [Debugging](#debugging)
+- [Deployment](#d)
+    - [Heroku](#)
+- [Sources & Credits](#sources)
+- [Acknowledgments](#acknowledgments)
 
 
 ## User Stories
@@ -57,11 +84,51 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 <img width="50%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
-## Debugging
 
-Static files weren't included by Heroku after deployment. Using WhiteNoise package fixed the issue.
+
+## Testing
+
+### Debugging
+
+:lady_beetle: - Static files weren't included by Heroku after deployment. Using WhiteNoise package fixed the issue.
 
 <img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
+
+:lady_beetle: - Date Format
+
+having trouble with the date formats in Django. The html form has dd-mm-yyyy and Django has yyyy-mm-dd.
+They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my model items...
+
+Editing as a user, I mean by clicking the yellow edit button for a specific task on my all_tasks html. 
+It does not prepopulate the date dropdown and throws an error when trying to submit without chosing the date over again
+
+Editing inside the admin site works well
+
+<img width="30%" alt="debugging" src="documentation/bug-date-admin.jpg">
+<img width="30%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
+<img width="30%" alt="debugging" src="documentation/bug-date-admin-3.jpg">
+<img width="30%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
+
+Tried solving by:
+by adding: 
+LANGUAGE_CODE = 'en-us'
+USE_L10N = False
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+it did not work
+
+
+I found a solution:
+
+Changed the date format in my edit function in views.py as following:
+
+date.strftime("%Y-%m-%d"),
+
+Now it prepopulates my field with date as dd-mm-yyyy. The mom_task is then saved without errors.
+
+
+
+
+
 
 
 ## Tools
@@ -70,6 +137,8 @@ Wireframes: https://www.figma.com/
 Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 ## Sources
+
+Python Datetime: https://www.w3schools.com/python/python_datetime.asp
 
 User Specific Pages: https://www.techwithtim.net/tutorials/django/user-specific-pages-data/
 
@@ -92,3 +161,5 @@ Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/devel
 ## Acknowledgments
 
 Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
+
+Jakob Lövhall - help with Python datetime formatting

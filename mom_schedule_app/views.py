@@ -18,6 +18,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
+import datetime
+
 
 def mom_home(request):
     return render(request, "index.html")
@@ -105,10 +107,12 @@ def new(request):
 @login_required(login_url='login')
 def edit(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
+    # format_date = datetime.datetime(2020, 5, 17)
+    # print(format_date.strftime("%Y-%m-%d"))
     edit_task_form_fields = {
         "title": mom_task.title,
         "description": mom_task.description,
-        "date": mom_task.date,
+        "date": mom_task.date.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
     return render(request, 'edit_task.html', context=edit_task_form_fields)
