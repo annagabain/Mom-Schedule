@@ -90,11 +90,13 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 ### Debugging
 
-:lady_beetle: - Static files weren't included by Heroku after deployment. Using WhiteNoise package fixed the issue.
+:spider: - Static files weren't included by Heroku after deployment. 
+
+:bulb: - Using WhiteNoise package fixed the issue.
 
 <img width="30%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="30%" alt="debugging" src="documentation/static_css_local.jpg">
 
-:lady_beetle: - Date Format
+:spider: - Date Format
 
 having trouble with the date formats in Django. The html form has dd-mm-yyyy and Django has yyyy-mm-dd.
 They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my model items...
@@ -109,7 +111,7 @@ Editing inside the admin site works well
 <img width="30%" alt="debugging" src="documentation/bug-date-admin-3.jpg">
 <img width="30%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
 
-Tried solving by:
+:mag: - Tried solving by:
 by adding: 
 LANGUAGE_CODE = 'en-us'
 USE_L10N = False
@@ -117,7 +119,7 @@ DATE_INPUT_FORMATS = ['%d-%m-%Y']
 it did not work
 
 
-I found a solution:
+:bulb: - I found a solution:
 
 Changed the date format in my edit function in views.py as following:
 
