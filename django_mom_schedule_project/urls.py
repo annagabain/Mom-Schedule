@@ -35,4 +35,6 @@ urlpatterns = [
     path('toggle_complete/<int:mom_task_id>/', views.toggle_complete, name='toggle_complete'),  # noqa
     path('calendar', views.calendar, name='calendar'),
     path('all_tasks_complete', views.all_tasks_complete, name='all_tasks_complete'),  # noqa
+    path('all_tasks_hide_complete', views.all_tasks_hide_complete, name='all_tasks_hide_complete'),  # noqa
+    path('all_tasks_filter_date', views.all_tasks_filter_date, name='all_tasks_filter_date'),  # noqa
 ]

@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
-        data-bs-toggle="dropdown" aria-expanded="false">Sort Tasks by</a>
+    <a class="btn btn-secondary dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+        aria-expanded="false">Sort Tasks by</a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <li><a class="dropdown-item" href="all_tasks">All Tasks</a></li>
-        <li><a class="dropdown-item" href="all_tasks_hide_complete">Incomplete Tasks Only</a></li>
-        <li><a class="dropdown-item" href="all_tasks_filter_date">Due Date</a></li>
+        <li><a class="dropdown-item" href="all_tasks_complete">Show Completed Tasks Only</a></li>
+        <li><a class="dropdown-item" href="all_tasks_hide_complete">Hide Completed Tasks</a></li>
         <li><a class="dropdown-item" href="#">(Category)</a></li>
     </ul>
 </div>
 <br>
-<div id="card-parent" class="col">
+<div class="center col">
     {% for mom_task in mom_task_list %}
     <div class="row">
-        <div class="col">
+        <div class="col-lg-6 col-md-8 col-sm-12 col-12">
             <!-- <div class="card"> -->
             <div class="row">
                 <div class="card-body">
-                    <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
-                        alt="default task image">
+                    <!-- <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
+                        alt="default task image"> -->
+                    <span class="card-text" style="color: brown"><strong>Due on: {{ mom_task.date }}</strong></span>
 
-                    <span class="card-title">{{ mom_task.title }}</span>
                     <br>
-                    <span class="card-text">Due on: {{ mom_task.date }}</span>
+                    <span class="card-title">{{ mom_task.title }}</span>
                     <br>
                     <br>
                     <span class="card-text">{{ mom_task.description }}</span>

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="center">
 <p>Are you sure you want to delete <b>{{ mom_task.title }}</b> task? </p>
 
 <form method="post">
 {% csrf_token %}
-<input type="submit" value="Delete">
+<input class="btn btn-danger" type="submit" value="Delete">
 </form>
+<br>
+<a href="/all_tasks"><button class="btn btn-success">No, Go back to the Tasks!</button></a></div>
 
-<a href="/all_tasks"><button>No, Go back to the Tasks!</button></a>
 
 {% endblock content %}
