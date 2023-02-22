@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
+<div class="center">
     <form action="/add" method="post">
         {% csrf_token %}
         <div class="field">
@@ -11,13 +11,33 @@
             <br>
             <input id="heading" type="text" name="title" placeholder="Task heading..." required="required">
             <br>
+            <br>
+
             <input id="description" type="textarea" name="description" placeholder="Task description...">
             <br>
-            Due date: <input id="date" type="date" name="date" required="required">
-            <!-- <input id="date" type="text" name="title" placeholder="yyyy-mm-dd" required="required"> -->
+            <br>
 
+            Due date: <input id="date" type="date" name="date" required="required">
+            <br>
+            <br>
+
+            <!-- Make the functionality later! -->
+            <div>
+                <label for="inputGroupSelect01">Choose a Category:</label>
+                <select id="inputGroupSelect01">
+                    <option selected>Other</option>
+                    <option value="1">Work</option>
+                    <option value="2">Childcare</option>
+                    <option value="3">Private_time</option>
+                    <option value="4">Household</option>
+                </select>
+            </div>
+            <br>
         </div>
         <br>
+
+
+
         <button type="submit">Add</button>
     </form>
 </div>
