@@ -33,4 +33,6 @@ urlpatterns = [
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),
     path('toggle_complete/<int:mom_task_id>/', views.toggle_complete, name='toggle_complete'),  # noqa
+    path('calendar', views.calendar, name='calendar'),
+    path('all_tasks_complete', views.all_tasks_complete, name='all_tasks_complete'),  # noqa
 ]

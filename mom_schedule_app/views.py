@@ -31,9 +31,14 @@ def mom_task(request):
     mom_tasks = Mom_task.objects.filter(user=request.user)
 
     # keep this line for filtering the views!
-    # mom_tasks = Mom_task.objects.filter(user=request.user, complete='False')
     # mom_tasks = Mom_task.objects.filter(complete='False').values()
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
+
+
+@login_required(login_url='login')
+def all_tasks_complete(request):
+    mom_tasks_complete = Mom_task.objects.filter(user=request.user, complete='True')  # noqa
+    return render(request, "all_tasks_complete.html", {"mom_task_list": mom_tasks_complete})  # noqa
 
 
 def register_request(request):
@@ -147,3 +152,7 @@ def delete(request, mom_task_id):
         return redirect("all_tasks")
 
     return render(request, 'delete_task.html', {'mom_task': mom_task})
+
+
+def calendar(request):
+    return render(request, 'calendar.html')
