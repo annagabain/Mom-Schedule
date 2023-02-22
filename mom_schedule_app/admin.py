@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Mom_task, Mom_contact
+from .models import Mom_task, Mom_contact, Task_Category
 
 
 admin.site.register(Mom_task)
 admin.site.register(Mom_contact)
+admin.site.register(Task_Category)

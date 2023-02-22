@@ -6,30 +6,39 @@ import datetime
 
 # Database columns are here!!
 
-# Task table
-class Mom_task(models.Model):
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
-    title = models.CharField(max_length=50, null=False, blank=False)
-    complete = models.BooleanField(null=False, blank=False, default=False)
-    # category = models.ForeignKey(Mom_category, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
-    description = models.TextField(max_length=500)
-    date = models.DateField()
+# Category table
+# class Mom_task_Category(models.Model):
+#     name = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.name
 
 
 # Category table
-# class Mom_category(models.Model):
-#   name = models.CharField(max_length=50, null=False)
-    # def __str__(self):
-    #     return self.name
+class Task_Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
     # Household
     # Work
     # Childcare
     # Private_time
     # Other
+
+
+# Task table
+class Mom_task(models.Model):
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
+    title = models.CharField(max_length=50, null=False, blank=False)
+    complete = models.BooleanField(null=False, blank=False, default=False)
+    description = models.TextField(max_length=500)
+    category = models.ForeignKey(Task_Category, null=True, on_delete=models.CASCADE)  # noqa
+    date = models.DateField()
+
+    def __str__(self):
+        return self.title
 
 
 # Contact Form table
