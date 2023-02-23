@@ -3,7 +3,7 @@ from django.views.decorators.http import require_http_methods
 
 from .models import Mom_task, Mom_contact, Task_Category
 from django.core import serializers
-import json  # ??
+# import json  # ??
 from .forms import NewUserForm
 # from .forms import NewUserForm, ContactForm
 
@@ -30,25 +30,40 @@ def mom_home(request):
 @login_required(login_url='login')
 def mom_task(request):
     mom_tasks = Mom_task.objects.filter(user=request.user)
-    return render(request, "all_tasks.html", {"mom_task_list": mom_tasks})
+    task_category_context = Task_Category.objects.all()
+    return render(request, "all_tasks.html", {"mom_task_list": mom_tasks, 'Task_Category': task_category_context})  # noqa
 
 
 @login_required(login_url='login')
 def all_tasks_complete(request):
+    task_category_context = Task_Category.objects.all()
     mom_tasks_complete = Mom_task.objects.filter(user=request.user, complete='True')  # noqa
-    return render(request, "all_tasks_complete.html", {"mom_task_list": mom_tasks_complete})  # noqa
+    return render(request, "all_tasks_complete.html", {"mom_task_list": mom_tasks_complete, "Task_Category": task_category_context})  # noqa
 
 
 @login_required(login_url='login')
 def all_tasks_hide_complete(request):
+    task_category_context = Task_Category.objects.all()
     all_tasks_hide_complete = Mom_task.objects.filter(user=request.user, complete='False')  # noqa
-    return render(request, "all_tasks_hide_complete.html", {"mom_task_list": all_tasks_hide_complete})  # noqa
+    return render(request, "all_tasks_hide_complete.html", {"mom_task_list": all_tasks_hide_complete, "Task_Category": task_category_context})  # noqa
 
 
 @login_required(login_url='login')
 def all_tasks_filter_date(request):
+    task_category_context = Task_Category.objects.all()
     all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('date').values()  # noqa
-    return render(request, "all_tasks_filter_date.html", {"mom_task_list": all_tasks_filter_date})  # noqa
+    return render(request, "all_tasks_filter_date.html", {"mom_task_list": all_tasks_filter_date, "Task_Category": task_category_context})  # noqa
+
+
+@login_required(login_url='login')
+def all_tasks_filter_category(request):
+    category = request.POST["category"]
+    task_category_context = Task_Category.objects.all()
+    # all_tasks_filter_category = Mom_task.objects.filter(user=request.user).filter(category=4)  # noqa
+    # all_tasks_filter_category = Mom_task.objects.filter(user=request.user).filter(category=category_id)  # noqa
+    all_tasks_filter_category = Mom_task.objects.filter(user=request.user).filter(category=int(category))  # noqa
+
+    return render(request, "all_tasks_filter_category.html", {"mom_task_list": all_tasks_filter_category, "Task_Category": task_category_context})  # noqa
 
 
 def register_request(request):
@@ -108,22 +123,12 @@ def add(request):
     description = request.POST["description"]
     date = request.POST["date"]
     category = request.POST["category"]
-    # print(Task_Category.objects.all())
-    # catList = Task_Category.objects.filter(name=category)
-    # print(category)
-    # print(catList)
     cat = Task_Category.objects.all()[int(category) - 1]
-    # print(cat)
 
     mom_task = Mom_task(title=title, category=cat, description=description, date=date)  # noqa
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")
-
-
-# @login_required(login_url='login')
-# def new(request):
-#     return render(request, 'new_task.html')
 
 
 @login_required(login_url='login')
@@ -136,20 +141,22 @@ def new(request):
 @login_required(login_url='login')
 def edit(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
-    # format_date = datetime.datetime(2020, 5, 17)
-    # print(format_date.strftime("%Y-%m-%d"))
+    # task_category_context = Task_Category.objects.all()
     edit_task_form_fields = {
         "title": mom_task.title,
         "description": mom_task.description,
         "category": mom_task.category,
+        # "categories": task_category_context,
         "date": mom_task.date.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
     return render(request, 'edit_task.html', context=edit_task_form_fields)
+    # return render(request, 'edit_task.html', {"context": edit_task_form_fields, "task_categories": task_category_context})  # noqa
 
 
 @login_required(login_url='login')
 def update(request, mom_task_id):
+    # task_category_context = Task_Category.objects.all()
     mom_task = Mom_task.objects.get(id=mom_task_id)
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
@@ -157,7 +164,8 @@ def update(request, mom_task_id):
     mom_task.date = request.GET['date']
     mom_task.save()
     task_form_fields = {
-        "alltasks": Mom_task.objects.all()
+        "alltasks": Mom_task.objects.all(),
+        # "all_categories": Task_Category.objects.all()
     }
     return redirect("all_tasks")
 

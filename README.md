@@ -145,6 +145,8 @@ Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 ## Sources
 
+How to Create a Dropdown List in Django python: https://labpys.com/how-to-create-cascading-dependent-dropdown-list-in-django-python/?utm_content=cmp-true
+
 Grid system: https://getbootstrap.com/docs/5.0/layout/grid/
 
 Python Datetime: https://www.w3schools.com/python/python_datetime.asp

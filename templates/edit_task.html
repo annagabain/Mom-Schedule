@@ -14,17 +14,31 @@
     <label for="category">Task Category:</label>
     <br>
     <input type="text" id="category" name="category" value={{category}}>
+    <!-- <input type="dropdown" id="category" name="category" value={{categories}}> -->
+    <!-- <li class="dropdown">
+        <form action="/all_tasks_filter_category" method="post">
+            {% csrf_token %}
+
+            <label for="category">Change Category:</label>
+
+            <select id="category" type="category" name="category">
+                {% for item in Task_Category  %}
+                
+                <option value="{{category}}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Go</button>
+        </form>
+    </li> -->
     <br>
     <br>
     <label for="description">Task Description:</label>
     <br>
     <textarea id="description" name="description">{{ description }}</textarea>
     <br>
-    <!-- <textarea id="date" name="date">{{ date }}</textarea> -->
-    <!-- <label for="date">Current due date: {{ date }}</label> -->
     <label for="date">Due date:</label>
     <br>
-    <input type="date" id="date" name="date" value='{{date}}'>  
+    <input type="date" id="date" name="date" value='{{date}}'>
     <br>
     <br>
     <button type="submit">Save</button>
