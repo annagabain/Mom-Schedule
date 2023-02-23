@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
 from django.contrib.auth.models import User
 
 import datetime
@@ -35,6 +37,7 @@ class Mom_task(models.Model):
     complete = models.BooleanField(null=False, blank=False, default=False)
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Task_Category, null=True, on_delete=models.CASCADE)  # noqa
+    # category = models.ForeignKey(Task_Category, default=True null=False, on_delete=models.CASCADE)  # noqa
     date = models.DateField()
 
     def __str__(self):

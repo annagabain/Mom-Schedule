@@ -22,16 +22,25 @@
             <br>
 
             <!-- Make the functionality later! -->
-            <!-- <div>
-                <label for="inputGroupSelect01">Choose a Category:</label>
-                <select id="inputGroupSelect01">
-                    <option selected>Other</option>
-                    <option value="1">Work</option>
-                    <option value="2">Childcare</option>
-                    <option value="3">Private_time</option>
-                    <option value="4">Household</option>
+            <div>
+                <label for="category">Choose a Category:</label>
+                <!-- Find analogy!! -->
+                <select id="category" type="category" name="category">
+                    <option value="0">--Select Category--</option>
+                    {% for item in Task_Category  %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                    {% endfor %}
                 </select>
-            </div> -->
+                <!-- <select id="category" type="category" name="category">
+                    <option selected>{{name}}</option>
+                    <option value={{category.name}}>{{category.name}}</option>
+                    <option value={{category.name}}>Childcare</option>
+                    <option value={{category.name}}>Private_time</option>
+                    <option value={{category.name}}>Household</option>
+                </select> -->
+            </div>
+
+
             <br>
         </div>
         <br>

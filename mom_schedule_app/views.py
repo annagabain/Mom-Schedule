@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 
-from .models import Mom_task, Mom_contact
-
+from .models import Mom_task, Mom_contact, Task_Category
+from django.core import serializers
+import json  # ??
 from .forms import NewUserForm
 # from .forms import NewUserForm, ContactForm
 
@@ -106,16 +107,30 @@ def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
     date = request.POST["date"]
+    category = request.POST["category"]
+    # print(Task_Category.objects.all())
+    # catList = Task_Category.objects.filter(name=category)
+    # print(category)
+    # print(catList)
+    cat = Task_Category.objects.all()[int(category) - 1]
+    # print(cat)
 
-    mom_task = Mom_task(title=title, description=description, date=date)
+    mom_task = Mom_task(title=title, category=cat, description=description, date=date)  # noqa
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")
 
 
+# @login_required(login_url='login')
+# def new(request):
+#     return render(request, 'new_task.html')
+
+
 @login_required(login_url='login')
 def new(request):
-    return render(request, 'new_task.html')
+    task_category_context = Task_Category.objects.all()
+    mom_task__context = Mom_task.objects.filter(user=request.user)
+    return render(request, 'new_task.html', {'Task_Category': task_category_context, 'Mom_task': mom_task__context})  # noqa
 
 
 @login_required(login_url='login')
@@ -126,6 +141,7 @@ def edit(request, mom_task_id):
     edit_task_form_fields = {
         "title": mom_task.title,
         "description": mom_task.description,
+        "category": mom_task.category,
         "date": mom_task.date.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
@@ -137,6 +153,7 @@ def update(request, mom_task_id):
     mom_task = Mom_task.objects.get(id=mom_task_id)
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
+    mom_task.category = request.GET['category']
     mom_task.date = request.GET['date']
     mom_task.save()
     task_form_fields = {
