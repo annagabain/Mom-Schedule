@@ -75,6 +75,10 @@ Class prefix | Size     | Container (max-width) |
 
     }
 
+    #filter-tasks {
+        position: fixed;
+    }
+
     footer {
         position: absolute;
         /* z-index: 1; */
