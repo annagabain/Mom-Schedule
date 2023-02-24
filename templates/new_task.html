@@ -23,8 +23,6 @@
                 <label for="category">Choose a Category:</label>
                 <select id="category" type="category" name="category">
                     {% for item in Task_Category  %}
-                    <!-- <option value="0">--Select --</option>    -->
-
                     <option value="{{ item.id }}">{{ item.name }}</option>
                     {% endfor %}
                 </select>

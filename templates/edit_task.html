@@ -11,25 +11,16 @@
     <input type="text" id="title" name="title" value='{{title}}'>
     <br>
     <br>
-    <label for="category">Task Category:</label>
-    <br>
-    <input type="text" id="category" name="category" value={{category}}>
-    <!-- <input type="dropdown" id="category" name="category" value={{categories}}> -->
-    <!-- <li class="dropdown">
-        <form action="/all_tasks_filter_category" method="post">
-            {% csrf_token %}
-
-            <label for="category">Change Category:</label>
-
-            <select id="category" type="category" name="category">
-                {% for item in Task_Category  %}
-                
-                <option value="{{category}}">{{ item.name }}</option>
-                {% endfor %}
-            </select>
-            <button type="submit">Go</button>
-        </form>
-    </li> -->
+    <!-- TRY TO PREPOPULATE -->
+    <!-- <label for="category">Task Category:</label> -->
+    <!-- <input type="text" id="category" name="category" value={{category}}> -->
+    
+    <label for="category">Choose a Category:</label>
+    <select id="category" type="category" name="category">
+        {% for item in Task_Category  %}
+        <option value="{{ item.id }}">{{ item.name }}</option>
+        {% endfor %}
+    </select>
     <br>
     <br>
     <label for="description">Task Description:</label>

@@ -21,6 +21,7 @@ app_name = 'mom_schedule_app'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('', views.mom_home, name='index'),
     path('register', views.register_request, name='register'),
     path('login', views.login_request, name='login'),

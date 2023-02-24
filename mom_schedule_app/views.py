@@ -144,41 +144,48 @@ def add(request):
 
 @login_required(login_url='login')
 def new(request):
-    task_category_context = Task_Category.objects.all() 
+    task_category_context = Task_Category.objects.all()
     mom_task__context = Mom_task.objects.filter(user=request.user)
-    # print('=========================================')
-    # print('new - CATEGORIES', task_category_context)
-    # print('=========================================')
     return render(request, 'new_task.html', {'Task_Category': task_category_context, 'Mom_task': mom_task__context})  # noqa
 
 
 @login_required(login_url='login')
 def edit(request, mom_task_id):
+    task_category_context = Task_Category.objects.all()
     mom_task = Mom_task.objects.get(id=mom_task_id)
     edit_task_form_fields = {
         "title": mom_task.title,
+        "Task_Category": task_category_context,
         "description": mom_task.description,
-        "category": mom_task.category,
+        # <!-- TRY TO PREPOPULATE -->
+        # "category": mom_task.category,
         "date": mom_task.date.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
-    return render(request, 'edit_task.html', context=edit_task_form_fields)
-    # return render(request, 'edit_task.html', {"context": edit_task_form_fields, "task_categories": task_category_context})  # noqa
+    return render(request, 'edit_task.html', context=edit_task_form_fields)  # noqa
 
 
 @login_required(login_url='login')
 def update(request, mom_task_id):
-    # task_category_context = Task_Category.objects.all()
     mom_task = Mom_task.objects.get(id=mom_task_id)
+
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
-    mom_task.category = request.GET['category']
     mom_task.date = request.GET['date']
+
+    selected_category_id = request.GET["category"]
+
+    category_find = None
+    for cat in Task_Category.objects.all():
+        print('cat.name', cat.name)
+        print('cat.pk', cat.pk)
+        if cat.pk == int(selected_category_id):
+            category_find = cat
+    print('category_id', category_find)
+
+    mom_task.category = category_find
+
     mom_task.save()
-    task_form_fields = {
-        "alltasks": Mom_task.objects.all(),
-        # "all_categories": Task_Category.objects.all()
-    }
     return redirect("all_tasks")
 
 
