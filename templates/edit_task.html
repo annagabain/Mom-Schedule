@@ -12,11 +12,14 @@
     <br>
     <br>
     <!-- TRY TO PREPOPULATE -->
-    <!-- <label for="category">Task Category:</label> -->
-    <!-- <input type="text" id="category" name="category" value={{category}}> -->
-    
-    <label for="category">Choose a Category:</label>
+    <!-- <label for="category">Task Category: {{category}}</label> -->
+    <!-- <input type="text" id="category" name="category" value='{{category}}'> -->
+    <br>
+
+    <label for="category">Category:</label>
     <select id="category" type="category" name="category">
+        <option value="0">{{category}}</option>
+        <option value="0">--------------</option>
         {% for item in Task_Category  %}
         <option value="{{ item.id }}">{{ item.name }}</option>
         {% endfor %}

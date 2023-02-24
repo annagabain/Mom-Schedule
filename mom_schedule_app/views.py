@@ -153,12 +153,13 @@ def new(request):
 def edit(request, mom_task_id):
     task_category_context = Task_Category.objects.all()
     mom_task = Mom_task.objects.get(id=mom_task_id)
+
     edit_task_form_fields = {
         "title": mom_task.title,
         "Task_Category": task_category_context,
         "description": mom_task.description,
         # <!-- TRY TO PREPOPULATE -->
-        # "category": mom_task.category,
+        "category": mom_task.category,
         "date": mom_task.date.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
@@ -177,11 +178,11 @@ def update(request, mom_task_id):
 
     category_find = None
     for cat in Task_Category.objects.all():
-        print('cat.name', cat.name)
-        print('cat.pk', cat.pk)
+        # print('cat.name', cat.name)
+        # print('cat.pk', cat.pk)
         if cat.pk == int(selected_category_id):
             category_find = cat
-    print('category_id', category_find)
+    # print('category_id', category_find)
 
     mom_task.category = category_find
 
