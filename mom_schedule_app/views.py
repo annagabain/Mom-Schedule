@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
-
-from .models import Mom_task, Mom_contact, Task_Category
+from .models import *
+# from .models import Mom_task, Mom_contact, Task_Category
 from django.core import serializers
-# import json  # ??
-from .forms import NewUserForm
+# from .forms import NewUserForm
 # from .forms import NewUserForm, ContactForm
+from .forms import *
 
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
@@ -16,10 +16,12 @@ from django.contrib.auth.forms import AuthenticationForm
 
 # for restricting unautharized views
 from django.contrib.auth.decorators import login_required
-
 from django.contrib.auth.models import User
-
-import datetime
+from django.views import generic
+from datetime import datetime
+from django.views import generic
+from django.utils.safestring import mark_safe
+from .utils import Calendar
 
 
 def mom_home(request):
@@ -210,3 +212,36 @@ def delete(request, mom_task_id):
 
 def calendar(request):
     return render(request, 'calendar.html')
+
+
+def get_date(req_day):
+    if req_day:
+        year, month = (int(x) for x in req_day.split("-"))
+        return date(year, month, day=1)
+    return datetime.today()
+
+
+# class CalendarView(LoginRequiredMixin, generic.ListView):
+class CalendarView(generic.ListView):
+
+    # login_url = "accounts:signin"
+    model = Mom_task
+    template_name = "calendar.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        d = get_date(self.request.GET.get("month", None))
+        # d = get_date(self.request.GET.get('day', None))
+        cal = Calendar(d.year, d.month)
+        html_cal = cal.formatmonth(withyear=True)
+        context["calendar"] = mark_safe(html_cal)
+        # context["prev_month"] = prev_month(d)
+        # context["next_month"] = next_month(d)
+        return context
+
+
+# def get_date(req_day):
+#     if req_day:
+#         year, month = (int(x) for x in req_day.split('-'))
+#         return date(year, month, day=1)
+#     return datetime.date.today()

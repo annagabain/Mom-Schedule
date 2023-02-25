@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <form action="/update/{{id}}">
 
     {% csrf_token %}
@@ -42,7 +41,6 @@
     <br>
     <br>
     <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
-
 </form>
-
+<!-- {{ complete }} -->
 {% endblock content %}

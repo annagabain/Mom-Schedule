@@ -167,6 +167,8 @@ Django models: https://docs.djangoproject.com/en/4.1/topics/db/models/
 
 How to create a calendar with Django:  https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 
+Event Calendar sample project and some source code: https://github.com/sajib1066/event-calendar
+
 Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/develop-a-simple-python-django-todo-app-in-1-minute-4908
 
 ## Acknowledgments
