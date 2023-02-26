@@ -18,19 +18,22 @@ body {
     font-weight: 400;
 }
 
+header {
+    padding: 30px 50px;
+}
+
 header,
 footer {
-    padding: 30px 50px;
     color: #FAF7F4;
     background: #455359;
 }
 
 footer {
     font-size: 0.7rem;
-    position: sticky;
-    height: 60px;
-    padding: 20px;
+    height: 30px;
+    padding: 5px !important;
     width: 100%;
+    bottom: 0 !important;
 }
 
 h1 {
@@ -70,6 +73,7 @@ a:active {
 .sidebar {
     background-color: #efe2da;
     padding: 50px;
+    height: 100%;
 }
 
 .sidebar a {
@@ -141,22 +145,30 @@ button {
     text-align: center;
 }
 
-#description,
-#your_message {
-    width: 50%;
-    height: 70px;
+.btn-primary
+
+/* .btn-primary:hover, */
+/* .btn-primary:active, */
+/* .btn-primary:visited */
+    {
+
+    background-color: #D8CBC4 !important;
+    color: #0D0D0D !important;
+    border-color: #0D0D0D !important;
+
+
 }
 
-#heading,
-#topic,
-#email,
-#title {
-    width: 50%;
+.btn-primary:hover {
+    color: #efe2da !important;
+    background: #6A4C39 !important;
+
 }
 
 .center,
 form {
     text-align: center;
+    padding: 2rem;
 }
 
 .right {
@@ -173,47 +185,63 @@ li {
 }
 
 /* calendar start */
-  #calendar {
+#calendar {
     max-width: 1100px;
     margin: 40px auto;
-  }
+}
 
-  .calendar {
+.calendar {
     width: 98%;
     margin: auto;
     font-size: 13px;
-  }
-  
-  .calendar tr, .calendar td {
+}
+
+.calendar tr,
+.calendar td {
     border: 1px solid black;
-  }
-  
-  .calendar th {
+}
+
+.calendar th {
     padding: 10px;
     text-align: center;
     font-size: 18px;
-  }
-  
-  .calendar td {
+}
+
+.calendar td {
     width: 200px;
     height: 150px;
     padding: 20px 0px 0px 5px;
-  }
-  
-  .month {
+}
+
+.month {
     font-size: 25px;
-  }
-  
-  .date {
+}
+
+.date {
     font-size: 16px;
-  }
-  
-  /* ul {
-    height: 100%;
-    padding: 0px 5px 0px 20px;
-  } */
-  
-  a {
+}
+
+a {
     color: #17a2b8;
+}
+
+.left {
+    float: left;
   }
-/* sidebar end */
+  
+  .right {
+    float: right;
+  }
+  
+  .btn {
+    outline: none;
+    color: black;
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
+  }
+  
+  .clearfix {
+    margin: 15px;
+  }
+
+/* calendar end */

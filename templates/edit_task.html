@@ -2,52 +2,47 @@
 {% block content %}
 
 <form action="/update/{{id}}">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-10">
 
-    {% csrf_token %}
+        {% csrf_token %}
+        <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
+        <br>
+        <br>
 
-    <label for="title">Task Heading:</label>
-    <br>
-    <input type="text" id="title" name="title" value='{{title}}'>
-    <br>
-    <br>
-    <!-- TRY TO PREPOPULATE -->
-    <!-- <label for="category">Task Category: {{category}}</label> -->
-    <!-- <input type="text" id="category" name="category" value='{{category}}'> -->
-    <br>
+        <div class="mb-3">
+            <label for="title" class="form-label">Task Heading:</label>
+            <input type="text" id="title" class="form-control" name="title" value='{{title}}'>
+        </div>
 
-    <label for="category">Category:</label>
-    <select id="category" type="category" name="category">
-        <option value="0">{{category}}</option>
-        <option value="0">--------------</option>
-        {% for item in Task_Category  %}
-        <option value="{{ item.id }}">{{ item.name }}</option>
-        {% endfor %}
-    </select>
-    <br>
-    <br>
-    <label for="description">Task Description:</label>
-    <br>
-    <textarea id="description" name="description">{{ description }}</textarea>
-    <br>
-    <label for="date">Due date:</label>
-    <br>
-    <!-- <input type="date" id="date" name="date" value='{{date}}'> -->
-    <label for="start_time">Start:</label>
-    <input type="date" id="start_time" name="start_time" value='{{start_time}}'>
-    
-    <label for="end_time">End:</label>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category:</label>
+            <select id="category" class="form-select" type="category" name="category">
+                <option value="0">{{category}}</option>
+                <option value="0">--------------</option>
+                {% for item in Task_Category  %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <input type="date" id="end_time" name="end_time" value='{{end_time}}'>
+        <div class="mb-3">
+            <label for="description">Task Description:</label>
+            <textarea id="description" class="form-control" name="description">{{ description }}</textarea>
+        </div>
 
-    <br>
-    <br>
-    <button type="submit">Save</button>
-    <br>
-    <br>
-    or
-    <br>
-    <br>
-    <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
+        <div class="mb-3">
+            <label for="date">Due date:</label>
+            <!-- <input type="date" id="date" name="date" value='{{date}}'> -->
+            <br>
+            <label for="start_time">Start:</label>
+            <input type="date" id="start_time" class="input-group-addon" name="start_time" value='{{start_time}}'>
+            <br>
+            <label for="end_time">End:</label>
+            <input type="date" id="end_time" class="input-group-addon" name="end_time" value='{{end_time}}'>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
 </form>
-<!-- {{ complete }} -->
+
 {% endblock content %}

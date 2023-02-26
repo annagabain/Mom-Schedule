@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 from .models import *
-# from .models import Mom_task, Mom_contact, Task_Category
 from django.core import serializers
-# from .forms import NewUserForm
-# from .forms import NewUserForm, ContactForm
 from .forms import *
 
 from django.core.mail import send_mail, BadHeaderError
@@ -19,6 +16,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views import generic
 from datetime import datetime
+from datetime import timedelta, datetime, date
+import calendar
 from django.views import generic
 from django.utils.safestring import mark_safe
 from .utils import Calendar
@@ -33,9 +32,7 @@ def mom_home(request):
 def mom_task(request):
     mom_tasks = Mom_task.objects.filter(user=request.user)
     task_category_context = Task_Category.objects.all()
-    print('=========================================')
-    print('all tasks - CATEGORY INDEX', task_category_context)
-    print('=========================================')
+
     return render(request, "all_tasks.html", {"mom_task_list": mom_tasks, 'Task_Category': task_category_context})  # noqa
 
 
@@ -56,7 +53,8 @@ def all_tasks_hide_complete(request):
 @login_required(login_url='login')
 def all_tasks_filter_date(request):
     task_category_context = Task_Category.objects.all()
-    all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('date').values()  # noqa
+    all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('end_time').values()  # noqa
+    # all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('date').values()  # noqa
     return render(request, "all_tasks_filter_date.html", {"mom_task_list": all_tasks_filter_date, "Task_Category": task_category_context})  # noqa
 
 
@@ -214,7 +212,7 @@ def delete(request, mom_task_id):
     return render(request, 'delete_task.html', {'mom_task': mom_task})
 
 
-def calendar(request):
+def my_calendar(request):
     return render(request, 'calendar.html')
 
 
@@ -225,11 +223,22 @@ def get_date(req_day):
     return datetime.today()
 
 
-# class CalendarView(LoginRequiredMixin, generic.ListView):
-# @login_required(login_url='login')
+def prev_month(d):
+    first = d.replace(day=1)
+    prev_month = first - timedelta(days=1)
+    month = "month=" + str(prev_month.year) + "-" + str(prev_month.month)
+    return month
+
+
+def next_month(d):
+    days_in_month = calendar.monthrange(d.year, d.month)[1]
+    last = d.replace(day=days_in_month)
+    next_month = last + timedelta(days=1)
+    month = "month=" + str(next_month.year) + "-" + str(next_month.month)
+    return month
+
+
 class CalendarView(generic.ListView):
-    # class CalendarView(request, mom_task_id):
-    # login_url = "accounts:signin"
     login_url = "login"
     model = Mom_task
     template_name = "calendar.html"
@@ -239,15 +248,24 @@ class CalendarView(generic.ListView):
         d = get_date(self.request.GET.get("month", None))
         # d = get_date(self.request.GET.get('day', None))
         cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth(withyear=True)
+        html_cal = cal.formatmonth(self.request, withyear=True)
         context["calendar"] = mark_safe(html_cal)
-        # context["prev_month"] = prev_month(d)
-        # context["next_month"] = next_month(d)
+        context["prev_month"] = prev_month(d)
+        context["next_month"] = next_month(d)
         return context
 
 
-# def get_date(req_day):
-#     if req_day:
-#         year, month = (int(x) for x in req_day.split('-'))
-#         return date(year, month, day=1)
-#     return datetime.date.today()
+# def prev_month(d):
+#     first = d.replace(day=1)
+#     prev_month = first - timedelta(days=1)
+#     month = 'month=' + str(prev_month.year) + '-' + str(prev_month.month)
+#     return month
+
+
+# def next_month(d):
+#     days_in_month = calendar.monthrange(d.year, d.month)[1]
+#     last = d.replace(day=days_in_month)
+#     next_month = last + timedelta(days=1)
+#     month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
+#     return month
+

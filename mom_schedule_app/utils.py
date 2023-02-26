@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Mom_task
+from django.contrib.auth.models import User
 
 
 class Calendar(HTMLCalendar):
@@ -30,9 +31,9 @@ class Calendar(HTMLCalendar):
 
     # formats a month as a table
     # filter events by year and month
-    def formatmonth(self, withyear=True):
+    def formatmonth(self, request, withyear=True):
         events = Mom_task.objects.filter(
-            start_time__year=self.year, start_time__month=self.month
+            user=request.user, start_time__year=self.year, start_time__month=self.month  # noqa
         )
         cal = (
             '<table border="0" cellpadding="0" cellspacing="0" class="calendar">\n'  # noqa

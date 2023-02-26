@@ -1,45 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="center">
-    <form action="/add" method="post">
-        {% csrf_token %}
-        <div class="field">
-            <label>
-                <h2>Create a New Task</h2>
-            </label>
-            <br>
-            <input id="heading" type="text" name="title" placeholder="Task heading..." required="required">
-            <br>
-            <br>
+<form action="/add" method="post">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-10">
 
-            <input id="description" type="textarea" name="description" placeholder="Task description...">
-            <br>
-            <br>
-            <!-- Due date: <input id="date" type="date" name="date" required="required">
-            <br>
-            <br> -->
-            Start date: <input id="start_time" type="date" name="start_time" required="required">
-            <br>
-            <br>
-            End date: <input id="end_time" type="date" name="end_time" required="required">
-            <br>
-            <br>
-            <div>
-                <label for="category">Choose a Category:</label>
-                <select id="category" type="category" name="category">
-                    <option value="0">Select:</option>
-                    <option value="0">--------------</option>
-                    {% for item in Task_Category  %}
-                    <option value="{{ item.id }}">{{ item.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <br>
+        {% csrf_token %}
+
+        <label>
+            <h2>Create a New Task</h2>
+        </label>
+
+        <div class="mb-3">
+            <input id="heading" class="form-control" type="text" name="title" placeholder="Task heading..."
+                required="required">
         </div>
-        <br>
-        <button type="submit">Add</button>
-    </form>
-</div>
+        <div class="mb-3">
+            <input id="description" class="form-control" type="textarea" name="description"
+                placeholder="Task description...">
+        </div>
+        <div class="mb-3">
+            <label for="category">Choose a Category:</label>
+            <select id="category" class="form-select" type="category" name="category">
+                <option value="0">Select:</option>
+                <option value="0">--------------</option>
+                {% for item in Task_Category  %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="start_time">Start date:</label>
+            <input id="start_time" class="input-group-addon" type="date" name="start_time" required="required">
+        </div>
+        <div class="mb-3">
+            <label for="start_time">Due date:</label>
+            <input id="end_time" class="input-group-addon" type="date" name="end_time" required="required">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
 
 {% endblock content %}
