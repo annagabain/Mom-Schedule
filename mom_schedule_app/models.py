@@ -36,13 +36,13 @@ class Mom_task(models.Model):
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Task_Category, null=True, on_delete=models.CASCADE)  # noqa
     # featured_image = CloudinaryField('image', default='static/css/pexels-tatiana-syrikova-3932941.jpg')  # noqa
-    date = models.DateField()
+    # date = models.DateField()
 
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
     class Meta:
-        ordering = ['date']
+        ordering = ['start_time']
 
     def __str__(self):
         return self.title
@@ -56,4 +56,3 @@ class Mom_contact(models.Model):
 
     def __str__(self):
         return self.topic
-

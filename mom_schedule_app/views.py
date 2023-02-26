@@ -124,7 +124,10 @@ def mom_contact(request):
 def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
-    date = request.POST["date"]
+    # date = request.POST["date"]
+    start_time = request.POST["start_time"]
+    end_time = request.POST["end_time"]
+
     category = request.POST["category"]
 
     category_id = None
@@ -138,7 +141,8 @@ def add(request):
     # print('add - CATEGORY INDEX', category)
     # print('=========================================')
 
-    mom_task = Mom_task(title=title, category=category_id, description=description, date=date)  # noqa
+    mom_task = Mom_task(title=title, category=category_id, description=description, start_time=start_time, end_time=end_time)  # noqa
+    # mom_task = Mom_task(title=title, category=category_id, description=description, date=date)  # noqa
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")
@@ -162,7 +166,9 @@ def edit(request, mom_task_id):
         "description": mom_task.description,
         # <!-- TRY TO PREPOPULATE -->
         "category": mom_task.category,
-        "date": mom_task.date.strftime("%Y-%m-%d"),
+        # "date": mom_task.date.strftime("%Y-%m-%d"),
+        "start_time": mom_task.start_time.strftime("%Y-%m-%d"),
+        "end_time": mom_task.end_time.strftime("%Y-%m-%d"),
         "id": mom_task.id
     }
     return render(request, 'edit_task.html', context=edit_task_form_fields)  # noqa
@@ -174,18 +180,16 @@ def update(request, mom_task_id):
 
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
-    mom_task.date = request.GET['date']
+    # mom_task.date = request.GET['date']
+    mom_task.start_time = request.GET['start_time']
+    mom_task.end_time = request.GET['end_time']
 
     selected_category_id = request.GET["category"]
 
     category_find = None
     for cat in Task_Category.objects.all():
-        # print('cat.name', cat.name)
-        # print('cat.pk', cat.pk)
         if cat.pk == int(selected_category_id):
             category_find = cat
-    # print('category_id', category_find)
-
     mom_task.category = category_find
 
     mom_task.save()
@@ -222,9 +226,11 @@ def get_date(req_day):
 
 
 # class CalendarView(LoginRequiredMixin, generic.ListView):
+# @login_required(login_url='login')
 class CalendarView(generic.ListView):
-
+    # class CalendarView(request, mom_task_id):
     # login_url = "accounts:signin"
+    login_url = "login"
     model = Mom_task
     template_name = "calendar.html"
 
