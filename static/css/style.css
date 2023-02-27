@@ -112,7 +112,7 @@ a:active {
     margin: 0px 0px 20px 0px;
 } */
 
-.card-body {
+.card-body, .calendar {
     width: 18rem;
     border-style: solid;
     border-color: #455359;
@@ -194,6 +194,12 @@ li {
     width: 98%;
     margin: auto;
     font-size: 13px;
+
+    /* border-style: solid;
+    border-color: #455359;
+    border-width: 2px;
+    border-radius: 10%;
+    background-color: #FAF7F4; */
 }
 
 .calendar tr,
@@ -241,7 +247,8 @@ a {
   }
   
   .clearfix {
-    margin: 15px;
+    margin: 25px;
+    width: 95%;
   }
 
 /* calendar end */
