@@ -11,7 +11,6 @@
         <li class="dropdown">
             <form action="/all_tasks_filter_category" method="post">
                 {% csrf_token %}
-
                         <label for="category">Category:</label>
                         <select id="category" class="form-select" type="category" name="category">
                             {% for item in Task_Category  %}
@@ -31,8 +30,14 @@
             <!-- <div class="card"> -->
             <div class="row">
                 <div class="card-body">
-                    <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
-                        alt="default task image">
+                    <div class="image-container">
+                        {% if "placeholder" in mom_task.featured_image.url %}
+                            <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
+                            alt="default task image">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ mom_task.featured_image.url }}">
+                        {% endif %}
+                    </div>
 
                     <span class="card-title">{{ mom_task.title }}</span>
                     <br>

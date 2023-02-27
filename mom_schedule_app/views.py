@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_http_methods
+from django.views import generic
+
 from .models import *
-from django.core import serializers
 from .forms import *
 
+from django.core import serializers
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
@@ -14,11 +16,8 @@ from django.contrib.auth.forms import AuthenticationForm
 # for restricting unautharized views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views import generic
-from datetime import datetime
 from datetime import timedelta, datetime, date
 import calendar
-from django.views import generic
 from django.utils.safestring import mark_safe
 from .utils import Calendar
 
@@ -54,7 +53,6 @@ def all_tasks_hide_complete(request):
 def all_tasks_filter_date(request):
     task_category_context = Task_Category.objects.all()
     all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('end_time').values()  # noqa
-    # all_tasks_filter_date = Mom_task.objects.filter(user=request.user).order_by('date').values()  # noqa
     return render(request, "all_tasks_filter_date.html", {"mom_task_list": all_tasks_filter_date, "Task_Category": task_category_context})  # noqa
 
 
@@ -122,25 +120,17 @@ def mom_contact(request):
 def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
-    # date = request.POST["date"]
+    featured_image = request.POST["featured_image"]
     start_time = request.POST["start_time"]
     end_time = request.POST["end_time"]
-
     category = request.POST["category"]
 
     category_id = None
     for cat in Task_Category.objects.all():
-        # print('cat.name', cat.name)
-        # print('cat.pk', cat.pk)
         if cat.pk == int(category):
             category_id = cat
 
-    # print('=========================================')
-    # print('add - CATEGORY INDEX', category)
-    # print('=========================================')
-
-    mom_task = Mom_task(title=title, category=category_id, description=description, start_time=start_time, end_time=end_time)  # noqa
-    # mom_task = Mom_task(title=title, category=category_id, description=description, date=date)  # noqa
+    mom_task = Mom_task(featured_image=featured_image, title=title, category=category_id, description=description, start_time=start_time, end_time=end_time)  # noqa
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")
@@ -162,9 +152,7 @@ def edit(request, mom_task_id):
         "title": mom_task.title,
         "Task_Category": task_category_context,
         "description": mom_task.description,
-        # <!-- TRY TO PREPOPULATE -->
         "category": mom_task.category,
-        # "date": mom_task.date.strftime("%Y-%m-%d"),
         "start_time": mom_task.start_time.strftime("%Y-%m-%d"),
         "end_time": mom_task.end_time.strftime("%Y-%m-%d"),
         "id": mom_task.id
@@ -178,7 +166,6 @@ def update(request, mom_task_id):
 
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
-    # mom_task.date = request.GET['date']
     mom_task.start_time = request.GET['start_time']
     mom_task.end_time = request.GET['end_time']
 
@@ -245,27 +232,10 @@ class CalendarView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        d = get_date(self.request.GET.get("month", None))
-        # d = get_date(self.request.GET.get('day', None))
-        cal = Calendar(d.year, d.month)
+        current_date = get_date(self.request.GET.get("month", None))
+        cal = Calendar(current_date.year, current_date.month)
         html_cal = cal.formatmonth(self.request, withyear=True)
         context["calendar"] = mark_safe(html_cal)
-        context["prev_month"] = prev_month(d)
-        context["next_month"] = next_month(d)
+        context["prev_month"] = prev_month(current_date)
+        context["next_month"] = next_month(current_date)
         return context
-
-
-# def prev_month(d):
-#     first = d.replace(day=1)
-#     prev_month = first - timedelta(days=1)
-#     month = 'month=' + str(prev_month.year) + '-' + str(prev_month.month)
-#     return month
-
-
-# def next_month(d):
-#     days_in_month = calendar.monthrange(d.year, d.month)[1]
-#     last = d.replace(day=days_in_month)
-#     next_month = last + timedelta(days=1)
-#     month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
-#     return month
-

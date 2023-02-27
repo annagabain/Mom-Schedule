@@ -9,9 +9,12 @@
         <label>
             <h2>Create a New Task</h2>
         </label>
-
         <div class="mb-3">
-            <input id="heading" class="form-control" type="text" name="title" placeholder="Task heading..."
+            <!-- <input id="featured_image" class="form-control" type="image" src="static/css/pexels-karolina-grabowska-4959753.jpg" name="featured_image" placeholder="Task picture..."> -->
+            <input type="file" id="featured_image" class="form-control" name="featured_image" accept="image/*">
+        </div>
+        <div class="mb-3">
+            <input id="heading" class="form-control" type="text" name="title" placeholder="* Task heading..."
                 required="required">
         </div>
         <div class="mb-3">
