@@ -9,7 +9,8 @@ Postgres Relational database
 
 Live View https://mom-schedule.herokuapp.com/
 
-<img width="100%" alt="responsiveness" src="documentation/all_tasks_print_screen_on_tablet.jpg">
+<img width="70%" alt="responsiveness" src="documentation/tablet.jpg"><img width="30%" alt="responsiveness" src="documentation/phone.jpg">
+
 <img width="100%" alt="responsiveness" src="documentation/responsiveness.jpg">
 
 
