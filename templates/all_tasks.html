@@ -34,35 +34,12 @@
                         {% if "placeholder" in mom_task.featured_image.url %}
                         <img class="card-img-top" src=" {{ mom_task.category.featured_image.url }}">
                         {% else %}
-
-                         <img src="static/mom_task_category_images/household.jpg" class="card-img-top"
+                         <img src="static/mom_task_category_images/other1.jpg" class="card-img-top"
                          alt="default task image">
 
                         {% endif %}
                     </div>
                     
-                    <!-- <div class="image-container">
-                        {% if mom_task.category == Work %}
-
-                        <img src="static/mom_task_category_images/work.jpg" class="card-img-top"
-                            alt="work category task image">
-
-                        {% else %}
-                        <img src="static/pexels-tatiana-syrikova-3933275.jpg" class="card-img-top" alt="another image">
-                        {% endif %}
-                    </div> -->
-
-                    <!-- {% for category in Task_Category  %}
-                    {% if "placeholder" in category.featured_image.url %}
-                    <img src="static/mom_task_category_images/household.jpg" class="card-img-top"
-                        alt="default task image">
-                    {% else %}
-                    <img class="card-img-top" value="{{ category.id }}" src="{{ category.featured_image.url }}">
-                    {% endif %}
-                    {% endfor %} -->
-
-
-
                     <span class="card-title">{{ mom_task.title }}</span>
                     <br>
                     <span class="card-text">Category: {{ mom_task.category }}</span>
