@@ -7,9 +7,6 @@ from cloudinary.models import CloudinaryField
 
 from django.urls import reverse
 
-# from calendarapp.models import EventAbstract
-# from accounts.models import User
-
 
 # Database columns are here!!
 
@@ -35,9 +32,7 @@ class Mom_task(models.Model):
     complete = models.BooleanField(null=False, blank=False, default=False)
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Task_Category, null=True, on_delete=models.CASCADE)  # noqa
-    # featured_image = CloudinaryField('image', default='static/css/pexels-tatiana-syrikova-3932941.jpg')  # noqa
     # date = models.DateField()
-
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
