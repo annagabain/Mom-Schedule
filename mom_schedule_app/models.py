@@ -13,6 +13,7 @@ from django.urls import reverse
 # Category table
 class Task_Category(models.Model):
     name = models.CharField(max_length=100)
+    featured_image = CloudinaryField('image', default='placeholder')  # noqa
 
     def __str__(self):
         return self.name
@@ -31,7 +32,7 @@ class Mom_task(models.Model):
     title = models.CharField(max_length=50, null=False, blank=False)
     complete = models.BooleanField(null=False, blank=False, default=False)
     description = models.TextField(max_length=500)
-    category = models.ForeignKey(Task_Category, null=True, on_delete=models.CASCADE)  # noqa
+    category = models.ForeignKey(Task_Category, null=False, blank=False, on_delete=models.CASCADE)  # noqa
     # date = models.DateField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()

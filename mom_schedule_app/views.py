@@ -120,7 +120,6 @@ def mom_contact(request):
 def add(request):
     title = request.POST["title"]
     description = request.POST["description"]
-    image = request.POST["featured_image"]
     start_time = request.POST["start_time"]
     end_time = request.POST["end_time"]
     category = request.POST["category"]
@@ -130,8 +129,7 @@ def add(request):
         if cat.pk == int(category):
             category_id = cat
 
-    mom_task = Mom_task(featured_image=image, title=title, category=category_id, description=description, start_time=start_time, end_time=end_time)  # noqa
-    print('=================', mom_task.category)
+    mom_task = Mom_task(title=title, category=category_id, description=description, start_time=start_time, end_time=end_time)  # noqa
     mom_task.save()
     request.user.momtask.add(mom_task)
     return redirect("all_tasks")

@@ -9,10 +9,9 @@
         <label>
             <h2>Create a New Task</h2>
         </label>
-        <div class="mb-3">
-            <!-- <input id="featured_image" class="form-control" type="image" src="static/css/pexels-karolina-grabowska-4959753.jpg" name="featured_image" placeholder="Task picture..."> -->
-            <input id="featured_image" class="form-control" type="file" name="featured_image" accept="image/*">
-        </div>
+        <!-- <div class="mb-3">
+                        <input id="featured_image" class="form-control" type="file" name="featured_image" accept="image/*">
+        </div> -->
         <div class="mb-3">
             <input id="heading" class="form-control" type="text" name="title" placeholder="* Task heading..."
                 required="required">
@@ -22,10 +21,10 @@
                 placeholder="Task description...">
         </div>
         <div class="mb-3">
-            <label for="category">Choose a Category:</label>
-            <select id="category" class="form-select" type="category" name="category">
-                <option value="0">Select:</option>
-                <option value="0">--------------</option>
+            <label for="category">* Choose a Category:</label>
+            <select id="category" class="form-select" type="category" name="category" required="required">
+                <!-- <option value="0">Select:</option>
+                <option value="0">--------------</option> -->
                 {% for item in Task_Category  %}
                 <option value="{{ item.id }}">{{ item.name }}</option>
                 {% endfor %}
