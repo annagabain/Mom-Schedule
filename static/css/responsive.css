@@ -70,10 +70,19 @@ Class prefix | Size     | Container (max-width) |
 
     /* sidebar end */
 
-    .main-content {
-        padding-top: 120px;
-
+    #homepage_info>div {
+        width: 98%;
+        
     }
+
+    #homepage_info>div>img,
+    #homepage_info>div>p
+     {
+        text-align:center;
+        
+    }
+    .main-content {
+        padding-top: 120px;}
 
     .calendar_container {
         width: 100%;

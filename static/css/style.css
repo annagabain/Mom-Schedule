@@ -43,6 +43,22 @@ h1 {
     text-align: left;
 }
 
+#homepage_info {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+
+#homepage_info>div {
+    width: 30%;
+}
+
+#homepage_info>div>img {
+    width: 100%;
+    text-align: center;
+}
+
 a,
 a:link,
 a:visited,
@@ -112,7 +128,8 @@ a:active {
     margin: 0px 0px 20px 0px;
 } */
 
-.card-body, .calendar {
+.card-body,
+.calendar {
     width: 18rem;
     border-style: solid;
     border-color: #455359;
@@ -175,6 +192,11 @@ form {
     text-align: right;
 }
 
+#circle-image-div {
+    width: 200px;
+    padding: 20px;
+}
+
 #circle-image {
     border-radius: 50%;
 }
@@ -194,12 +216,6 @@ li {
     width: 98%;
     margin: auto;
     font-size: 13px;
-
-    /* border-style: solid;
-    border-color: #455359;
-    border-width: 2px;
-    border-radius: 10%;
-    background-color: #FAF7F4; */
 }
 
 .calendar tr,
@@ -233,22 +249,22 @@ a {
 
 .left {
     float: left;
-  }
-  
-  .right {
+}
+
+.right {
     float: right;
-  }
-  
-  .btn {
+}
+
+.btn {
     outline: none;
     color: black;
     background-color: transparent;
     box-shadow: 0 0 0 0;
-  }
-  
-  .clearfix {
+}
+
+.clearfix {
     margin: 25px;
     width: 95%;
-  }
+}
 
 /* calendar end */

@@ -9,7 +9,9 @@ Postgres Relational database
 
 Live View https://mom-schedule.herokuapp.com/
 
+<img width="100%" alt="responsiveness" src="documentation/all_tasks_print_screen_on_tablet.jpg">
 <img width="100%" alt="responsiveness" src="documentation/responsiveness.jpg">
+
 
 ## Portfolio Project 4
 
@@ -144,6 +146,8 @@ Wireframes: https://www.figma.com/
 Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 ## Sources
+
+CSS tricks: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#top-of-site
 
 How to Create a Dropdown List in Django python: https://labpys.com/how-to-create-cascading-dependent-dropdown-list-in-django-python/?utm_content=cmp-true
 

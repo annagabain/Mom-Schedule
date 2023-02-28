@@ -2,75 +2,70 @@
 {% block content %}
 
 <div class="center">
-    <!-- <div>
-        <img id="circle-image" width="15%" alt="planning mother" src="static/css/pexels-karolina-grabowska-4959753.jpg">
-    </div> -->
-    <h2>Welcome to Time Planning Tool for Busy Mothers</h3>
-
-        <p>Mom Schedule has a calendar, offers event editing and creating task cards. As a site user you can:
-        </p>
-        <div id="card-parent" class="col">
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/login_print_screen.jpg" class="card-img-top" alt="category images">
-                            <h5 class="card-title">Login</h5>
-                            <p class="card-text">Register so that you have a unique and private schedule
-                                and then login so that you can view your own schedule.</p>
-                            <a href="/new_task" class="btn btn-primary">Start here..</a>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/new_task_print_screen.jpg" class="card-img-top"
-                                alt="category images">
-                            <h5 class="card-title">Create Tasks</h5>
-                            <p class="card-text">Title, Category and the due dates.</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/all_tasks_print_screen.jpg" class="card-img-top"
-                                alt="category images">
-                            <h5 class="card-title">Tasks with Categories</h5>
-                            <p class="card-text">Each category has an image.</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/filter_by_due_date_print_screen.jpg" class="card-img-top"
-                                alt="category images">
-                            <h5 class="card-title">Order Tasks by Due date</h5>
-                            <p class="card-text">So you do not miss important deadlines. - View an individual task so that you can read the details of it
-                                - Edit an individual task so that you can adapt it to your needs</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/calendar_print_screen.jpg" class="card-img-top"
-                                alt="category images">
-                            <h5 class="card-title">Month's Calendar</h5>
-                            <p class="card-text">Tasks are marked. See the schedule so you can overview your tasks</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="card-body">
-                            <img src="static/images/completed_tasks_print_screen.jpg" class="card-img-top"
-                                alt="category images">
-                            <h5 class="card-title">Completed or still to-do?</h5>
-                            <p class="card-text">See the tasks that you have completed or only those to work on.</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+         <h2>Welcome to Time Planning Tool for Busy Mothers</h2>   
+        </div>
+        <br>
+        <br>
+    <div id="homepage_info">     
+        <div>
+            <p>Mom Schedule has a calendar, offers event editing and creating task cards.</p>
+        </div>
+        <div id="circle-image-div">
+            <img id="circle-image" width="10%" alt="planning mother" src="static/pexels-karolina-grabowska-4959753.jpg">
+        </div>
+        <div>
+            <p>As a site user you can: Login, Create Tasks, Categorize, See only (In)Complete, Order by Due date,
+                Overview your Month.</p>
+        </div>
+        <div>
+            <hr>
+            <h5>Login</h5>
+            <hr>
+            <img src="static/images/login_print_screen.jpg" alt="category images">
+            <p><a href="/register">Register</a> so that you have a unique and private schedule
+                and then <a href="/login">login</a> so that you can view your own schedule.</p>
         </div>
 
-        {% endblock content %}
+
+
+        <div>
+            <hr>
+            <h5>Create Tasks</h5>
+            <hr>
+            <img src="static/images/new_task_print_screen.jpg" alt="category images">
+            <p>Title, Category and the due dates.</p>
+        </div>
+        <div>
+            <hr>
+            <h5>Categorize</h5>
+            <hr>
+            <img src="static/images/all_tasks_print_screen.jpg" alt="category images">
+            <p>Each category has an image.</p>
+        </div>
+        <div>
+            <hr>
+            <h5>See only (In)Complete</h5>
+            <hr>
+            <img src="static/images/completed_tasks_print_screen.jpg" alt="category images">
+            <p>See the tasks that you have completed or only those to work on.</p>
+        </div>
+        <div>
+            <hr>
+            <h5>Order by Due date</h5>
+            <hr>
+            <img src="static/images/filter_by_due_date_print_screen.jpg" alt="category images">
+            <p>So you do not miss important deadlines. - View an individual task so that you can
+                read the details of it
+                - Edit an individual task so that you can adapt it to your needs</p>
+        </div>
+        <div>
+            <hr>
+            <h5>Overview your Month</h5>
+            <hr>
+            <img src="static/images/calendar_print_screen.jpg" alt="category images">
+            <p>Tasks are marked. See the schedule so you can overview your tasks</p>
+        </div>
+    </div>
+
+    {% endblock content %}
