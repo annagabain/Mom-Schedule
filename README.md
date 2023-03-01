@@ -20,7 +20,7 @@ Project purpose:
 In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
 
 - address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
-- includes a calendar, event editing, creating task cards.
+- includes a calendar, event editing, and creating task cards.
 
 
 ## Contents:
@@ -28,11 +28,10 @@ In this project, you'll build a Full-Stack site based on business logic used to 
     - [User Stories](#user-stories)
     - [Responsivity](#responsivity)
 - [Features](#)
-    - [Welcoming Intro](#)
-    - [Main Menu](#)
     - [HOME](#)
+        - [Welcoming Intro](#)
     - [My Tasks](#)
-    - [(Sort by)](#)
+    - [Filter by](#)
     - [Contact Us](#)
     - [New Task](#)
     - [Future Features](#)
@@ -55,17 +54,17 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 ## UX
 ### User Stories
 
-- As a site user I can register so that I can have a unique and private schedule
+- As a site user, I can register so that I can have a unique and private schedule
 
-- As a site user I can login so that I can view my own schedule
+- As a site user, I can log in so that I can view my own schedule
 
-- As a site user I can see the schedule so that I can overview my tasks
+- As a site user, I can see the schedule so that I can overview my tasks
 
-- As a site user I can View an individual task so that I can read the details of it
+- As a site user, I can View an individual task so that I can read the details of it
 
-- As a site user I can Edit an individual task so that I can adapt it to my needs
+- As a site user, I can Edit an individual task so that I can adapt it to my needs
 
-- As **a site Admin** I can **login** so that I can **view and manage the users and tasks**
+- As **a Site Admin**, I can log in so that I can **view and manage the users and tasks**
 
 All user stories as part of a project: https://github.com/users/annagabain/projects/7/views/1
 
@@ -77,7 +76,7 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 *The Methods*
 
-Bootstrap5 features and custom css
+Bootstrap5 features and custom CSS
 
 <img width="70%" alt="responsivity" src="documentation_for_github_readme/responsivity.jpg">
 
@@ -149,7 +148,7 @@ Coverage
 
 :lady_beetle: - *Static files weren't included by Heroku after deployment.*
 
-:bulb: - Using WhiteNoise package fixed the issue.
+:bulb: - Using the WhiteNoise package fixed the issue.
 
 *Before*
 
@@ -167,10 +166,10 @@ Coverage
 
 :lady_beetle: - *Date Format*
 
-having trouble with the date formats in Django. The html form has dd-mm-yyyy and Django has yyyy-mm-dd.
-They somehow communicate innerly to save the date correctly in the database but the problem occurs when I try editing one of my Task, by clicking the yellow edit button for a specific task on my all_tasks.html. 
+having trouble with the date formats in Django. The HTML form has dd-mm-yyyy and Django has yyyy-mm-dd.
+They somehow communicate to save the date correctly in the database but the problem occurs when I try editing one of my Tasks, by clicking the yellow edit button for a specific task on my all_tasks.html. 
 
-It **did not prepopulate the date dropdown** and threw an error when trying to submit without chosing the date over again. However, editing inside the admin site worked well (it displayed yyyy-mm-dd).
+It **did not prepopulate the date dropdown** and threw an error when trying to submit without choosing the date over again. However, editing inside the admin site worked well (it displayed yyyy-mm-dd).
 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin.jpg"> <img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin-2.jpg">
 
@@ -189,13 +188,13 @@ It did not work
 
 :bulb: - I found a solution:
 
-Changed the date format in my edit function in views.py as following:
+Changed the date format in my edit function in views.py as follows:
 
 ...
 
 date.strftime("%Y-%m-%d"),
 
-Now it prepopulates my field with date as dd-mm-yyyy. The mom_task is then saved without errors.
+Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then saved without errors.
 
 - [Deployment](#d)
     - [Heroku](#)
