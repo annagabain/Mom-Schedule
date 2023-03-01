@@ -13,8 +13,7 @@ Class prefix | Size     | Container (max-width) |
 /* Device = Most of the Smartphones Mobiles */
 @media (max-width: 992px) {
     header {
-        position:fixed;
-        padding: 60px 10px 5px 10px;
+        padding: 60px 20px 5px 20px;
     }
 
     h1 {
@@ -78,18 +77,10 @@ Class prefix | Size     | Container (max-width) |
     #homepage_info>div>p
      {
         text-align:center;
-        
     }
-    .main-content {
-        padding-top: 120px;}
 
     .calendar_container {
         width: 100%;
-
-    }
-
-    #filter-tasks {
-        position: fixed;
     }
     
 }

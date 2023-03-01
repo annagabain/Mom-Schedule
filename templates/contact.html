@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="main-content">
 <form action="/contact" method="post">
     <div class="col-lg-8 col-md-8 col-sm-10 col-10">
-
-
         {% csrf_token %}
         <div class="field">
             <label>
@@ -24,5 +23,5 @@
         <button class="btn btn-primary" type="submit">Submit</button>
     </div>
 </form>
-
+</div>
 {% endblock content %}

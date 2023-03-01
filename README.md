@@ -73,7 +73,7 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 *Test result: Am I responsive?*
 
-<img width="100%" alt="responsiveness" src="documentation_for_github_readme/responsiveness.jpg">
+<img width="70%" alt="responsiveness" src="documentation_for_github_readme/responsiveness.jpg">
 
 *The Methods*
 
@@ -87,23 +87,18 @@ Bootstrap5 features and custom css
 ### Welcoming Intro
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
-
-    - [Main Menu](#)
     - [HOME](#)
+    - [Main Menu](#)
     - [My Tasks](#)
     - [Filter by](#)
     - [Contact Us](#)
     - [New Task](#)
     - [Future Features](#)
 
-- [Development Stages](#)
-    - [Planning](#)
-    - [Structure](#)
-    - [Using Frameworks](#)
-    - [Using Source code](#)
+## Development Stages
 
-
-## Desktop Wireframes
+### Planning
+#### Desktop Wireframes
 
 *Today View*
 
@@ -121,13 +116,22 @@ Bootstrap5 features and custom css
 
 <img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
+
+### Structure
+
 *PgSQL Relational Database Diagram*
 
 <img width="50%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
+### Using Frameworks
+
+Django 
+Bootstrap 5
+
+### Using Source code
+
 
 ## Testing
-
 
 ### Validators
 

@@ -21,8 +21,8 @@ body {
 }
 
 header {
-    padding: 30px 50px;
-    /* position: fixed; */
+    padding: 5px 50px;
+    position: fixed;
 }
 
 header,
@@ -32,18 +32,32 @@ footer {
 }
 
 footer {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem;
     height: 30px;
     padding: 5px !important;
     width: 100%;
-    bottom: 0 !important;
+    position: absolute;
+    bottom: 0px !important; */
+    font-size: 0.7rem;
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    padding: 5px !important;
+    width: 100%;
+    left: 0;
 }
 
-h1 {
+#site_logo
+ {
     font-family: 'Lemonada', cursive, sans-serif;
     font-weight: 400;
+    font-size: 1.5rem;
     color: #FAF7F4;
     text-align: left;
+}
+
+h1, h2 {
+    font-family: 'Lemonada', cursive, sans-serif;
 }
 h5 {
     font-family: 'Lemonada', cursive, sans-serif;
@@ -96,14 +110,15 @@ a:active {
 }
 
 .main-content {
-    padding: 30px 30px;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
 }
 
 /* sidebar start */
 .sidebar {
     background-color: #efe2da;
-    padding: 50px;
-    /* height: 100%; */
+    padding: 5rem;
+    padding-top: 10rem;
 }
 
 .sidebar a {
@@ -132,15 +147,16 @@ a:active {
 }
 
 /* sidebar end */
+#filter-tasks {
+    position: fixed;
+    padding-top: 2.5rem;
+    opacity: 0.9;
+}
 
 #card-parent {
     column-count: 3;
+    padding-top: 4rem;
 }
-
-/* 
-.card {
-    margin: 0px 0px 20px 0px;
-} */
 
 .card-body,
 .calendar {
@@ -200,12 +216,14 @@ form {
 }
 
 #circle-image-div {
-    width: 200px;
-    padding: 0px 50px 50px 50px;
+    /* width: 200px; */
+    /* padding: 0px 50px 50px 50px; */
 }
 
 #circle-image {
     border-radius: 50%;
+    padding: 20px 20px 20px 20px;
+
 }
 
 ul,
@@ -275,3 +293,11 @@ a {
 }
 
 /* calendar end */
+.top {
+        opacity: 0.9;
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        width: 60px;
+        position: fixed;
+    }

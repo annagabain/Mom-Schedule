@@ -25,13 +25,13 @@
             <div class="row">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-6">
                     <a href="/">
-                        <h1>Mom Schedule</h1>
+                        <h1 id="site_logo">Mom Schedule</h1>
                     </a>
                 </div>
                 <div class="login-greeting col-lg-2 col-md-2  col-sm-2 col-6">
                     <!-- log in or logout based on authentication status -->
                     {% if user.is_authenticated %}
-                    <a href="#">Hello {{user.username}}!</a>
+                    <span>Hello {{user.username}}!</span>
                     <br>
                     <a href="/logout">Logout</a>
                     {% else %}
@@ -75,6 +75,10 @@
                 </div>
             </div>
         </div>
+        <div class="top">
+            <a href="#top"><button class="btn btn-primary">&#9650;</button></a>
+        </div>
+
     </main>
     <footer class="center">
         Anna Gabain &#169; for educational purposes
