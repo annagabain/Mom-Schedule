@@ -9,17 +9,20 @@
 /* These fonts are imported from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Open+Sans:wght@300;400&family=Share+Tech+Mono&display=swap');
 
 
 body {
     color: #0D0D0D;
     background-color: #D8CBC4;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 header {
     padding: 30px 50px;
+    /* position: fixed; */
 }
 
 header,
@@ -41,6 +44,17 @@ h1 {
     font-weight: 400;
     color: #FAF7F4;
     text-align: left;
+}
+h5 {
+    font-family: 'Lemonada', cursive, sans-serif;
+
+}
+p {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    /* text-indent: 20px; */
+    line-height: 25px;
 }
 
 #homepage_info {
@@ -147,13 +161,6 @@ a:active {
     text-align: left;
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    text-indent: 30px;
-    line-height: 32px;
-}
-
 button {
     height: 35px;
     border-radius: 10%;
@@ -194,7 +201,7 @@ form {
 
 #circle-image-div {
     width: 200px;
-    padding: 20px;
+    padding: 0px 50px 50px 50px;
 }
 
 #circle-image {

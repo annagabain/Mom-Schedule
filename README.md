@@ -9,9 +9,7 @@ Postgres Relational database
 
 Live View https://mom-schedule.herokuapp.com/
 
-<img width="70%" alt="responsiveness" src="documentation/tablet.jpg"><img width="30%" alt="responsiveness" src="documentation/phone.jpg">
-
-<img width="100%" alt="responsiveness" src="documentation/responsiveness.jpg">
+<img width="66%" alt="responsiveness" src="documentation_for_github_readme/tablet.jpg">  <img width="26%" alt="responsiveness" src="documentation_for_github_readme/phone.jpg">
 
 
 ## Portfolio Project 4
@@ -26,7 +24,9 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 
 ## Contents:
-- [UX](#user-stories)
+- [UX](#ux)
+    - [User Stories](#user-stories)
+    - [Responsivity](#responsivity)
 - [Features](#)
     - [Welcoming Intro](#)
     - [Main Menu](#)
@@ -44,13 +44,16 @@ In this project, you'll build a Full-Stack site based on business logic used to 
     - [Validators](#)
     - [Manual Testing](#)
     - [Debugging](#debugging)
-- [Deployment](#d)
+- [Deployment](#)
     - [Heroku](#)
 - [Sources & Credits](#sources)
-- [Acknowledgments](#acknowledgments)
+    - [Sources](#sources)
+    - [Tools](#tools)
+    - [Acknowledgments](#acknowledgments)
 
 
-## User Stories
+## UX
+### User Stories
 
 - As a site user I can register so that I can have a unique and private schedule
 
@@ -65,6 +68,39 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 - As **a site Admin** I can **login** so that I can **view and manage the users and tasks**
 
 All user stories as part of a project: https://github.com/users/annagabain/projects/7/views/1
+
+### Responsivity
+
+*Test result: Am I responsive?*
+
+<img width="100%" alt="responsiveness" src="documentation_for_github_readme/responsiveness.jpg">
+
+*The Methods*
+
+Bootstrap5 features and custom css
+
+<img width="70%" alt="responsivity" src="documentation_for_github_readme/responsivity.jpg">
+
+
+
+## Features
+### Welcoming Intro
+
+<img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
+
+    - [Main Menu](#)
+    - [HOME](#)
+    - [My Tasks](#)
+    - [Filter by](#)
+    - [Contact Us](#)
+    - [New Task](#)
+    - [Future Features](#)
+
+- [Development Stages](#)
+    - [Planning](#)
+    - [Structure](#)
+    - [Using Frameworks](#)
+    - [Using Source code](#)
 
 
 ## Desktop Wireframes
@@ -90,8 +126,20 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 <img width="50%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
 
-
 ## Testing
+
+
+### Validators
+
+### Manual Testing
+
+### Django testing 
+Test functions
+tests.py
+test_forms.py
+test_views.py
+test_models.py
+Coverage
 
 ### Debugging
 
@@ -99,7 +147,13 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 :bulb: - Using WhiteNoise package fixed the issue.
 
-<img width="50%" alt="debugging" src="documentation/static_css_heroku.jpg"> <img width="50%" alt="debugging" src="documentation/static_css_local.jpg">
+*Before*
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/static_css_heroku.jpg"> 
+
+*After*
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/static_css_local.jpg">
 
 :lady_beetle: - *Title prepopulated with the first word only*
 
@@ -114,9 +168,9 @@ They somehow communicate innerly to save the date correctly in the database but 
 
 It **did not prepopulate the date dropdown** and threw an error when trying to submit without chosing the date over again. However, editing inside the admin site worked well (it displayed yyyy-mm-dd).
 
-<img width="50%" alt="debugging" src="documentation/bug-date-admin.jpg"> <img width="50%" alt="debugging" src="documentation/bug-date-admin-2.jpg">
+<img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin.jpg"> <img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin-2.jpg">
 
-<img width="50%" alt="debugging" src="documentation/bug-date-admin-3.jpg"> <img width="50%" alt="debugging" src="documentation/bug-date-admin-4.jpg">
+<img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin-3.jpg"> <img width="50%" alt="debugging" src="documentation_for_github_readme/bug-date-admin-4.jpg">
 
 :mag: - Tried solving by adding this code to settings.py: 
 
@@ -139,14 +193,16 @@ date.strftime("%Y-%m-%d"),
 
 Now it prepopulates my field with date as dd-mm-yyyy. The mom_task is then saved without errors.
 
-
+- [Deployment](#d)
+    - [Heroku](#)
 
 ## Tools
 
 Wireframes: https://www.figma.com/
 Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
-## Sources
+## Sources & Credits
+### Sources
 
 CSS tricks: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#top-of-site
 
@@ -176,7 +232,7 @@ Event Calendar sample project and some source code: https://github.com/sajib1066
 
 Develop a Simple Python Django ToDo App in 1 minute: https://dev.to/nditah/develop-a-simple-python-django-todo-app-in-1-minute-4908
 
-## Acknowledgments
+### Acknowledgments
 
 Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
 
