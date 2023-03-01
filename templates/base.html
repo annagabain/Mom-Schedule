@@ -31,13 +31,15 @@
                 <div class="login-greeting col-lg-2 col-md-2  col-sm-2 col-6">
                     <!-- log in or logout based on authentication status -->
                     {% if user.is_authenticated %}
-                    <span>Hello {{user.username}}!</span>
-                    <br>
-                    <a href="/logout">Logout</a>
+                    <div class="dropdown">
+                            <a class="dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">Hello {{user.username}}!</a>
+                            <ul class="dropdown-menu">
+                                <li id="login_greeting_logout_button"><a a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
+                    </div>
                     {% else %}
-                    <a href="/login">Login</a>
+                    <li><a href="/login">Login</a></li>
                     {% endif %}
-
                 </div>
             </div>
         </div>
@@ -59,11 +61,13 @@
                     <!-- put main content here -->
 
                     <!-- Bootstrap messages as a user interaction feedback -->
+
                     {% if messages %}
                     {% for message in messages %}
-                    <div class="container-fluid center">
-                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                            <span style="color:red;">{{ message }}</span>
+                    <div class="center">
+                        <div class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert" style="background-color: #FAF7F4;">
+                            <span style="color:#6A4C39;">{{ message }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     </div>
                     {% endfor %}
@@ -100,4 +104,5 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

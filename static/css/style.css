@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    padding: 5px 50px;
+    padding: 1rem 3rem;
     position: fixed;
 }
 
@@ -105,8 +105,25 @@ a:active {
     color: #FAF7F4;
 }
 
-.login-greeting a:hover {
+.login-greeting a:hover
+ {
     color: #D8CBC4;
+}
+
+#login_greeting_logout_button,
+#login_greeting_logout_button a,
+#login_greeting_logout_button a:link,
+#login_greeting_logout_button a:visited,
+#login_greeting_logout_button a:active {
+    color: #0D0D0D;
+    text-decoration: none;
+}
+
+#login_greeting_logout_button a:hover
+ {
+    color: #D8CBC4;
+    background-color: #6A4C39;
+
 }
 
 .main-content {
