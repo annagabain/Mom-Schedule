@@ -8,16 +8,15 @@
         <li><a class="dropdown-item" href="all_tasks_complete">Show Completed Tasks Only</a></li>
         <li><a class="dropdown-item" href="all_tasks_hide_complete">Hide Completed Tasks</a></li>
         <li><a class="dropdown-item" href="all_tasks_filter_date">Due Date</a></li>
-        <li class="dropdown">
-            <form action="/all_tasks_filter_category" method="post">
+        <li class="dropdown-item">
+            <form style="display: inline-block;" action="/all_tasks_filter_category" method="post" id="filter_form">
                 {% csrf_token %}
                 <label for="category">Category:</label>
-                <select id="category" class="form-select" type="category" name="category">
+                <select id="category" type="category" name="category" onchange="filter_form.submit()">
                     {% for item in Task_Category  %}
                     <option value="{{ item.id }}">{{ item.name }}</option>
                     {% endfor %}
                 </select>
-                <button class="btn btn-primary" type="submit">Go</button>
             </form>
         </li>
     </ul>

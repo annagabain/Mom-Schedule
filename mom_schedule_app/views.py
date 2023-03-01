@@ -149,7 +149,7 @@ def edit(request, mom_task_id):
 
     edit_task_form_fields = {
         "title": mom_task.title,
-        "Task_Category": task_category_context,
+        "from_Task_Category": task_category_context,
         "description": mom_task.description,
         "category": mom_task.category,
         "start_time": mom_task.start_time.strftime("%Y-%m-%d"),
@@ -161,19 +161,21 @@ def edit(request, mom_task_id):
 
 @login_required(login_url='login')
 def update(request, mom_task_id):
+
     mom_task = Mom_task.objects.get(id=mom_task_id)
 
     mom_task.title = request.GET['title']
     mom_task.description = request.GET['description']
     mom_task.start_time = request.GET['start_time']
     mom_task.end_time = request.GET['end_time']
-
-    selected_category_id = request.GET["category"]
+    selected_category_id = request.GET['category']
+    # mom_task.category is found later down, in the for loop!!
 
     category_find = None
     for cat in Task_Category.objects.all():
         if cat.pk == int(selected_category_id):
             category_find = cat
+
     mom_task.category = category_find
 
     mom_task.save()

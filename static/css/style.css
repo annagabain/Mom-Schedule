@@ -167,7 +167,7 @@ a:active {
 #filter-tasks {
     position: fixed;
     padding-top: 2.5rem;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 #card-parent {
@@ -222,8 +222,7 @@ button {
 
 }
 
-.center,
-form {
+.center{
     text-align: center;
     padding: 2rem;
 }

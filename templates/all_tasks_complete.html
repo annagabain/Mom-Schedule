@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="dropdown" id="filter-tasks">
-    <a class="btn btn-secondary dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+    <a class="btn btn-primary dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
         aria-expanded="false">Filter Tasks by</a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <li><a class="dropdown-item" href="all_tasks">All Tasks</a></li>
@@ -11,13 +11,13 @@
         <li class="dropdown">
             <form action="/all_tasks_filter_category" method="post">
                 {% csrf_token %}
-                        <label for="category">Choose a Category:</label>
-                        <select id="category" type="category" name="category">
-                            {% for item in Task_Category  %}
-                            <option value="{{ item.id }}">{{ item.name }}</option>
-                            {% endfor %}
-                        </select>
-                        <button type="submit">Go</button>
+                <label for="category">Category:</label>
+                <select id="category" class="form-select" type="category" name="category">
+                    {% for item in Task_Category  %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-primary" type="submit">Go</button>
             </form>
         </li>
     </ul>
@@ -30,12 +30,22 @@
             <!-- <div class="card"> -->
             <div class="row">
                 <div class="card-body">
-                    <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
-                        alt="default task image">
+                    <div class="image-container">
+                        {% if "placeholder" in mom_task.featured_image.url %}
+                        <img class="card-img-top" src=" {{ mom_task.category.featured_image.url }}">
+                        {% else %}
+                         <img src="static/mom_task_category_images/other1.jpg" class="card-img-top"
+                         alt="default task image">
 
+                        {% endif %}
+                    </div>
+                    
                     <span class="card-title">{{ mom_task.title }}</span>
                     <br>
-                    <span class="card-text">Due on: {{ mom_task.date }}</span>
+                    <span class="card-text">Category: {{ mom_task.category }}</span>
+                    <br>
+
+                    <span class="card-text">Due on: {{ mom_task.end_time }}</span>
                     <br>
                     <br>
                     <span class="card-text">{{ mom_task.description }}</span>

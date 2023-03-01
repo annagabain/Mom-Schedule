@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/update/{{id}}">
+<form class="center" action="/update/{{id}}">
     <div class="col-lg-8 col-md-8 col-sm-10 col-10">
 
         {% csrf_token %}
@@ -17,11 +17,11 @@
         <div class="mb-3">
             <label for="category" class="form-label">Category:</label>
             <select id="category" class="form-select" type="category" name="category">
-                <!-- <option value="0">{{category}}</option> -->
-                <option value="{{ item.id }}">{{category}}</option>
-                {% for item in Task_Category  %}
+                <!-- Very tricky situation with category IDs!! -->
+                <option value="{{ category.id }}">{{ category }}</option>
+                {% for item in from_Task_Category  %}
                 <option value="{{ item.id }}">{{ item.name }}</option>
-                
+
                 {% endfor %}
             </select>
         </div>

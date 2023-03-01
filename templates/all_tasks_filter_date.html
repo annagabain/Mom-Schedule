@@ -1,71 +1,64 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="dropdown" id="filter-tasks">
-    <a class="btn btn-secondary dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-        aria-expanded="false">Filter Tasks by</a>
+    <a class="btn btn-primary dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
+        data-bs-toggle="dropdown" aria-expanded="false">Filter Tasks by</a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <li><a class="dropdown-item" href="all_tasks">All Tasks</a></li>
+        <li><a class="dropdown-item" href="calendar">Calendar</a></li>
         <li><a class="dropdown-item" href="all_tasks_complete">Show Completed Tasks Only</a></li>
         <li><a class="dropdown-item" href="all_tasks_hide_complete">Hide Completed Tasks</a></li>
-        <!-- <li><a class="dropdown-item" href="all_tasks_filter_date">Due Date</a></li> -->
-        <li class="dropdown">
-            <form action="/all_tasks_filter_category" method="post">
+        <li class="dropdown-item">
+            <form style="display: inline-block;" action="/all_tasks_filter_category" method="post" id="filter_form">
                 {% csrf_token %}
-                        <label for="category">Choose a Category:</label>
-                        <select id="category" type="category" name="category">
-                            {% for item in Task_Category  %}
-                            <option value="{{ item.id }}">{{ item.name }}</option>
-                            {% endfor %}
-                        </select>
-                        <button type="submit">Go</button>
+                <label for="category">Category:</label>
+                <select id="category" type="category" name="category" onchange="filter_form.submit()">
+                    {% for item in Task_Category  %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                    {% endfor %}
+                </select>
             </form>
         </li>
     </ul>
 </div>
-<br>
-<div class="center col">
-    {% for mom_task in mom_task_list %}
-    <div class="row">
-        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
-            <!-- <div class="card"> -->
-            <div class="row">
-                <div class="card-body">
-                    <!-- <img src="static/css/pexels-tatiana-syrikova-3932941.jpg" class="card-img-top"
-                        alt="default task image"> -->
-                    <span class="card-title">{{ mom_task.title }} </span>
-                    <span class="card-text" style="color: brown"><strong> Due on: {{ mom_task.end_time}}</strong></span>
+<div class="main-content">
 
-                    <!-- <br> -->
-                    <!-- <span class="card-title">{{ mom_task.title }}</span> -->
-                    <!-- <br>
-                    <br> -->
-                    <!-- <span class="card-text">{{ mom_task.description }}</span>
-                    <br>
-                    <br> -->
-                    <a class="btn btn-warning" href="/edit/{{ mom_task.id }}">Edit</a>
+    <br>
+    <div class="center col">
+        {% for mom_task in mom_task_list %}
+        <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+                <!-- <div class="card"> -->
+                <div class="row">
+                    <div class="card-body">
+                        <span class="card-title">{{ mom_task.title }} </span>
+                        <span class="card-text" style="color: brown"><strong> Due on:
+                                {{ mom_task.end_time}}</strong></span>
+                        <a class="btn btn-warning" href="/edit/{{ mom_task.id }}">Edit</a>
 
-                    {% if mom_task.complete == False %}
-                    <a class="btn btn-secondary" href="/toggle_complete/{{ mom_task.id }}">Mark complete</a>
-                    {% else %}
-                    <a class="btn btn-success" href="/toggle_complete/{{ mom_task.id }}">Completed</a>
-                    {% endif %}
+                        {% if mom_task.complete == False %}
+                        <a class="btn btn-secondary" href="/toggle_complete/{{ mom_task.id }}">Mark complete</a>
+                        {% else %}
+                        <a class="btn btn-success" href="/toggle_complete/{{ mom_task.id }}">Completed</a>
+                        {% endif %}
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
-</div>
-
-{% if not mom_task_list %}
-<div class="center">
-    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-        <span style="color:red;">No Tasks to Show</span>
-    </div>
-    <div>
-        <a href="/new_task"><button>Create New Tasks Here</button></a>
+        {% endfor %}
     </div>
 
+    {% if not mom_task_list %}
+    <div class="center">
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <span style="color:red;">No Tasks to Show</span>
+        </div>
+        <div>
+            <a href="/new_task"><button>Create New Tasks Here</button></a>
+        </div>
+
+    </div>
 </div>
 {% endif %}
 
