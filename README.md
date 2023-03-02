@@ -91,7 +91,13 @@ Bootstrap5 features and custom CSS
 
 #### Site Header and Log in
 
+<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login.jpg">
+<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login_dropdown.jpg">
+
+
 #### Welcoming Intro
+
+The welcoming intorduction is visible to everyone, regardless of their log in status. This overview provides information about the application features and functionality. Sample screenshots show what to expect seeing once registered and logged in.
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
 
@@ -99,7 +105,7 @@ Bootstrap5 features and custom CSS
 ### Site Navigation
 #### Sidebar
 
-### My Tasks]
+### My Tasks
 #### Filter by
 
 ### Contact Us
@@ -164,6 +170,7 @@ python3 manage.py test
 
 ### Django testing 
 Test functions
+Django’s unit tests use a Python standard library module: unittest. This module defines tests using a class-based approach.
 tests.py
 test_forms.py
 test_views.py
@@ -189,6 +196,8 @@ Coverage
 :mag: {{ title }}
 
 :bulb: Changed to {{ 'title' }} as a string and it worked
+
+-----------------------------------------------------------------------------------
 
 :lady_beetle: - *Date Format*
 
@@ -222,6 +231,29 @@ date.strftime("%Y-%m-%d"),
 
 Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then saved without errors.
 
+-----------------------------------------------------------------------------------
+
+:lady_beetle: TestCase Bug
+- *Got an error creating the test database: permission denied to create database*
+
+
+*Before*
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug.jpg"> 
+
+:mag:  - Checking the current database settings in settings.py
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_1.jpg"> 
+
+:bulb: - Temporarily activating the sqlite3 Django backends database fixed the issue.
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_2.jpg"> 
+
+*After*
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_3.jpg"> 
+
+
 ## Deployment
 
 The project is deployed to GitHub via Gitpod Terminal with an integrated VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
@@ -232,17 +264,17 @@ The app is run in the backend terminal using **python3 manage.py runserver** and
 
 The project was deployed to Heroku as follows:
 
-Create an account and log in to https://www.heroku.com/
-Click 'New' from the dashboard, and from the drop-down menu select "Create new app"
-Make a unique app name: mom-data
-Choose a relevant geographical region, Europe
-Click "Create app"
-In the settings menu, go to "Config Vars" section
-Click "Reveal Config Vars", where dependencies are installed
-In "Deploy" tab, select Github as the deployment method
-Connect to GitHub
-Find the project repository and click "connect" next to it
-"Enable Automatic Deploys" for automatic deployment with every new change
+- Create an account and log in to https://www.heroku.com/
+- Click 'New' from the dashboard, and from the drop-down menu select "Create new app"
+- Make a unique app name: mom-data
+- Choose a relevant geographical region, Europe
+- Click "Create app"
+- In the settings menu, go to "Config Vars" section
+- Click "Reveal Config Vars", where dependencies are installed
+- In "Deploy" tab, select Github as the deployment method
+- Connect to GitHub
+- Find the project repository and click "connect" next to it
+- "Enable Automatic Deploys" for automatic deployment with every new change
 
 ## Tools
 
@@ -251,6 +283,7 @@ Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 ## Sources & Credits
 ### Sources
+Writing and running tests in Django: https://docs.djangoproject.com/en/4.1/topics/testing/overview/
 
 CSS tricks: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#top-of-site
 
