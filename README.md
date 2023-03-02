@@ -163,18 +163,26 @@ Bootstrap 5
 ### Manual Testing
 
 ### Automatic Testing - Writing Functions
-tests.py
 
-in terminal:
-python3 manage.py test
 
 ### Django testing 
 Test functions
 Django’s unit tests use a Python standard library module: unittest. This module defines tests using a class-based approach.
+
 tests.py
-test_forms.py
+
+in terminal:
+**python3 manage.py test**
+
+*test_forms.py*
+
+<img width="100%" alt="debugging" src="documentation_for_github_readme/test_forms.jpg"> 
+
+
 test_views.py
+
 test_models.py
+
 Coverage
 
 ### Debugging
@@ -190,6 +198,9 @@ Coverage
 *After*
 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/static_css_local.jpg">
+
+-----------------------------------------------------------------------------------
+
 
 :lady_beetle: - *Title prepopulated with the first word only*
 
@@ -239,19 +250,19 @@ Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then s
 
 *Before*
 
-<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug.jpg"> 
+<img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug.jpg"> 
 
 :mag:  - Checking the current database settings in settings.py
 
-<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_1.jpg"> 
+<img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_1.jpg"> 
 
 :bulb: - Temporarily activating the sqlite3 Django backends database fixed the issue.
 
-<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_2.jpg"> 
+<img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_2.jpg"> 
 
 *After*
 
-<img width="50%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_3.jpg"> 
+<img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_3.jpg"> 
 
 
 ## Deployment
