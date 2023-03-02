@@ -1,50 +1,49 @@
 # Mom Schedule
 ## A Time Planning Tool for Busy Mothers
 
-## Main Technologies
+Mom Schedule is a time-planning tool for busy Mothers. Mom Schedule has a calendar and offers event editing and creating task cards.
+
+As a site user, you can: Log in, Create Tasks, Categorize and Filter by following criteria: All Tasks, Calendar - to Overview your Month, See Completed Tasks Only, Hide Completed Tasks, Filter by Due Date, Filter by selected Category - Work, Childcare, Household, Health, Free time and Other tasks.
+
+Main Technologies:
 HTML, CSS, JavaScript, Python+Django
 Postgres Relational database 
 
+This is the fourth Portfolio Project in frames of the Code Institute Full Stack Web Developer Course Assessment. Portfolio Project 4: Full-Stack Toolkit. Project purpose, as per curriculum requirement: "In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset."
+
 :point_down: Click the link below for the live view: 
 
-Live View https://mom-schedule.herokuapp.com/
+# [Live View](https://mom-schedule.herokuapp.com/)
+
 
 <img width="66%" alt="responsiveness" src="documentation_for_github_readme/tablet.jpg">  <img width="26%" alt="responsiveness" src="documentation_for_github_readme/phone.jpg">
-
-
-## Portfolio Project 4
-
-Full-Stack Toolkit
-Project purpose:
-
-In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
-
-- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
-- includes a calendar, event editing, and creating task cards.
 
 
 ## Contents:
 - [UX](#ux)
     - [User Stories](#user-stories)
     - [Responsivity](#responsivity)
-- [Features](#)
-    - [HOME](#)
-        - [Welcoming Intro](#)
-    - [My Tasks](#)
-    - [Filter by](#)
-    - [Contact Us](#)
-    - [New Task](#)
-    - [Future Features](#)
-- [Development Stages](#)
-    - [Planning](#)
-    - [Structure](#)
-    - [Using Libraries](#)
+- [Features](#features)
+    - [Homepage](#homepage)
+        - [Site Header and Log in]()
+        - [Welcoming Intro](#welcoming-intro)
+    - [Site Navigation]()
+        - [Sidebar]()
+    - [My Tasks]()
+        - [Filter by]()
+    - [Contact Us]()
+    - [New Task]()
+    - [Future Features]()
+- [Development Stages]()
+    - [Planning](#planning)
+    - [Structure]()
+    - [Using Libraries]()
 - [Testing](#testing)
-    - [Validators](#)
-    - [Manual Testing](#)
+    - [Validators]()
+    - [Manual Testing]()
     - [Debugging](#debugging)
-- [Deployment](#)
-    - [Heroku](#)
+- [Deployment](#deployment)
+    - [Heroku](#creating-the-heroku-app)
 - [Sources & Credits](#sources)
     - [Sources](#sources)
     - [Tools](#tools)
@@ -52,6 +51,9 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 
 ## UX
+
+- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
+
 ### User Stories
 
 - As a site user, I can register so that I can have a unique and private schedule
@@ -83,10 +85,11 @@ Bootstrap5 features and custom CSS
 
 
 ## Features
-### Welcoming Intro
+### Homepage
+#### Welcoming Intro
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
-    - [HOME](#)
+    - [Home](#)
     - [Main Menu](#)
     - [My Tasks](#)
     - [Filter by](#)
@@ -196,8 +199,27 @@ date.strftime("%Y-%m-%d"),
 
 Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then saved without errors.
 
-- [Deployment](#d)
-    - [Heroku](#)
+## Deployment
+
+The project is deployed to GitHub via Gitpod Terminal with an integrated VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
+
+The app is run in the backend terminal using **python3 manage.py runserver** and dependencies are placed in the requirements.txt file. The instruction on Heroku deployment was taken from the Code Institute Love Sandwiches walkthrough project, step by step as required.
+
+### Creating the Heroku app
+
+The project was deployed to Heroku as follows:
+
+Create an account and log in to https://www.heroku.com/
+Click 'New' from the dashboard, and from the drop-down menu select "Create new app"
+Make a unique app name: mom-data
+Choose a relevant geographical region, Europe
+Click "Create app"
+In the settings menu, go to "Config Vars" section
+Click "Reveal Config Vars", where dependencies are installed
+In "Deploy" tab, select Github as the deployment method
+Connect to GitHub
+Find the project repository and click "connect" next to it
+"Enable Automatic Deploys" for automatic deployment with every new change
 
 ## Tools
 
