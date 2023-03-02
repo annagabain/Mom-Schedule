@@ -127,7 +127,7 @@ a:active {
 }
 
 .main-content {
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-bottom: 3rem;
 }
 
@@ -144,6 +144,9 @@ a:active {
     font-size: 25px;
     color: #0D0D0D;
     display: block;
+}
+.dropdown-item{
+    font-size: 14px !important;
 }
 
 .sidebar a:hover {

@@ -27,6 +27,10 @@ Class prefix | Size     | Container (max-width) |
         font-size: 1rem;
     }
 
+    .main-content {
+        padding-top: 5rem;
+    }
+
     #card-parent {
         column-count: 1;
     }

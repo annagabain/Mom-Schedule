@@ -56,8 +56,6 @@
 
                     <a href="/">Home</a>
                     <a href="/contact">Contact</a>
-                    <a href="/new_task"><button id="round-button">New Task</button></a>
-
 
                     <span class="dropdown">
                         <a class="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
@@ -65,9 +63,9 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="/all_tasks">All Tasks</a></li>
                             <li><a class="dropdown-item" href="/calendar">Calendar</a></li>
-                            <li><a class="dropdown-item" href="/all_tasks_complete">Show Completed Tasks Only</a></li>
+                            <li><a class="dropdown-item" href="/all_tasks_complete">Completed Tasks Only</a></li>
                             <li><a class="dropdown-item" href="/all_tasks_hide_complete">Hide Completed Tasks</a></li>
-                            <li><a class="dropdown-item" href="/all_tasks_filter_date">Due Date</a></li>
+                            <li><a class="dropdown-item" href="/all_tasks_filter_date">Filter by Due Date</a></li>
                             <li class="dropdown-item">
                                 <form style="display: inline-block;" action="/all_tasks_filter_category" method="post"
                                     id="filter_form">
@@ -83,6 +81,9 @@
                             </li>
                         </ul>
                     </span>
+
+                    <a href="/new_task"><button id="round-button">New Task</button></a>
+
                 </div>
                 <!-- sidebar end -->
 
