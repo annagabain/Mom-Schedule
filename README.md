@@ -33,7 +33,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
         - [Filter by]()
     - [Contact Us]()
     - [New Task]()
-    - [Future Features]()
+    - [Future Features](#future-features)
 - [Development Stages]()
     - [Planning](#planning)
     - [Structure]()
@@ -41,6 +41,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 - [Testing](#testing)
     - [Validators]()
     - [Manual Testing]()
+    - [Automatic Testing - Writing Functions](#automatic-testing---writing-functions)
     - [Debugging](#debugging)
 - [Deployment](#deployment)
     - [Heroku](#creating-the-heroku-app)
@@ -85,17 +86,33 @@ Bootstrap5 features and custom CSS
 
 
 ## Features
+
 ### Homepage
+
+#### Site Header and Log in
+
 #### Welcoming Intro
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
-    - [Home](#)
-    - [Main Menu](#)
-    - [My Tasks](#)
-    - [Filter by](#)
-    - [Contact Us](#)
-    - [New Task](#)
-    - [Future Features](#)
+
+
+### Site Navigation
+#### Sidebar
+
+### My Tasks]
+#### Filter by
+
+### Contact Us
+
+### New Task
+
+### Future Features
+
+- Week view
+- Day view
+- Mark start and end dates and show them as a span between the calendar dates
+- Highlight today in the Calendar
+- Show urgent deadlines (send notifications)
 
 ## Development Stages
 
@@ -138,6 +155,12 @@ Bootstrap 5
 ### Validators
 
 ### Manual Testing
+
+### Automatic Testing - Writing Functions
+tests.py
+
+in terminal:
+python3 manage.py test
 
 ### Django testing 
 Test functions
