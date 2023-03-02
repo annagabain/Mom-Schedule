@@ -18,7 +18,7 @@
             <label for="category" class="form-label">Category:</label>
             <select id="category" class="form-select" type="category" name="category">
                 <!-- Very tricky situation with category IDs!! -->
-                <option value="{{ category.id }}">{{ category }}</option>
+                <option value="{{ category.id }}">-- {{ category }} --</option>
                 {% for item in from_Task_Category  %}
                 <option value="{{ item.id }}">{{ item.name }}</option>
 

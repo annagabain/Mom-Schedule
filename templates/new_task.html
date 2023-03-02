@@ -23,8 +23,6 @@
         <div class="mb-3">
             <label for="category">* Choose a Category:</label>
             <select id="category" class="form-select" type="category" name="category" required="required">
-                <!-- <option value="0">Select:</option>
-                <option value="0">--------------</option> -->
                 {% for item in Task_Category  %}
                 <option value="{{ item.id }}">{{ item.name }}</option>
                 {% endfor %}
