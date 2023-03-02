@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from mom_schedule_app import views
+from django.contrib.auth.decorators import login_required
 
 app_name = 'mom_schedule_app'
 
@@ -20,7 +21,7 @@ urlpatterns = [
     path('delete/<int:mom_task_id>/', views.delete, name='delete'),
     path('update/<int:mom_task_id>/', views.update, name='update'),
     path('toggle_complete/<int:mom_task_id>/', views.toggle_complete, name='toggle_complete'),  # noqa
-    path('calendar', views.CalendarView.as_view(), name='calendar'),  # noqa
+    path('calendar', login_required(login_url='login')(views.CalendarView.as_view()), name='calendar'),  # noqa
     path('all_tasks_complete', views.all_tasks_complete, name='all_tasks_complete'),  # noqa
     path('all_tasks_hide_complete', views.all_tasks_hide_complete, name='all_tasks_hide_complete'),  # noqa
     path('all_tasks_filter_date', views.all_tasks_filter_date, name='all_tasks_filter_date'),  # noqa

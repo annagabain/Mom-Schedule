@@ -200,8 +200,9 @@ def delete(request, mom_task_id):
     return render(request, 'delete_task.html', {'mom_task': mom_task})
 
 
-def my_calendar(request):
-    return render(request, 'calendar.html')
+# @login_required(login_url='login')
+# def my_calendar(request):
+#     return render(request, 'calendar.html')
 
 
 def get_date(req_day):
@@ -226,6 +227,7 @@ def next_month(d):
     return month
 
 
+# @login_required(login_url='login')
 class CalendarView(generic.ListView):
     login_url = "login"
     model = Mom_task

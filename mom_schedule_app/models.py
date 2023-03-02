@@ -46,7 +46,7 @@ class Mom_task(models.Model):
     @property
     def get_html_url(self):
         url = reverse('edit', args=(self.id,))
-        return f'<a href="{url}"> {self.title} </a>'
+        return f'<a  style="color: brown; font-weight: 500;" href="{url}"> {self.title} </a>'  # noqa
 
 
 # Contact Form table

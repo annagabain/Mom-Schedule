@@ -41,9 +41,9 @@ Class prefix | Size     | Container (max-width) |
     }
 
     .sidebar a {
-        padding: 2px;
+        padding: 5px;
         text-decoration: none;
-        font-size: 25px;
+        /* font-size: 18px; */
         color: #0D0D0D;
         display: inline;
     }
@@ -66,21 +66,40 @@ Class prefix | Size     | Container (max-width) |
     #new-task-sidebar {
         display: none;
     }
+
     /* sidebar end */
 
     #homepage_info>div {
         width: 98%;
-        
+
     }
 
     #homepage_info>div>img,
-    #homepage_info>div>p
-     {
-        text-align:center;
+    #homepage_info>div>p {
+        text-align: center;
     }
 
     .calendar_container {
         width: 100%;
     }
-    
+
+    /* calendar cell */
+    .calendar ul {
+        padding: 0rem !important;
+    }
+
+    /* .calendar td {
+        max-width: 100px !important;
+        height: 100px !important;
+        word-wrap: break-word !important;
+    } */
+
+    .calendar li {
+        word-wrap: break-word !important;
+    }
+
+    .container {
+        padding-left: 0.1rem !important;
+        padding-right: 0.1rem !important;
+    }
 }

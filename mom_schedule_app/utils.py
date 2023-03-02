@@ -20,13 +20,6 @@ class Calendar(HTMLCalendar):
 # NEW!!!
         for event in events_per_day:
             d += f'<li> {event.get_html_url} </li>'
-        # mom_task = Mom_task.objects.get(id=mom_task_id)
-
-# OLD!
-        # for event in events_per_day:
-            # d += f"<li> {event.get_html_url} </li>"
-            # d += f"<li> {event.title} </li>"
-            # d += f"<li> {event.title} <a href="">test link</a></li>"  # noqa
 
         if day != 0:
             return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"

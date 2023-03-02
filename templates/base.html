@@ -32,10 +32,12 @@
                     <!-- log in or logout based on authentication status -->
                     {% if user.is_authenticated %}
                     <div class="dropdown">
-                            <a class="dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">Hello {{user.username}}!</a>
-                            <ul class="dropdown-menu">
-                                <li id="login_greeting_logout_button"><a a class="dropdown-item" href="/logout">Logout</a></li>
-                            </ul>
+                        <a class="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown">Hello {{user.username}}!</a>
+                        <ul class="dropdown-menu">
+                            <li id="login_greeting_logout_button"><a a class="dropdown-item" href="/logout">Logout</a>
+                            </li>
+                        </ul>
                     </div>
                     {% else %}
                     <li><a href="/login">Login</a></li>
@@ -49,14 +51,42 @@
         <!-- this is the bootstrap container div -->
         <div>
             <div class="row">
+                <!-- sidebar start -->
                 <div class="sidebar col-lg-2 col-md-12  col-sm-12 col-12">
-                    <!-- put sidebar here -->
+
                     <a href="/">Home</a>
                     <a href="/contact">Contact</a>
-                    <a href="/all_tasks">My Tasks</a>
                     <a href="/new_task"><button id="round-button">New Task</button></a>
 
+
+                    <span class="dropdown">
+                        <a class="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">My Tasks</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/all_tasks">All Tasks</a></li>
+                            <li><a class="dropdown-item" href="/calendar">Calendar</a></li>
+                            <li><a class="dropdown-item" href="/all_tasks_complete">Show Completed Tasks Only</a></li>
+                            <li><a class="dropdown-item" href="/all_tasks_hide_complete">Hide Completed Tasks</a></li>
+                            <li><a class="dropdown-item" href="/all_tasks_filter_date">Due Date</a></li>
+                            <li class="dropdown-item">
+                                <form style="display: inline-block;" action="/all_tasks_filter_category" method="post"
+                                    id="filter_form">
+                                    {% csrf_token %}
+                                    <label for="category">Category:</label>
+                                    <select id="category" type="category" name="category"
+                                        onchange="filter_form.submit()">
+                                        {% for item in Task_Category  %}
+                                        <option value="{{ item.id }}">{{ item.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </form>
+                            </li>
+                        </ul>
+                    </span>
                 </div>
+                <!-- sidebar end -->
+
+
                 <div class="main-content col-lg-10 col-md-12 col-sm-12 col-12">
                     <!-- put main content here -->
 
@@ -65,9 +95,10 @@
                     {% if messages %}
                     {% for message in messages %}
                     <div class="center">
-                        <div class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert" style="background-color: #FAF7F4;">
+                        <div class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert"
+                            style="background-color: #FAF7F4;">
                             <span style="color:#6A4C39;">{{ message }}</span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     </div>
                     {% endfor %}
