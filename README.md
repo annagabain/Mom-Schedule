@@ -16,7 +16,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 # [Live View](https://mom-schedule.herokuapp.com/)
 
 
-<img width="66%" alt="responsiveness" src="documentation_for_github_readme/tablet.jpg">  <img width="26%" alt="responsiveness" src="documentation_for_github_readme/phone.jpg">
+<img width="73%" alt="responsiveness" src="documentation_for_github_readme/tablet.png"> <img width="26%" alt="responsiveness" src="documentation_for_github_readme/phone.png">
 
 
 ## Contents:
@@ -27,6 +27,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
     - [Homepage](#homepage)
         - [Site Header and Log in]()
         - [Welcoming Intro](#welcoming-intro)
+    - [Authentication and Authorization](#register-and-log-in)
     - [Site Navigation]()
         - [Sidebar]()
     - [My Tasks]()
@@ -53,7 +54,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 
 ## UX
 
-- address the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
+Addressed the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
 
 ### User Stories
 
@@ -101,6 +102,12 @@ The welcoming intorduction is visible to everyone, regardless of their log in st
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
 
+### Authentication and Authorization
+
+*Register and Log in*
+
+<img width="45%" alt="login" src="documentation_for_github_readme/login_print_screen.jpg"> <img width="30%" alt="register" src="documentation_for_github_readme/register_print_screen.jpg">
+
 
 ### Site Navigation
 #### Sidebar
@@ -113,9 +120,31 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 #### Filter by
 
+*Sidebar dropdown with nested categories dropdown*
+
+<img width="40%" alt="welcome page" src="documentation_for_github_readme/sidebar_dropdown.png"> <img width="40%" alt="welcome page" src="documentation_for_github_readme/sidebar_dropdown_categories.png">
+
+*Filtering Tasks*
+
+Show all:
+
+<img width="50%" alt="filter tasks show all tasks" src="documentation_for_github_readme/all_tasks_print_screen.jpg">
+
+Show Headlines on Calendar:
+
+<img width="50%" alt="filter tasks show calendar" src="documentation_for_github_readme/calendar_print_screen.jpg">
+
+By due date (for urgency):
+
+<img width="50%" alt="filter tasks by dues date" src="documentation_for_github_readme/filter_by_due_date_print_screen.jpg">
+
+
 ### Contact Us
 
 ### New Task
+
+<img width="50%" alt="new task" src="documentation_for_github_readme/new_task_print_screen.jpg">
+
 
 ### Future Features
 
@@ -130,32 +159,29 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 ### Planning
 #### Desktop Wireframes
 
-*Today View*
+*Today View, now All Tasks*
 
-<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> 
+*Login / Register View, now in separate windows*
 
-*Login / Register View*
-
-<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-register-login-view.png"> 
+<img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> <img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-register-login-view.png"> 
 
 *Edit Task View*
 
-<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-task-edit.png"> 
+*Initially 'This Week View', now Month's Calendar*
 
-*This Week View*
-
-<img width="50%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
+<img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-task-edit.png"> <img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
 
 ### Structure
 
 *PgSQL Relational Database Diagram*
 
-<img width="50%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
+<img width="100%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
 ### Using Frameworks
 
 Django 
+
 Bootstrap 5
 
 ### Using Source code
@@ -170,15 +196,12 @@ Some parts of the projects have been created using sections of code from other s
 
 ### Automatic Testing - Writing Functions
 
-
-### Django testing 
 #### Test functions
 Django’s unit tests use a Python standard library module: unittest. This module defines tests using a class-based approach.
 
 tests.py
 
-in terminal:
-**python3 manage.py test**
+in terminal: **python3 manage.py test**
 
 *test_forms.py*
 
