@@ -240,7 +240,7 @@ In the browser by running the local server:
 
 **python3 manage.py runserver**
 
-Two devices for responsovoty: a laptop and iPhone 8
+Two devices for responsivoty: a laptop and an iPhone 8
 
 ### Automatic Testing - Writing Functions
 
@@ -264,9 +264,7 @@ python3 manage.py test mom_schedule_app.test_forms.Test_NewUserForm.test_item_em
 
 #### Coverage
 
-in Terminal:
-
-pip3 install coverage
+In Terminal: pip3 install coverage
 
 coverage run --source=mom_schedule_app manage.py test
 
@@ -320,9 +318,35 @@ The coverage report nr.1 showed there are improvements to make in the following 
 
 :lady_beetle: - *Title prepopulated with the first word only*
 
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_1.png"> 
+
+
+*Before: The Task heading is prepopulated only partially*
+
+Instead of "Cleaning Chores" we see "Cleaning" only
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_2.png"> 
+
+
 :mag: {{ title }}
 
-:bulb: Changed to {{ 'title' }} as a string and it worked
+The title was going into the database as a 'the variable seen, the value preserved' and being posted to the database as the first value that is true, ignoring the rest of the text.
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_reason.png"> 
+
+
+:bulb: Changing to {{ 'title' }} as a string solved the problem and the database started storing the whole inner contents of that string, no matter how many words.
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_solution.png"> 
+
+
+*After*
+
+The Task heading is now prepopulated completely as "Cleaning Chores".
+
+
+<img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_3.png">
 
 -----------------------------------------------------------------------------------
 
