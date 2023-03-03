@@ -25,23 +25,23 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
     - [Responsivity](#responsivity)
 - [Features](#features)
     - [Homepage](#homepage)
-        - [Site Header and Log in]()
         - [Welcoming Intro](#welcoming-intro)
+        - [Site Header and Log in](#site-header-and-log-in)
     - [Authentication and Authorization](#register-and-log-in)
-    - [Site Navigation]()
-        - [Sidebar]()
-    - [My Tasks]()
-        - [Filter by]()
-    - [Contact Us]()
-    - [New Task]()
+    - [Site Navigation](#site-navigation)
+        - [Sidebar](#sidebar)
+    - [My Tasks](#my-tasks)
+        - [Filter by](#filter-by)
+    - [Contact Us](#contact-us)
+    - [New Task](#new-task)
     - [Future Features](#future-features)
-- [Development Stages]()
+- [Development Stages](#development-stages)
     - [Planning](#planning)
-    - [Structure]()
-    - [Using Libraries]()
+    - [Structure](#structure)
+    - [Using Frameworks and Libraries](#using-frameworks)
 - [Testing](#testing)
-    - [Validators]()
-    - [Manual Testing]()
+    - [Validators](#validators)
+    - [Manual Testing](#manual-testing)
     - [Automatic Testing - Writing Functions](#automatic-testing---writing-functions)
     - [Debugging](#debugging)
 - [Deployment](#deployment)
@@ -54,23 +54,43 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 
 ## UX
 
-Addressed the user persona from my previous projects. https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
+It is crucial to identify and get to know the website user in order to enhance the user experience. A Persona method helps 'bringing to life' a real-life individual with personality traits, favourite choices and preferences. Jane Smith (the Persona) is a working mother that loves bio products and enjoys walks in the nature. She will like the Mom Schedule colour pallette in natural tones. The persona summary is created with a tool called Xtensio that helps to conduct a virtual UX analysis. Additionally, a customer journey tracking was conducted to follow Jane's navigation and make it to her most convenience.
+
+More about this user Persona is described in my previous project, called Mom Lifehacks: https://github.com/annagabain/Mom-Lifehacks#User-Experience-and-User-Interface-Design-UX-and-UI
 
 ### User Stories
 
-- As a site user, I can register so that I can have a unique and private schedule
+- As a site user, I can register so that I can have a unique and private schedule.
 
-- As a site user, I can log in so that I can view my own schedule
+- As a site user, I can **log in** so that I can view my own schedule.
 
-- As a site user, I can see the schedule so that I can overview my tasks
+- As a user, I can see a navigation option (sidebar) so that I can create, sort my tasks, manage them, as well as find the contact option.
 
-- As a site user, I can View an individual task so that I can read the details of it
+- CRUD * - As a site user I can **Create** a task so that I can note down an event or an activity.
 
-- As a site user, I can Edit an individual task so that I can adapt it to my needs
+- CRUD - As a site user, I can **View** an individual task so that I can read the details of it.
 
-- As **a Site Admin**, I can log in so that I can **view and manage the users and tasks**
+- CRUD - As a site user, I can **Edit** an individual task so that I can adapt it to my needs.
+
+- CRUD - As a site user I can **Delete** an individual task so that I can remove the no longer needed information.
+
+- As a user I can see my tasks as cards so that I have a better visual overview.
+
+- As a user, I can view my tasks marked on a calendar so that I can remember the dates.
+
+- As user I can contact the site owners so that can ask questions or provide feedback.
+
+- As **a Site Admin**, I can log in so that I can **view and manage the users, task categories and tasks**.
+
+- As a Site Admin, I can see the messages sent from the 'contact us' form so that I can **communicate with the user**.
+
+- As a Site Admin, I can access the user registration information so that I can help them changing the passwords, editing or deleting the accounts.
+
 
 All user stories as part of a project: https://github.com/users/annagabain/projects/7/views/1
+
+
+CRUD *  means CREATE, READ, UPDATE and DELETE
 
 ### Responsivity
 
@@ -90,17 +110,16 @@ Bootstrap5 features and custom CSS
 
 ### Homepage
 
-#### Site Header and Log in
-
-<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login.jpg">
-<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login_dropdown.jpg">
-
-
 #### Welcoming Intro
 
 The welcoming intorduction is visible to everyone, regardless of their log in status. This overview provides information about the application features and functionality. Sample screenshots show what to expect seeing once registered and logged in.
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
+
+#### Site Header and Log in
+
+<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login.jpg">
+<img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login_dropdown.jpg">
 
 ### Authentication and Authorization
 
@@ -128,15 +147,15 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 Show all:
 
-<img width="50%" alt="filter tasks show all tasks" src="documentation_for_github_readme/all_tasks_print_screen.jpg">
+<img width="70%" alt="filter tasks show all tasks" src="documentation_for_github_readme/all_tasks_print_screen.jpg">
 
 Show Headlines on Calendar:
 
-<img width="50%" alt="filter tasks show calendar" src="documentation_for_github_readme/calendar_print_screen.jpg">
+<img width="70%" alt="filter tasks show calendar" src="documentation_for_github_readme/calendar_print_screen.jpg">
 
 By due date (for urgency):
 
-<img width="50%" alt="filter tasks by dues date" src="documentation_for_github_readme/filter_by_due_date_print_screen.jpg">
+<img width="70%" alt="filter tasks by dues date" src="documentation_for_github_readme/filter_by_due_date_print_screen.jpg">
 
 
 ### Contact Us
@@ -157,6 +176,11 @@ By due date (for urgency):
 ## Development Stages
 
 ### Planning
+
+<img width="70%" alt="planning" src="documentation_for_github_readme/Planning_1.jpg">
+
+<img width="70%" alt="planning" src="documentation_for_github_readme/Planning_2.jpg">
+
 #### Desktop Wireframes
 
 *Today View, now All Tasks*
