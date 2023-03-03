@@ -104,7 +104,7 @@ Bootstrap5 features and custom CSS
 
 <img width="70%" alt="responsivity" src="documentation_for_github_readme/responsivity.jpg">
 
-
+:point_up_2: [Back to Contents](#contents)
 
 ## Features
 
@@ -127,38 +127,41 @@ The welcoming intorduction is visible to everyone, regardless of their log in st
 
 <img width="45%" alt="login" src="documentation_for_github_readme/login_print_screen.jpg"> <img width="30%" alt="register" src="documentation_for_github_readme/register_print_screen.jpg">
 
+:point_up_2: [Back to Contents](#contents)
 
 ### Site Navigation
 #### Sidebar
 
 Homepage, Contact form, My Tasks and Filtering dropdown, including the Calendar view, New Task button.
 
-### My Tasks
+#### My Tasks
 
 Upon clicking the My Tasks dropdown, the user navigates through the Task filtering, the first of which is viewing all of the tasks.
 
-#### Filter by
+##### Filter by
 
 *Sidebar dropdown with nested categories dropdown*
 
 <img width="40%" alt="welcome page" src="documentation_for_github_readme/sidebar_dropdown.png"> <img width="40%" alt="welcome page" src="documentation_for_github_readme/sidebar_dropdown_categories.png">
 
-*Filtering Tasks*
-
-Show all:
+*Filtering Tasks - Show all:*
 
 <img width="70%" alt="filter tasks show all tasks" src="documentation_for_github_readme/all_tasks_print_screen.jpg">
 
-Show Headlines on Calendar:
+*Filtering Tasks - Show Headlines on Calendar:*
 
 <img width="70%" alt="filter tasks show calendar" src="documentation_for_github_readme/calendar_print_screen.jpg">
 
-By due date (for urgency):
+*Filtering Tasks - By due date (for urgency):*
 
 <img width="70%" alt="filter tasks by dues date" src="documentation_for_github_readme/filter_by_due_date_print_screen.jpg">
 
 
 ### Contact Us
+
+
+<img width="50%" alt="contact form" src="documentation_for_github_readme/contact_form.png">
+
 
 ### New Task
 
@@ -172,6 +175,8 @@ By due date (for urgency):
 - Mark start and end dates and show them as a span between the calendar dates
 - Highlight today in the Calendar
 - Show urgent deadlines (send notifications)
+
+:point_up_2: [Back to Contents](#contents)
 
 ## Development Stages
 
@@ -202,21 +207,40 @@ By due date (for urgency):
 
 <img width="100%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
-### Using Frameworks
+### Using Frameworks and Libraries
 
 Django 
 
+PostgreSQL
+
 Bootstrap 5
+
+Cloudinary
+
 
 ### Using Source code
 
 Some parts of the projects have been created using sections of code from other sources. An example of this is the HTML calendar feature, that was partially taken from a repository: https://github.com/sajib1066/event-calendar , forked and adapted to the Mom Schedule project.
 
+:point_up_2: [Back to Contents](#contents)
+
 ## Testing
 
 ### Validators
 
+HTML
+
+CSS
+
+LightHouse Report
+
 ### Manual Testing
+
+In the browser by running the local server:
+
+**python3 manage.py runserver**
+
+Two devices for responsovoty: a laptop and iPhone 8
 
 ### Automatic Testing - Writing Functions
 
@@ -275,7 +299,7 @@ The coverage report nr.1 showed there are improvements to make in the following 
 **coverage report nr. 2**
 
 
-
+:point_up_2: [Back to Contents](#contents)
 
 ### Debugging
 
@@ -324,7 +348,7 @@ DATE_INPUT_FORMATS = ['%d-%m-%Y']
 It did not work
 
 
-:bulb: - I found a solution:
+:bulb: - found a solution:
 
 Changed the date format in my edit function in views.py as follows:
 
@@ -356,6 +380,7 @@ Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then s
 
 <img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_3.jpg"> 
 
+:point_up_2: [Back to Contents](#contents)
 
 ## Deployment
 
@@ -384,7 +409,10 @@ The project was deployed to Heroku as follows:
 Wireframes: https://www.figma.com/
 Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
+:point_up_2: [Back to Contents](#contents)
+
 ## Sources & Credits
+
 ### Sources
 Writing and running tests in Django: https://docs.djangoproject.com/en/4.1/topics/testing/overview/
 
