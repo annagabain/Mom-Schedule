@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+# Source code: https://github.com/sajib1066/event-calendar
 class Calendar(HTMLCalendar):
     def __init__(self, year=None, month=None):
         self.year = year

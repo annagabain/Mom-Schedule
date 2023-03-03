@@ -155,6 +155,7 @@ Bootstrap 5
 
 ### Using Source code
 
+Some parts of the projects have been created using sections of code from other sources. An example of this is the HTML calendar feature, that was partially taken from a repository: https://github.com/sajib1066/event-calendar , forked and adapted to the Mom Schedule project.
 
 ## Testing
 
@@ -166,7 +167,7 @@ Bootstrap 5
 
 
 ### Django testing 
-Test functions
+#### Test functions
 Django’s unit tests use a Python standard library module: unittest. This module defines tests using a class-based approach.
 
 tests.py
@@ -178,12 +179,51 @@ in terminal:
 
 <img width="100%" alt="debugging" src="documentation_for_github_readme/test_forms.jpg"> 
 
+python3 manage.py test mom_schedule_app.test_forms
 
-test_views.py
+python3 manage.py test mom_schedule_app.test_forms.Test_NewUserForm
 
-test_models.py
+python3 manage.py test mom_schedule_app.test_forms.Test_NewUserForm.test_item_email_is_required
 
-Coverage
+
+#### Coverage
+
+in Terminal:
+
+pip3 install coverage
+
+coverage run --source=mom_schedule_app manage.py test
+
+**coverage report nr. 1**
+
+<img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_report_1.jpg"> 
+
+
+**coverage html**
+
+coverage html
+python3 -m http.server
+
+<img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_htmlcov.jpg"> 
+
+
+The coverage report nr.1 showed there are improvements to make in the following tests :
+
+- test_models.py - tested 86%, so 14% was yet to be improved
+- test_utils.py - tested 32%, so 68% was yet to be improved
+- test_views.py - tested 32%, so 68% was yet to be improved
+
+**test_models.py**
+
+**test_utils.py**
+
+**test_views.py**
+
+
+**coverage report nr. 2**
+
+
+
 
 ### Debugging
 
