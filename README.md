@@ -301,6 +301,8 @@ The coverage report nr.1 showed there are improvements to make in the following 
 
 ### Debugging
 
+-------------------
+
 :lady_beetle: - *Static files weren't included by Heroku after deployment.*
 
 :bulb: - Using the WhiteNoise package fixed the issue.
@@ -322,16 +324,16 @@ The coverage report nr.1 showed there are improvements to make in the following 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_1.png"> 
 
 
-*Before: The Task heading is prepopulated only partially*
+*Before: The Task heading is prepopulated only partially. Instead of "Cleaning Chores" we see "Cleaning" only*
 
-Instead of "Cleaning Chores" we see "Cleaning" only
+
 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_2.png"> 
 
 
 :mag: {{ title }}
 
-The title was going into the database as a 'the variable seen, the value preserved' and being posted to the database as the first value that is true, ignoring the rest of the text.
+The title was going into the database as a 'the variable seen, the **first** value preserved' and being posted to the database as the first value that is true, ignoring the rest of the text.
 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_reason.png"> 
 
@@ -341,9 +343,7 @@ The title was going into the database as a 'the variable seen, the value preserv
 <img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_solution.png"> 
 
 
-*After*
-
-The Task heading is now prepopulated completely as "Cleaning Chores".
+*After: The Task heading is now prepopulated completely as "Cleaning Chores".*
 
 
 <img width="50%" alt="debugging" src="documentation_for_github_readme/title_bug_3.png">
@@ -385,10 +385,10 @@ Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then s
 -----------------------------------------------------------------------------------
 
 :lady_beetle: TestCase Bug
-- *Got an error creating the test database: permission denied to create database*
 
 
-*Before*
+*Before: Got an error creating the test database: permission denied to create database*
+
 
 <img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug.jpg"> 
 
@@ -431,6 +431,7 @@ The project was deployed to Heroku as follows:
 ## Tools
 
 Wireframes: https://www.figma.com/
+
 Bootstrap grid: https://getbootstrap.com/docs/4.1/layout/grid/
 
 :point_up_2: [Back to Contents](#contents)
