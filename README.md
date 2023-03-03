@@ -73,7 +73,7 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 ### Responsivity
 
-*Test result: Am I responsive?*
+*Initial test result: Am I responsive?*
 
 <img width="70%" alt="responsiveness" src="documentation_for_github_readme/responsiveness.jpg">
 
@@ -105,7 +105,12 @@ The welcoming intorduction is visible to everyone, regardless of their log in st
 ### Site Navigation
 #### Sidebar
 
+Homepage, Contact form, My Tasks and Filtering dropdown, including the Calendar view, New Task button.
+
 ### My Tasks
+
+Upon clicking the My Tasks dropdown, the user navigates through the Task filtering, the first of which is viewing all of the tasks.
+
 #### Filter by
 
 ### Contact Us
