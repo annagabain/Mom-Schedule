@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -92,7 +92,7 @@ MESSAGE_TAGS = {
 WSGI_APPLICATION = 'django_mom_schedule_project.wsgi.application'
 
 
-# Database
+# Database for Local testing 
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # DATABASES = {
@@ -103,8 +103,8 @@ WSGI_APPLICATION = 'django_mom_schedule_project.wsgi.application'
 # }
 
 
+# Database for Deployment
 # - links to the DATATBASE_URL variable on Heroku
-
 DATABASES = {
     'default':
     dj_database_url.parse(os.environ.get('DATABASE_URL'))
