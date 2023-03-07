@@ -11,6 +11,8 @@ from django.urls import reverse
 # Database columns are here!!
 
 # Category table
+# The categories for the project are: 
+# Household, Work, Health, Childcare, Private_time, Other
 class Task_Category(models.Model):
     name = models.CharField(max_length=100)
     featured_image = CloudinaryField('image', default='placeholder')  # noqa
@@ -18,24 +20,17 @@ class Task_Category(models.Model):
     def __str__(self):
         return self.name
 
-    # Household
-    # Work
-    # Childcare
-    # Private_time
-    # Other
-
 
 # Task table
 class Mom_task(models.Model):
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name="momtask")  # noqa
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='momtask')  # noqa
     featured_image = CloudinaryField('image', default='placeholder')  # noqa
     title = models.CharField(max_length=50, null=False, blank=False)
     complete = models.BooleanField(null=False, blank=False, default=False)
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Task_Category, null=False, blank=False, on_delete=models.CASCADE)  # noqa
-    # date = models.DateField()
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateField()
+    end_time = models.DateField()
 
     class Meta:
         ordering = ['start_time']
@@ -43,6 +38,7 @@ class Mom_task(models.Model):
     def __str__(self):
         return self.title
 
+    # this is for having task titles inside the calendar view
     @property
     def get_html_url(self):
         url = reverse('edit', args=(self.id,))

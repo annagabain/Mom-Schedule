@@ -66,13 +66,13 @@ More about this user Persona is described in my previous project, called Mom Lif
 
 - As a user, I can see a navigation option (sidebar) so that I can create, sort my tasks, manage them, as well as find the contact option.
 
-- CRUD * - As a site user I can **Create** a task so that I can note down an event or an activity.
+- As a site user I can **Create** a task so that I can note down an event or an activity.
 
-- CRUD - As a site user, I can **View** an individual task so that I can read the details of it.
+- As a site user, I can **View** an individual task so that I can read the details of it.
 
-- CRUD - As a site user, I can **Edit** an individual task so that I can adapt it to my needs.
+- As a site user, I can **Edit** an individual task so that I can adapt it to my needs.
 
-- CRUD - As a site user I can **Delete** an individual task so that I can remove the no longer needed information.
+- As a site user I can **Delete** an individual task so that I can remove the no longer needed information.
 
 - As a user I can see my tasks as cards so that I have a better visual overview.
 
@@ -89,8 +89,6 @@ More about this user Persona is described in my previous project, called Mom Lif
 
 All user stories as part of a project: https://github.com/users/annagabain/projects/7/views/1
 
-
-CRUD *  means CREATE, READ, UPDATE and DELETE
 
 ### Responsivity
 
@@ -192,20 +190,20 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 *Login / Register View, now in separate windows*
 
-<img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-today-view.png"> <img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-register-login-view.png"> 
+<img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-today-view.png"> <img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-register-login-view.png"> 
 
 *Edit Task View*
 
 *Initially 'This Week View', now Month's Calendar*
 
-<img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-task-edit.png"> <img width="40%" alt="wireframe" src="wireframes/mom-schedule-wireframe-desktop-week-view.png">
+<img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-task-edit.png"> <img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
 
 ### Structure
 
 *PgSQL Relational Database Diagram*
 
-<img width="100%" alt="wireframe" src="wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
+<img width="100%" alt="wireframe" src="documentation_for_github_readme/wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
 ### Using Frameworks and Libraries
 
@@ -268,12 +266,12 @@ In Terminal: pip3 install coverage
 
 coverage run --source=mom_schedule_app manage.py test
 
-**coverage report nr. 1**
+*Coverage report*
 
 <img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_report_1.jpg"> 
 
 
-**coverage html**
+*Coverage html*
 
 coverage html
 python3 -m http.server
@@ -281,20 +279,11 @@ python3 -m http.server
 <img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_htmlcov.jpg"> 
 
 
-The coverage report nr.1 showed there are improvements to make in the following tests :
+The coverage report showed there are improvements to make in the following tests :
 
 - test_models.py - tested 86%, so 14% was yet to be improved
 - test_utils.py - tested 32%, so 68% was yet to be improved
 - test_views.py - tested 32%, so 68% was yet to be improved
-
-**test_models.py**
-
-**test_utils.py**
-
-**test_views.py**
-
-
-**coverage report nr. 2**
 
 
 :point_up_2: [Back to Contents](#contents)

@@ -9,6 +9,5 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'description']
 
 
-# admin.site.register(Mom_task)
 admin.site.register(Mom_contact)
 admin.site.register(Task_Category)

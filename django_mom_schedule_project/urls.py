@@ -8,11 +8,11 @@ app_name = 'mom_schedule_app'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    # separate potential url files split
+
     path('', views.mom_home, name='index'),
     path('register', views.register_request, name='register'),
     path('login', views.login_request, name='login'),
-    path('logout', views.logout_request, name='logout'),
+    path('logout', views.logout_request, name='logout'),    
     path('contact', views.mom_contact, name='mom_contact'),
     path('all_tasks', views.mom_task, name='all_tasks'),
     path('add', views.add, name='add'),
