@@ -35,7 +35,8 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 - [Development Stages](#development-stages)
     - [Planning](#planning)
     - [Structure](#structure)
-    - [Using Frameworks and Libraries](#using-frameworks)
+    - [Using Frameworks and Libraries](#using-frameworks-and-libraries)
+    - [Using Source code](#using-source-code)
 - [Testing](#testing)
     - [Validators](#validators)
     - [Manual Testing](#manual-testing)
@@ -243,24 +244,25 @@ The main database consisted of 3 Tables, necessary to create the data manipulati
 
 ### Using Frameworks and Libraries
 
-Django 
+The following frameworks have been acting as main tools for the application programming: 
 
-PostgreSQL
-
-Bootstrap 5
-
-Cloudinary
+- Django 
+- PostgreSQL
+- Bootstrap 5
+- Cloudinary
 
 
 ### Using Source code
 
-Some parts of the projects have been created using sections of code from other sources. An example of this is the HTML calendar feature, that was partially taken from a repository: https://github.com/sajib1066/event-calendar , forked and adapted to the Mom Schedule project.
+Some parts of the project have been created using sections of code from other sources. An example of this is the HTML calendar feature, that was partially taken from a repository: https://github.com/sajib1066/event-calendar , forked and adapted to the Mom Schedule project.
 
 :point_up_2: [Back to Contents](#contents)
 
 ## Testing
 
 ### Validators
+
+A short validation has been performed with Html and Css validators. Minor issues have been detected with Html. Css validation passed with no issues.
 
 *HTML Validator*
 
@@ -272,54 +274,35 @@ Some parts of the projects have been created using sections of code from other s
 <img width="70%" alt="css validator" src="documentation_for_github_readme/CSS_validator_No errors.png"> 
 
 
-LightHouse Report
-
 ### Manual Testing
 
-In the browser by running the local server:
+In the browser by running the local server: **python3 manage.py runserver**
 
-**python3 manage.py runserver**
+Two devices for responsivoty: a laptop and an iPhone 8.
 
-Two devices for responsivoty: a laptop and an iPhone 8
+A user experience walkthrough.
 
 ### Automatic Testing - Writing Functions
 
 #### Test functions
 Django’s unit tests use a Python standard library module: unittest. This module defines tests using a class-based approach.
 
-tests.py
+In terminal: **python3 manage.py test**
 
-in terminal: **python3 manage.py test**
+Several test functions have been written and placed in files similar to the original, with the prefix 'test' to them (eg. test_forms.py, test_views.py).
 
 *test_forms.py*
 
 <img width="100%" alt="debugging" src="documentation_for_github_readme/test_forms.jpg"> 
 
-python3 manage.py test mom_schedule_app.test_forms
-
-python3 manage.py test mom_schedule_app.test_forms.Test_NewUserForm
-
-python3 manage.py test mom_schedule_app.test_forms.Test_NewUserForm.test_item_email_is_required
-
 
 #### Coverage
 
-In Terminal: pip3 install coverage
-
-coverage run --source=mom_schedule_app manage.py test
+A coverage Html report has been generated to test the percentage of the code tested within the application.
 
 *Coverage report*
 
-<img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_report_1.jpg"> 
-
-
-*Coverage html*
-
-coverage html
-python3 -m http.server
-
 <img width="70%" alt="debugging" src="documentation_for_github_readme/coverage_htmlcov.jpg"> 
-
 
 The coverage report showed there are improvements to make in the following tests :
 
