@@ -45,7 +45,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
     - [Remaining Issues](#remaining-issues)
 - [Deployment](#deployment)
     - [Heroku](#creating-the-heroku-app)
-- [Sources & Credits](#sources)
+- [Sources & Credits](#sources--credits)
     - [Sources](#sources)
     - [Tools](#tools)
     - [Acknowledgments](#acknowledgments)
