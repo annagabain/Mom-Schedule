@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="main-content">
-    
 
-</div>
-<div class="container">
-    <div class="clearfix">
-        <a class="btn btn-primary left" href="{% url 'calendar' %}?{{ prev_month }}">&#9754; Previous Month </a>
-        <a class="btn btn-primary right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month &#9755; </a>
+<div class="center main-content">
+    <div>
+        <hr>
+        <hr>
+        <h2>Monthly Overview</h2>
+        <hr>
     </div>
-    {{ calendar }}
-    </table>
+    <div class="container">
+        <div class="clearfix">
+            <a class="btn btn-primary left" href="{% url 'calendar' %}?{{ prev_month }}">&#9754; Previous Month </a>
+            <a class="btn btn-primary right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month &#9755; </a>
+        </div>
+        {{ calendar }}
+        </table>
+    </div>
 </div>
+
 {% endblock content %}

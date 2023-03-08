@@ -1,49 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-
-<form class="center" action="/update/{{id}}">
-    <div class="col-lg-8 col-md-8 col-sm-10 col-10">
-
-        {% csrf_token %}
-        <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
-        <br>
-        <br>
-
-        <div class="mb-3">
-            <label for="title" class="form-label">Task Heading:</label>
-            <input type="text" id="title" class="form-control" name="title" value='{{title}}'>
-        </div>
-
-        <div class="mb-3">
-            <label for="category" class="form-label">Category:</label>
-            <select id="category" class="form-select" type="category" name="category">
-                <!-- Very tricky situation with category IDs!! -->
-                <option value="{{ category.id }}">-- {{ category }} --</option>
-                {% for item in from_Task_Category  %}
-                <option value="{{ item.id }}">{{ item.name }}</option>
-
-                {% endfor %}
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="description">Task Description:</label>
-            <textarea id="description" class="form-control" name="description">{{ description }}</textarea>
-        </div>
-
-        <div class="mb-3">
-            <label for="date">Due date:</label>
-            <!-- <input type="date" id="date" name="date" value='{{date}}'> -->
-            <br>
-            <label for="start_time">Start:</label>
-            <input type="date" id="start_time" class="input-group-addon" name="start_time" value='{{start_time}}'>
-            <br>
-            <label for="end_time">End:</label>
-            <input type="date" id="end_time" class="input-group-addon" name="end_time" value='{{end_time}}'>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Save</button>
+<div class="center main-content">
+    <div>
+        <hr>
+        <hr>
+        <h2>Edit Task</h2>
+        <hr>
     </div>
-</form>
+    <form class="center" action="/update/{{id}}">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-10">
+
+            {% csrf_token %}
+            <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
+            <br>
+            <br>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Task Heading:</label>
+                <input type="text" id="title" class="form-control" name="title" value='{{title}}'>
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Category:</label>
+                <select id="category" class="form-select" type="category" name="category">
+                    <!-- Very tricky situation with category IDs!! -->
+                    <option value="{{ category.id }}">-- {{ category }} --</option>
+                    {% for item in from_Task_Category  %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="description">Task Description:</label>
+                <textarea id="description" class="form-control" name="description">{{ description }}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="date">Due date:</label>
+                <!-- <input type="date" id="date" name="date" value='{{date}}'> -->
+                <br>
+                <label for="start_time">Start:</label>
+                <input type="date" id="start_time" class="input-group-addon" name="start_time" value='{{start_time}}'>
+                <br>
+                <label for="end_time">End:</label>
+                <input type="date" id="end_time" class="input-group-addon" name="end_time" value='{{end_time}}'>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
 
 {% endblock content %}

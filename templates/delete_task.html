@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="center">
-<p>Are you sure you want to delete <b>{{ mom_task.title }}</b> task? </p>
+<div class="center main-content">
+    <div>
+        <hr>
+        <hr>
+        <h2>Delete Task</h2>
+        <hr>
+    </div>
 
-<form method="post">
-{% csrf_token %}
-<input class="btn btn-danger" type="submit" value="Delete">
-</form>
-<br>
-<a href="/all_tasks"><button class="btn btn-success">No, Go back to the Tasks!</button></a></div>
+    <p>Are you sure you want to delete <b>{{ mom_task.title }}</b> task? </p>
 
+    <form method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
+    <br>
+    <a href="/all_tasks"><button class="btn btn-success">No, Go back to the Tasks!</button></a>
+</div>
+
+</div>
 
 {% endblock content %}

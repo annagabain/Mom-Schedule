@@ -3,11 +3,13 @@
 
 {% load crispy_forms_tags %}
 
-<!--Login-->
-<div class="center">
-	<h2>Log in to view your tasks</h2>
-	<hr>
-	
+<div class="center main-content">
+	<div>
+		<hr>
+		<hr>
+		<h2>Log in to view your tasks</h2>
+		<hr>
+	</div>
 	<form method="POST">
 		{% csrf_token %}
 		{{ login_form|crispy }}

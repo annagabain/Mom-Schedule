@@ -23,12 +23,22 @@ Class prefix | Size     | Container (max-width) |
         margin: 1rem 0rem;
     }
 
+    p {
+        margin-bottom: 0rem !important;
+        line-height: 20px !important;
+    }
+
     .login-greeting {
         font-size: 1rem;
     }
 
     #card-parent {
         column-count: 1;
+    }
+
+    .center {
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
     }
 
     /* sidebar start */
@@ -43,7 +53,6 @@ Class prefix | Size     | Container (max-width) |
     .sidebar a {
         padding: 2px;
         text-decoration: none;
-        /* font-size: 18px; */
         color: #0D0D0D;
         display: inline;
     }
@@ -58,9 +67,6 @@ Class prefix | Size     | Container (max-width) |
         position: fixed;
         bottom: 30px;
         right: 30px;
-        /* font-weight: 400;
-        font-size: 2rem; */
-        /* z-index: 2; */
     }
 
     #new-task-sidebar {
@@ -87,12 +93,6 @@ Class prefix | Size     | Container (max-width) |
     .calendar ul {
         padding: 0rem !important;
     }
-
-    /* .calendar td {
-        max-width: 100px !important;
-        height: 100px !important;
-        word-wrap: break-word !important;
-    } */
 
     .calendar li {
         word-wrap: break-word !important;

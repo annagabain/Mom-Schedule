@@ -6,12 +6,13 @@
         {% for mom_task in mom_task_list %}
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-12 col-12">
-                <!-- <div class="card"> -->
                 <div class="row">
                     <div class="card-body">
-                        <span class="card-title">{{ mom_task.title }} </span>
                         <span class="card-text" style="color: brown"><strong> Due on:
                                 {{ mom_task.end_time}}</strong></span>
+                        <br>
+                        <span class="card-title">{{ mom_task.title }} </span>
+
                         <a class="btn btn-warning" href="/edit/{{ mom_task.id }}">Edit</a>
 
                         {% if mom_task.complete == False %}
@@ -29,12 +30,12 @@
 
     {% if not mom_task_list %}
     <div class="center">
-                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert"
-                    style="background-color: #FAF7F4;">
-                    <span style="color:#6A4C39;">No Tasks to Show</span>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert"
+            style="background-color: #FAF7F4;">
+            <span style="color:#6A4C39;">No Tasks to Show</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     </div>
     {% endif %}
 
-{% endblock content %}
+    {% endblock content %}

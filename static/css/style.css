@@ -6,7 +6,7 @@
 #A67153(old)  #6A4C39(new)   - Brown
 #0D0D0D   - Black-Brown */
 
-/* These fonts are imported from Google Fonts */
+/* These are imported from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Open+Sans:wght@300;400&family=Share+Tech+Mono&display=swap');
@@ -15,7 +15,6 @@
 body {
     color: #0D0D0D;
     background-color: #D8CBC4;
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -32,12 +31,6 @@ footer {
 }
 
 footer {
-    /* font-size: 0.7rem;
-    height: 30px;
-    padding: 5px !important;
-    width: 100%;
-    position: absolute;
-    bottom: 0px !important; */
     font-size: 0.7rem;
     position: fixed;
     bottom: 0;
@@ -59,15 +52,15 @@ footer {
 h1, h2 {
     font-family: 'Lemonada', cursive, sans-serif;
 }
+
 h5 {
     font-family: 'Lemonada', cursive, sans-serif;
 
 }
+
 p {
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    /* text-indent: 20px; */
     line-height: 25px;
 }
 
@@ -127,8 +120,8 @@ a:active {
 }
 
 .main-content {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 }
 
 /* sidebar start */
@@ -145,6 +138,7 @@ a:active {
     color: #0D0D0D;
     display: block;
 }
+
 .dropdown-item{
     font-size: 14px !important;
 }
@@ -152,7 +146,6 @@ a:active {
 .sidebar a:hover {
     color: #efe2da;
     background: #6A4C39;
-
 }
 
 #round-button {
@@ -162,7 +155,6 @@ a:active {
     background: #6A4C39;
     color: #efe2da;
     font-size: 1rem;
-    /* padding: -30px; */
     margin-bottom: 40px;
 }
 
@@ -205,18 +197,10 @@ button {
     text-align: center;
 }
 
-.btn-primary
-
-/* .btn-primary:hover, */
-/* .btn-primary:active, */
-/* .btn-primary:visited */
-    {
-
+.btn-primary {
     background-color: #D8CBC4 !important;
     color: #0D0D0D !important;
     border-color: #0D0D0D !important;
-
-
 }
 
 .btn-primary:hover {
@@ -232,11 +216,6 @@ button {
 
 .right {
     text-align: right;
-}
-
-#circle-image-div {
-    /* width: 200px; */
-    /* padding: 0px 50px 50px 50px; */
 }
 
 #circle-image {
@@ -310,8 +289,9 @@ a {
     margin: 25px;
     width: 95%;
 }
-
 /* calendar end */
+
+/* Navigation botton on the bottum of the site that sends to the top of the page */
 .top {
         opacity: 0.9;
         position: fixed;
@@ -319,4 +299,4 @@ a {
         right: 20px;
         width: 60px;
         position: fixed;
-    }
+}

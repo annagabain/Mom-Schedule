@@ -2,14 +2,16 @@
 {% block content %}
 
 <div class="main-content center">
-
+	<div>
+		<hr>
+		<hr>
+		<h2>Contact Us</h2>
+		<hr>
+	</div>
     <form action="/contact" method="post">
-        <div class="center col-lg-8 col-md-8 col-sm-10 col-10">
+        <div class="center main-content col-lg-8 col-md-8 col-sm-10 col-10">
             {% csrf_token %}
             <div class="field">
-                <label>
-                    <h2>Contact Us</h2>
-                </label>
                 <div class="mb-3">
                     <input id="email" class="form-control" type="email" name="email" placeholder="Your email..."
                         required="required">
