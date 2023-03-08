@@ -40,8 +40,7 @@ footer {
     left: 0;
 }
 
-#site_logo
- {
+#site_logo {
     font-family: 'Lemonada', cursive, sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -49,7 +48,8 @@ footer {
     text-align: left;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Lemonada', cursive, sans-serif;
 }
 
@@ -98,8 +98,7 @@ a:active {
     color: #FAF7F4;
 }
 
-.login-greeting a:hover
- {
+.login-greeting a:hover {
     color: #D8CBC4;
 }
 
@@ -112,8 +111,7 @@ a:active {
     text-decoration: none;
 }
 
-#login_greeting_logout_button a:hover
- {
+#login_greeting_logout_button a:hover {
     color: #D8CBC4;
     background-color: #6A4C39;
 
@@ -139,7 +137,7 @@ a:active {
     display: block;
 }
 
-.dropdown-item{
+.dropdown-item {
     font-size: 14px !important;
 }
 
@@ -209,7 +207,7 @@ button {
 
 }
 
-.center{
+.center {
     text-align: center;
     padding: 2rem;
 }
@@ -289,14 +287,15 @@ a {
     margin: 25px;
     width: 95%;
 }
+
 /* calendar end */
 
 /* Navigation botton on the bottum of the site that sends to the top of the page */
 .top {
-        opacity: 0.9;
-        position: fixed;
-        bottom: 30px;
-        right: 20px;
-        width: 60px;
-        position: fixed;
+    opacity: 0.9;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    position: fixed;
 }

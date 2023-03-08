@@ -14,23 +14,14 @@
                 and creating task cards. </p>
             <p> As a site user you can: Login, Create Tasks, Categorize, See only (In)Complete, Order by Due date,
                 Overview your Month. </p>
-            <p><a href="/register">Register</a> so that you have a unique and private schedule and then <a
-                    href="/login">login</a> so that you can view your own schedule. </p>
-            <p>Create tasks with Title, Category and the due dates. Each category has an image helping to visually
-                identify it. </p>
-
         </div>
         <div id="circle-image-div">
             <img id="circle-image" width="10%" alt="planning mother" src="static/pexels-karolina-grabowska-4959753.jpg">
-            <p>Filter and see the tasks that you have already completed or only those to work on. Toggling function
-                allows to revert the complete/incompete status. Can come quite handy if you need some schedule
-                adjustments. </p>
         </div>
         <div style="text-align: right;">
-            <p> Order by Due date, so you do not miss important deadlines. </p>
-            <p> Filter by Category, so you can see the tasks that are relevant to your current area of activity. </p>
             <p> View and Edit an individual task so that you can read the details and adapt it to your needs. </p>
-            <p> See your monthly schedule to overview your tasks. Tasks headings are marked on a Calendar.</p>
+            <p> This appication can be useful not only to mothers, fathers, but for any caretaker or just a busy person.
+            </p>
             <p> <a href="/contact">Contact us</a> for any questions or comments about the app.</p>
 
         </div>
@@ -39,14 +30,24 @@
             <hr>
             <h5>Login</h5>
             <hr>
-            <img src="static/images/login_print_screen.jpg" alt="category images">
+            <!-- <img src="static/images/login_print_screen.jpg" alt="category images"> -->
+            <a href="/login"><img src="static/images/login_print_screen.jpg" alt="category images" width="100%"></a>
+            <p><a href="/register">Register</a> so that you have a unique and private schedule and then <a
+                    href="/login">login</a> so that you can view your own schedule. </p>
         </div>
         <div>
             <hr>
             <hr>
             <h5>Create Tasks</h5>
             <hr>
-            <img src="static/images/new_task_print_screen.jpg" alt="category images">
+            <!-- <img src="static/images/new_task_print_screen.jpg" alt="category images"> -->
+            <a href="/new_task"><img src="static/images/new_task_print_screen.jpg" alt="category images"
+                    width="100%"></a>
+            <br>
+            <br>
+            <p>Create tasks with Title, Category and the due dates. Each category has an image helping to visually
+                identify it. </p>
+
         </div>
         <div>
             <hr>
@@ -54,6 +55,10 @@
             <h5>Categorize</h5>
             <hr>
             <img src="static/images/all_tasks_print_screen.jpg" alt="category images">
+            <!-- <a href="/all_tasks"><img src="static/images/all_tasks_print_screen.jpg" alt="category images" width="100%"></a> -->
+            <br>
+            <br>
+            <p> Filter by Category, so you can see the tasks that are relevant to your current area of activity. </p>
         </div>
         <div>
             <hr>
@@ -61,6 +66,9 @@
             <h5>See only (In)Complete</h5>
             <hr>
             <img src="static/images/completed_tasks_print_screen.jpg" alt="category images">
+            <p>Filter and see the tasks that you have already completed or only those to work on. Toggling function
+                allows to revert the complete/incompete status. Can come quite handy if you need some schedule
+                adjustments. </p>
         </div>
         <div>
             <hr>
@@ -68,7 +76,7 @@
             <h5>Prioritize by Due date</h5>
             <hr>
             <img src="static/images/filter_by_due_date_print_screen.jpg" alt="category images">
-
+            <p> Order by Due date, so you do not miss important deadlines. </p>
         </div>
         <div>
             <hr>
@@ -76,7 +84,10 @@
             <h5>Overview your Month</h5>
             <hr>
             <img src="static/images/calendar_print_screen.jpg" alt="category images">
+            <p> See your monthly schedule to overview your tasks. Tasks headings are marked on a Calendar.</p>
+
         </div>
     </div>
+</div>
 
-    {% endblock content %}
+{% endblock content %}

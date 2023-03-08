@@ -23,6 +23,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
 - [UX](#ux)
     - [User Stories](#user-stories)
     - [Responsivity](#responsivity)
+    - [User Friendly Messages](#user-friendly-messages)
 - [Features](#features)
     - [Homepage](#homepage)
         - [Welcoming Intro](#welcoming-intro)
@@ -101,6 +102,22 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 Bootstrap5 features and custom CSS
 
 <img width="70%" alt="responsivity" src="documentation_for_github_readme/responsivity.jpg">
+
+### User Friendly Messages
+
+*Log in confirmation message & new user guidance to create the first Task*
+
+<img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages_4.png">
+
+*Log out confirmation message*
+
+<img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages_2.png">
+
+*No tasks and what to do about it message*
+
+<img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages.png">
+
+
 
 :point_up_2: [Back to Contents](#contents)
 
@@ -226,9 +243,15 @@ Some parts of the projects have been created using sections of code from other s
 
 ### Validators
 
-HTML
+*HTML Validator*
 
-CSS
+<img width="70%" alt="html validator" src="documentation_for_github_readme/Html_validator_minor_errors.png"> 
+
+
+*CSS Validator*
+
+<img width="70%" alt="css validator" src="documentation_for_github_readme/CSS_validator_No errors.png"> 
+
 
 LightHouse Report
 
