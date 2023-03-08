@@ -1,15 +1,13 @@
 # Mom Schedule
 ## A Time Planning Tool for Busy Mothers
 
-Mom Schedule is a time-planning tool for busy Mothers. Mom Schedule has a calendar and offers event editing and creating task cards.
+Mom Schedule is a time-planning tool for busy Mothers. The application has a calendar and offers event editing and creating task cards.
 
 As a site user, you can: Log in, Create Tasks, Categorize and Filter by following criteria: All Tasks, Calendar - to Overview your Month, See Completed Tasks Only, Hide Completed Tasks, Filter by Due Date, Filter by selected Category - Work, Childcare, Household, Health, Free time and Other tasks.
 
-Main Technologies:
-HTML, CSS, JavaScript, Python+Django
-Postgres Relational database 
+Main Technologies applied are: HTML, CSS, Python, Django Framework and Postgres Relational database.
 
-This is the fourth Portfolio Project in frames of the Code Institute Full Stack Web Developer Course Assessment. Portfolio Project 4: Full-Stack Toolkit. Project purpose, as per curriculum requirement: "In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset."
+This is the fourth Portfolio Project in frames of the Code Institute Full Stack Web Developer Course Assessment.
 
 :point_down: Click the link below for the live view: 
 
@@ -26,13 +24,11 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
     - [User Friendly Messages](#user-friendly-messages)
 - [Features](#features)
     - [Homepage](#homepage)
-        - [Welcoming Intro](#welcoming-intro)
-        - [Site Header and Log in](#site-header-and-log-in)
-    - [Authentication and Authorization](#register-and-log-in)
+    - [Site Header and Log in](#site-header-and-log-in)
+    - [Authentication and Authorization](#authentication-and-authorization)
     - [Site Navigation](#site-navigation)
         - [Sidebar](#sidebar)
-    - [My Tasks](#my-tasks)
-        - [Filter by](#filter-by)
+        - [My Tasks](#my-tasks-and-filter-by-dropdown)
     - [Contact Us](#contact-us)
     - [New Task](#new-task)
     - [Future Features](#future-features)
@@ -94,30 +90,37 @@ All user stories as part of a project: https://github.com/users/annagabain/proje
 
 ### Responsivity
 
+There have been two main device views considered for the responsivity of Mom Schedule: Mobile and Laptop. Some efforts have been made to make sure the application is visually appealing and functional on tablets and larger monitors as well.
+
 *Initial test result: Am I responsive?*
 
 <img width="70%" alt="responsiveness" src="documentation_for_github_readme/responsiveness.jpg">
 
-*The Methods*
-
-Bootstrap5 features and custom CSS
+The Methods to achieve desired device responsivity level include Bootstrap5 features and custom CSS.
 
 <img width="70%" alt="responsivity" src="documentation_for_github_readme/responsivity.jpg">
 
 ### User Friendly Messages
 
+In order to reassure the user for the actions they have taken, as well as to guide them, user-friendly messages have been created.
+
 *Log in confirmation message & new user guidance to create the first Task*
 
 <img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages_4.png">
+
+The logged in user is redirected to the All Tasks page. In case the user has just registered or did not create any Tasks, a link is provided to do so.
 
 *Log out confirmation message*
 
 <img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages_2.png">
 
+The user is being informed about the log in / log out status to make sure their information is kept safe and private.
+
 *No tasks and what to do about it message*
 
 <img width="70%" alt="user friendliness" src="documentation_for_github_readme/user_messages.png">
 
+In case the user has no Tasks within selected filter, a message is provided accordingly, to hint them what to do. This ensures a smoother website navigation and user experience.
 
 
 :point_up_2: [Back to Contents](#contents)
@@ -126,18 +129,23 @@ Bootstrap5 features and custom CSS
 
 ### Homepage
 
-#### Welcoming Intro
-
-The welcoming intorduction is visible to everyone, regardless of their log in status. This overview provides information about the application features and functionality. Sample screenshots show what to expect seeing once registered and logged in.
+The welcoming intorduction is visible to everyone, regardless of their log in status. This overview provides information about the application features and functionality. Sample screenshots show what to expect once registered and logged in.
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/welcoming_intro.jpg">
 
-#### Site Header and Log in
+### Site Header and Log in
+
+The site header contains Mom Schedule clickable logo that leads to the homepage.
 
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login.jpg">
+
+As well as the login status and greeting the user by their username. There is a dropdon button to log out of the application directly.
+
 <img width="70%" alt="welcome page" src="documentation_for_github_readme/header_and_login_dropdown.jpg">
 
 ### Authentication and Authorization
+
+The application provides an Authentication and Authorization mechanism by enabling the user to register a personal account. There are several pages that request authorized view, as well as authentication of the user account to be able to store individual data.
 
 *Register and Log in*
 
@@ -146,15 +154,16 @@ The welcoming intorduction is visible to everyone, regardless of their log in st
 :point_up_2: [Back to Contents](#contents)
 
 ### Site Navigation
+
+In order to comfortably navigate through the tasks, homepage and contact the website administrators, a sidebar is available to the user. On the mobile view the navigation is floated to the top of the page, to maximize the application usability in frames of the limmited space on the phone screen.
+
 #### Sidebar
 
-Homepage, Contact form, My Tasks and Filtering dropdown, including the Calendar view, New Task button.
+The Sidebar includes: Homepage, Contact form, My Tasks and Filtering dropdown, including the Calendar view, New Task button.
 
-#### My Tasks
+#### My Tasks and Filter by Dropdown
 
 Upon clicking the My Tasks dropdown, the user navigates through the Task filtering, the first of which is viewing all of the tasks.
-
-##### Filter by
 
 *Sidebar dropdown with nested categories dropdown*
 
@@ -175,16 +184,21 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 ### Contact Us
 
+The user, regardless of their authentication status, is able to contact the website owner for questions and comments about the application.
 
 <img width="50%" alt="contact form" src="documentation_for_github_readme/contact_form.png">
 
 
 ### New Task
 
+This is the most important feature. The New Task form enables the user creating new tasks.
+
 <img width="50%" alt="new task" src="documentation_for_github_readme/new_task_print_screen.jpg">
 
 
 ### Future Features
+
+Some possible features will be considered for Mom Schedule upon request from the users:
 
 - Week view
 - Day view
@@ -198,9 +212,19 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 ### Planning
 
+Initial planning has been conducted manually with pen and paper. Most of the features have been implemented in Mom Schedule project afterwards.
+
 <img width="70%" alt="planning" src="documentation_for_github_readme/Planning_1.jpg">
 
+The main database consisted of 3 Tables, necessary to create the data manipulation flow. These are Tasks, Categories and Users.
+
 <img width="70%" alt="planning" src="documentation_for_github_readme/Planning_2.jpg">
+
+### Structure
+
+*PgSQL Relational Database Diagram*
+
+<img width="100%" alt="wireframe" src="documentation_for_github_readme/wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
 #### Desktop Wireframes
 
@@ -216,12 +240,6 @@ Upon clicking the My Tasks dropdown, the user navigates through the Task filteri
 
 <img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-task-edit.png"> <img width="40%" alt="wireframe" src="documentation_for_github_readme/wireframes/mom-schedule-wireframe-desktop-week-view.png">
 
-
-### Structure
-
-*PgSQL Relational Database Diagram*
-
-<img width="100%" alt="wireframe" src="documentation_for_github_readme/wireframes/drawSQL-mom-schedule-database-diagram-export-2023-02-02.png">
 
 ### Using Frameworks and Libraries
 
