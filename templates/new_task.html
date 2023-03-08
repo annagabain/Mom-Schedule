@@ -7,8 +7,9 @@
         <h2>Create a New Task</h2>
         <hr>
     </div>
-    <form action="/add" method="post">
-        <div class="center main-content col-lg-8 col-md-8 col-sm-10 col-10">
+    <div class="col-10">
+        <form action="/add" method="post" style="width: 80%; float: right;">
+
             {% csrf_token %}
 
             <div class="mb-3">
@@ -37,8 +38,9 @@
             </div>
 
             <button class="btn btn-primary" type="submit">Add</button>
-        </div>
-    </form>
+
+        </form>
+    </div>
 </div>
 
 {% endblock content %}

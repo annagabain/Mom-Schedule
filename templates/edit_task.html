@@ -7,8 +7,8 @@
         <h2>Edit Task</h2>
         <hr>
     </div>
-    <form class="center" action="/update/{{id}}">
-        <div class="col-lg-8 col-md-8 col-sm-10 col-10">
+    <div class="col-10">
+        <form class="center" action="/update/{{id}}" style="width: 80%; float: right;">
 
             {% csrf_token %}
             <a class="btn btn-danger" href="/delete/{{ id }}">Delete this task</a>
@@ -49,8 +49,9 @@
             </div>
 
             <button class="btn btn-primary" type="submit">Save</button>
-        </div>
-    </form>
+
+        </form>
+    </div>
 </div>
 
 {% endblock content %}

@@ -2,14 +2,14 @@
 {% block content %}
 
 <div class="main-content center">
-	<div>
-		<hr>
-		<hr>
-		<h2>Contact Us</h2>
-		<hr>
-	</div>
-    <form action="/contact" method="post">
-        <div class="center main-content col-lg-8 col-md-8 col-sm-10 col-10">
+    <div>
+        <hr>
+        <hr>
+        <h2>Contact Us</h2>
+        <hr>
+    </div>
+    <div class="col-10">
+        <form action="/contact" method="post" style="width: 80%; float: right;">
             {% csrf_token %}
             <div class="field">
                 <div class="mb-3">
@@ -26,7 +26,8 @@
                 </div>
             </div>
             <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
+    
     </form>
+    </div>
 </div>
 {% endblock content %}

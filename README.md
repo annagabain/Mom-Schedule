@@ -45,6 +45,7 @@ This is the fourth Portfolio Project in frames of the Code Institute Full Stack 
     - [Manual Testing](#manual-testing)
     - [Automatic Testing - Writing Functions](#automatic-testing---writing-functions)
     - [Debugging](#debugging)
+    - [Remaining Issues](#remaining-issues)
 - [Deployment](#deployment)
     - [Heroku](#creating-the-heroku-app)
 - [Sources & Credits](#sources)
@@ -415,6 +416,13 @@ Now it prepopulates my field with the date as dd-mm-yyyy. The mom_task is then s
 *After*
 
 <img width="70%" alt="debugging" src="documentation_for_github_readme/testing_database_bug_solution_3.jpg"> 
+
+### Remaining Issues
+
+- Broken first two cards in Firefox Browser only
+- Dropdown sidebar categories on Calendar page
+
+
 
 :point_up_2: [Back to Contents](#contents)
 
